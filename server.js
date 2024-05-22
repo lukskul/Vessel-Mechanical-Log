@@ -10,6 +10,10 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 const dataFilePath = path.join(__dirname, 'data', 'boats.json');
 
 app.post('/save', (req, res) => {
