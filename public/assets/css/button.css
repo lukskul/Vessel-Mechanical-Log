@@ -1,0 +1,45 @@
+/* initial home screen buttons*/
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.full-screen-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50%; /* Takes up half the screen height */
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px; /* Fixed width */
+    height: 150px; /* Fixed height */
+    text-decoration: none;
+    color: white;
+    background-color: #007BFF;
+    border-radius: 50%;
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
