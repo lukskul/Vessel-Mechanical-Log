@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js",
+    "watch": "onchange './public/assets/src/**/*.js' './public/assets/css/**/*.css' -- npm run build",
     "server": "node server.js",
-    "watch": "onchange './public/src/**/*.js' -- npm run build",
     "start": "npm-run-all --parallel watch server",
     "deploy": "gh-pages -d build"
   },

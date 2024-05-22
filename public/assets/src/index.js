@@ -6,13 +6,14 @@ document.getElementById('data-form').addEventListener('submit', function(event) 
   const data = { text: document.getElementById('data-input').value };
 
   fetch('/save', {
-    method: 'POST',
+    method: 'POST',  
     headers: {
       'Content-Type': 'application/json'    
     },
     body: JSON.stringify(data)
-  })
-  .then(response => response.text())  
+  })  
+  
+  .then(response => response.text())     
   .then(data => {
     console.log('Success:', data);
   })
@@ -21,4 +22,3 @@ document.getElementById('data-form').addEventListener('submit', function(event) 
   });
 });
 
-console.log("working"); 
