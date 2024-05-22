@@ -9,11 +9,23 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <form id="data-form">
-      <label for="data-input">Enter Data:</label>
-      <input type="text" id="data-input" name="data-input">
-      <button type="submit">Submit</button>
-  </form>
+
+    <div id="main-block" class="full-screen-block">
+      <div class="button-container">
+          <a href="#" class="button">Work Log</a>
+      </div>
+      <div class="button-container">
+          <a href="#" class="button">History</a>
+      </div>
+    </div>
+    <div class="full-screen-block none">
+      <form id="data-form">
+        <label for="data-input">Enter Data:</label>
+        <input type="text" id="data-input" name="data-input">
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
     <script src="bundle.js"></script>
   </body>
 </html>  
