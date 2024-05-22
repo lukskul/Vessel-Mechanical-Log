@@ -1,55 +1,48 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const fs = require('fs');
-const cors = require('cors');
+const path = require('path');
+
 const app = express();
-const port = 5000;
+const PORT = 3000;
 
-app.use(cors());
-app.use(express.json());
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-const dataFilePath = './data/boats.json';
+const dataFilePath = path.join(__dirname, 'data', 'boats.json');
 
-// Read the data from the JSON file
-const readData = () => {
-  const rawData = fs.readFileSync(dataFilePath);
-  return JSON.parse(rawData);
-};
+app.post('/save', (req, res) => {
+  const newData = req.body;
 
-// Write data to the JSON file
-const writeData = (data) => {
-  fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
-};
+  fs.readFile(dataFilePath, 'utf8', (err, content) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Server error');
+      return;
+    }
 
-// Get all boat data
-app.get('/boats', (req, res) => {
-  const data = readData();
-  res.json(data);
+    let jsonData = [];
+    try {
+      jsonData = JSON.parse(content);
+    } catch (e) {
+      console.error(e);
+    }
+
+    jsonData.push(newData);
+
+    fs.writeFile(dataFilePath, JSON.stringify(jsonData, null, 2), 'utf8', (err) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Server error');
+        return;
+      }
+
+      res.status(200).send('Data saved');
+    });
+  });
 });
 
-// Add a new boat
-app.post('/boats', (req, res) => {
-  const data = readData();
-  const newBoat = req.body;
-  data.push(newBoat);
-  writeData(data);
-  res.status(201).json(newBoat);
-});
-
-// Add work to a boat
-app.post('/boats/:name/work', (req, res) => {
-  const data = readData();
-  const boatName = req.params.name;
-  const workEntry = req.body;
-  const boat = data.find(boat => boat.name === boatName);
-  if (boat) {
-    boat.work.push(workEntry);
-    writeData(data);
-    res.status(201).json(workEntry);
-  } else {
-    res.status(404).json({ error: 'Boat not found' });
-  }
-});
-
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
