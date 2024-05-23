@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Your app description here" />
     <title>Vessel Mechanical Log</title>
-    <link rel="icon" href=".public/assets/icons/wrench-hammer.svg" />
+    <link rel="icon" href="/assets/icons/wrench-hammer.svg" />
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
 
-    <div id="main-block" class="full-screen-block">
+    <div id="main-block-page-1" class="full-screen-block">
       <div class="button-container">
-          <a href="#" class="button">Work Log</a>
+          <a href="#" class="button" id="work-log-button">Work Log</a>
       </div>
       <div class="button-container">
           <a href="#" class="button">History</a>
       </div>
     </div>
-    <div class="full-screen-block none">
+    <div id="main-block-form" class="full-screen-block" style="display:none;">
       <form id="data-form">
         <label for="data-input">Enter Data:</label>
         <input type="text" id="data-input" name="data-input">
