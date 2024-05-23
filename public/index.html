@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-
+    <!-- Page 1 Button Div -->
     <div id="main-block-page-1" class="full-screen-block">
       <div class="button-container">
           <a href="#" class="button" id="work-log-button">Work Log</a>
@@ -18,11 +18,15 @@
           <a href="#" class="button">History</a>
       </div>
     </div>
+    <!-- Form-1 -->
     <div id="main-block-form" class="full-screen-block" style="display:none;">
       <form id="data-form">
-        <label for="data-input">Enter Data:</label>
-        <input type="text" id="data-input" name="data-input">
-        <button type="submit">Submit</button>
+
+        <label for="boat-name"></label>
+        <input type="text" id="boat-name" name="boat-name" autocomplete="off" required>
+        <div id="autocomplete-suggestions" class="autocomplete-suggestions"></div>
+
+        <button id="save-new-vessel-button" type="submit">Save New Vessel</button>
       </form>
     </div>
 
