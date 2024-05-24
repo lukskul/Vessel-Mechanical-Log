@@ -9,24 +9,78 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <!-- Page 1 Button Div -->
-    <div id="main-block-page-1" class="full-screen-block">
+    <!-- home -->
+    <div id="main-block-home" class="full-screen-block">
       <div class="button-container">
-          <a href="#" class="button" id="work-log-button">Work Log</a>
+          <a href="#" class="button" id="archive-button">Work Archive</a>
       </div>
       <div class="button-container">
-          <a href="#" class="button">History</a>
+          <a href="#" class="button" id="add-work-button">Add Work</a>
       </div>
     </div>
-    <!-- Form-1 -->
-    <div id="main-block-form" class="full-screen-block" style="display:none;">
+    <!-- Work -->
+    <div id="main-block-vessel-form" class="full-screen-block" style="display:none;">
       <form id="data-form">
 
-        <label for="boat-name"></label>
-        <input type="text" id="boat-name" name="boat-name" autocomplete="off" required>
+        <label for="vessel-name"></label>
+        <input type="text" id="vessel-name" name="vessel-name" autocomplete="off" required>
         <div id="autocomplete-suggestions" class="autocomplete-suggestions"></div>
 
         <button id="save-new-vessel-button" type="submit">Save New Vessel</button>
+      </form>
+      <!-- Tasks -->
+      <form id="tasks">
+        <div class="form-group">
+            <div id="task-options" class="task-options">
+                <div class="task-option" data-task="engines">
+                    <img src="assets/icons/engine.svg" alt="Engines">
+                    <span>Engine</span>
+                </div>
+                <div class="task-option" data-task="generators">
+                    <img src="assets/icons/generator.svg" alt="Generator">
+                    <span>Generator</span>
+                </div>
+                <div class="task-option" data-task="electricMotors">
+                    <img src="assets/icons/motor.svg" alt="Electric Motors">
+                    <span>Electric motor</span>
+                </div>
+                <div class="task-option" data-task="shafts">
+                    <img src="assets/icons/shaft.png" alt="Shafts">
+                    <span>Shaft and Coupler</span>
+                </div>
+                <div class="task-option" data-task="props">
+                    <img src="assets/icons/props.svg" alt="Props">
+                    <span>Propeller</span>
+                </div>
+                <div class="task-option" data-task="bow-thrusters">
+                    <img src="./assets/icons/bowThruster.svg" alt="Bow Thrusters">
+                    <span>Bow Thruster</span>
+                </div>
+                <div class="task-option" data-task="sea-screens">
+                    <img src="./assets/icons/screen.svg" alt="Sea Screens">
+                    <span>Sea Screens</span>
+                </div>
+                <div class="task-option" data-task="zincs">
+                    <img src="assets/icons/zincs.svg" alt="Zincs">
+                    <span>Zincs</span>
+                </div>
+                <div class="task-option" data-task="doors">
+                    <img src="assets/icons/door.svg" alt="doors"> 
+                    <span>Doors</span>
+                </div>
+                <div class="task-option" data-task="misc">
+                    <img src="assets/icons/plus.svg" alt="Add New">
+                    <span>Misc Work</span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="work-done">Work Done:</label>
+            <input type="text" id="work-done" name="work-done" required>
+        </div>
+        <div class="form-group">
+            <button type="submit">Save</button>
+        </div>
       </form>
     </div>
 

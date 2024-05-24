@@ -8,54 +8,74 @@ const PORT = 3000;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'build')));
-
+app.use(express.static(path.join(__dirname, 'public'))); 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-const dataFilePath = path.join(__dirname, 'data', 'boats.json');
+const dataFilePath = path.join(__dirname, 'data', 'vessels.json');
+
+// Function to save New Vessel
+const saveVesselName = (vessels, res) => {
+  fs.writeFile(dataFilePath, JSON.stringify(vessels, null, 2), 'utf8', err => {
+    if (err) {
+      console.error('Error writing file:', err);
+      return res.status(500).send('Internal Server Error');
+    }
+    res.send('Vessel name added successfully');
+  });
+};
 
 app.post('/save', (req, res) => {
-  const { boatName } = req.body;
-  const filePath = path.join(__dirname, 'data', 'boats.json');
+  const requestBody = req.body; // This will contain all the dynamic variables sent in the request
 
-  fs.readFile(filePath, 'utf8', (err, data) => {
+  // Extract the first key-value pair from the request body
+  const key = Object.keys(requestBody)[0];
+  const value = requestBody[key].trim(); // Trim whitespace
+
+  fs.readFile(dataFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading file:', err);
+      // If file doesn't exist or cannot be read, start with an empty array
+      const vessels = [];
+      vessels.push({ [key]: value });
+      return saveVesselName(vessels, res);
+    }
+
+    let vessels = JSON.parse(data);
+    const vesselExists = vessels.some((vessel) => vessel[key]?.toLowerCase() === value.toLowerCase());
+
+    if (!vesselExists) {
+      vessels.push({ [key]: value });
+      saveVesselName(vessels, res);
+    } else {
+      res.send('Vessel already exists');
+    }
+  });
+});
+
+
+app.get('/vessel-names', (req, res) => {
+  fs.readFile(dataFilePath, 'utf8', (err, data) => {
       if (err) {
           console.error('Error reading file:', err);
           return res.status(500).send('Internal Server Error');
       }
-
-      let boats = JSON.parse(data);
-      const boatExists = boats.some(boat => boat.name.toLowerCase() === boatName.toLowerCase());
-
-      if (!boatExists) {
-          boats.push({ name: boatName });
-          fs.writeFile(filePath, JSON.stringify(boats, null, 2), 'utf8', err => {
-              if (err) {
-                  console.error('Error writing file:', err);
-                  return res.status(500).send('Internal Server Error');
-              }
-              res.send('Boat added successfully');
-          });
-      } else {
-          res.send('Boat already exists');
+      try {
+          const vessels = JSON.parse(data);
+          // Ensure vessels is an array of objects with 'name' properties
+          if (Array.isArray(vessels)) {
+              res.json(vessels);
+          } else {
+              res.json([]);
+          }
+      } catch (parseError) {
+          console.error('Error parsing JSON:', parseError);
+          res.status(500).send('Internal Server Error');
       }
   });
 });
 
-app.get('/boats', (req, res) => {
-  const filePath = path.join(__dirname, 'data', 'boats.json');
-
-  fs.readFile(filePath, 'utf8', (err, data) => {
-      if (err) {
-          console.error('Error reading file:', err);
-          return res.status(500).send('Internal Server Error');
-      }
-
-      const boats = JSON.parse(data);
-      res.json(boats);
-  });
-});
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
