@@ -2,8 +2,9 @@ export async function fetchVesselNames() {
     try {
         const response = await fetch('/vessel-names');
         const data = await response.json();
-        // Ensure data is an array of objects with 'name' properties
-        return data.map(vessel => vessel.name).filter(name => typeof name === 'string');
+        const vesselNames = data.map(vessel => vessel['vessel-name']).filter(name => typeof name === 'string');
+        console.log('Processed vessel names:', vesselNames);
+        return vesselNames;
     } catch (error) {
         console.error('Error fetching vessel names:', error);
         return [];
