@@ -1,10 +1,15 @@
 import { fetchVesselNames, saveData } from './dataService.js'; 
+import { state } from './global.js'; 
+import { vesselSelected } from './buttons.js';
+
+const dataForm = document.getElementById('data-form'); 
+
+//Select Vessel Drop down Box
 
 document.addEventListener('DOMContentLoaded', async function() {
     const vesselInput = document.getElementById('vessel-name');
     const suggestionsContainer = document.getElementById('autocomplete-suggestions');
     let vessels = [];
-    let selectedVessel = null;
 
         // Fetch vessel names
         try {
@@ -34,11 +39,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                 suggestionDiv.className = 'suggestion';
                 suggestionDiv.addEventListener('click', function() {
                     vesselInput.value = vessel;
-                    //selectedVessel = vessel; 
                     suggestionsContainer.innerHTML = '';
+                    state.setSelectedVessel(vessel);
                 });
-                suggestionsContainer.appendChild(suggestionDiv);
-                selectedVessel = vessel; 
+                suggestionsContainer.appendChild(suggestionDiv); 
             });
         }
     });
@@ -48,15 +52,14 @@ document.addEventListener('DOMContentLoaded', async function() {
         event.preventDefault();
         const nameInput = document.getElementById('vessel-name');
         const vesselName = nameInput.value.trim(); // Trim whitespace
-        const fieldId = nameInput.id; 
-        selectedVessel = vesselName; 
+        const fieldId = nameInput.id;  
 
         if (vesselName && !vessels.includes(vesselName)) {
             saveData(fieldId, vesselName).then(response => {
                 alert(response);
                 vessels.push(vesselName);
-                selectedVessel = vesselName; 
-                console.log('selected Vessel', selectedVessel);  
+                state.setSelectedVessel(vesselName); 
+                console.log('selected Vessel line 63', selectedVessel);                 
             }).catch(error => {
                 console.error('Error saving vessel name:', error);
                 alert('Error saving vessel name');
@@ -67,12 +70,13 @@ document.addEventListener('DOMContentLoaded', async function() {
             alert('Vessel name already exists');
         }
     });
-
-    vesselInput.addEventListener('blur', function() {
-        //selectedVessel = vesselInput.value.trim(); // Update selectedVessel when typing and moving away from input
-        console.log("Returning", selectedVessel); 
-    });
 });
+
+export function resetVessel() {
+    state.setSelectedVessel(null); // Reset the selected vessel
+    dataForm.reset(); // Clear the form inputs 
+    console.log("Vessel Selected from resetVesselName", state.selectedVessel); 
+}
 
 
  

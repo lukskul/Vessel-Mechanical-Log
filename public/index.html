@@ -9,8 +9,25 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <!-- home -->
-    <div id="main-block-home" class="full-screen-block">
+    <!-- Vessel Select -->
+    <div class="main-vessel-block">
+        <div id="vessel-form" class="vesselForm" style="display:block;">
+            <form id="data-form">
+                <label for="vessel-name"></label>
+                <input type="text" id="vessel-name" name="vessel-name" autocomplete="off" required>
+                <div id="autocomplete-suggestions" class="autocomplete-suggestions"></div>
+                <button id="save-new-vessel-button" class="vesselButton" type="submit"><img src="assets/icons/save.svg" alt="save"></button>
+            </form>
+        </div>
+        <div id="selected-vessel-heading" class="selectedVesselHeading" style="display:none;">
+        </div>
+        <button id="change-vessel-button" class="vesselButton">
+            <img src="assets/icons/edit.svg" alt="edit">
+        </button>
+    </div>
+
+    <!-- "Log Select -- Select between archive and add-work" -->
+    <div id="main-block-log-buttons" class="full-screen-block">
       <div class="button-container">
           <a href="#" class="button" id="archive-button">Work Archive</a>
       </div>
@@ -18,20 +35,9 @@
           <a href="#" class="button" id="add-work-button">Add Work</a>
       </div>
     </div>
-    <!-- Work -->
-    
-    <div id="main-block-vessel-form" class="full-screen-block" style="display:none;">
-      <form id="data-form">
 
-        <label for="vessel-name"></label>
-        <input type="text" id="vessel-name" name="vessel-name" autocomplete="off" required>
-        <div id="autocomplete-suggestions" class="autocomplete-suggestions"></div>
-
-        <button id="save-new-vessel-button" type="submit">Save New Vessel</button>
-
-      </form>
-
-      <!-- Tasks -->
+      <!-- Tasks --- "review tasks on vessels or add new work tasks to vessels" -->
+    <div id="main-block-task-form" style="display:none;">
       <form id="tasks">
         <div class="form-group">
             <div id="task-options" class="task-options">

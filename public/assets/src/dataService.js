@@ -1,3 +1,6 @@
+
+/*** Server Requests ***/ 
+
 export async function fetchVesselNames() {
     try {
         const response = await fetch('/vessel-names');

@@ -1,0 +1,27 @@
+
+/* Icon buttons */
+.task-options {
+    display: flex;
+    flex-wrap: wrap;
+}
+.task-option {
+    flex: 1 1 30%;
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+.task-option:hover {
+    background-color: #e9e9e9;
+}
+.task-option img {
+    display: block;
+    margin: 0 auto 5px;
+    max-width: 40px;
+    max-height: 40px;
+}
+.task-option.selected {
+    background-color: #cfe2f3;
+}
