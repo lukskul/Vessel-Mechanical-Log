@@ -1,5 +1,9 @@
 
-/* Icon buttons */
+.taskMainBlock {
+    background-color: #f1e7cb;
+    z-index: 992
+}
+
 .task-options {
     display: flex;
     flex-wrap: wrap;

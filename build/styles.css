@@ -1,5 +1,9 @@
 
-/* Icon buttons */
+.taskMainBlock {
+    background-color: #f1e7cb;
+    z-index: 992
+}
+
 .task-options {
     display: flex;
     flex-wrap: wrap;
@@ -26,9 +30,8 @@
     background-color: #cfe2f3;
 }
 /**  Global.css  **/
-
-label, input, button {
-    margin: 5px 0;
+body {
+    font-family: Arial, sans-serif;
 }
 
 h1 {
@@ -48,9 +51,11 @@ h2 {
 /* Center the main div at the top of the page */
 .main-vessel-block {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     margin-top: 20px;
+    background-color: white; 
+    margin-left: 5%; 
 }
 
 /* Style for the vessel form */
@@ -79,6 +84,7 @@ h2 {
     align-items: center;
     justify-content: center;
     margin-left: 10px;
+    max-width: 10%;
     cursor: pointer;
 }
 
@@ -117,7 +123,9 @@ h2 {
     width: calc(100% - 10px); /* Adjust width to fit the input */
     left: 0; /* Ensure the suggestions start from the left */
     border-radius: 5px; /* Add some border-radius for better appearance */
-    z-index: 1; /* Ensure the suggestions appear above other content */
+    z-index: 999; /* Ensure the suggestions appear above other content */
+    margin-top: 1%; 
+    margin-left: 5%; 
 }
 
 .suggestion {
@@ -129,3 +137,39 @@ h2 {
     background-color: #f0f0f0;
 }
 
+
+.mainBlockTab {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #f1e7cb; /* Match the background to the folder */
+    padding: 15px;
+    position: relative;
+    top: 40px; /* Adjust to position the main content properly */
+    z-index: -1;
+}
+.tab {
+    position: relative;
+    display: inline-block;
+    background-color: #f1e7cb; /* Tab color */
+    border: 1px solid #d3b36a; /* Border color similar to a folder */
+    border-bottom: none; /* Remove the bottom border to blend with content */
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    padding: 5px 10px;
+    top: -40px; /* Lift the tab to make it look like it's sticking out */
+    z-index: 991; /* Ensure the tab is above the rest of the content */
+    margin-left: 2px; 
+    width: 20%; 
+}
+.tab a {
+    margin-right: 10px; 
+    text-decoration: none;
+    color: #333; /* Text color */
+}
+.content {
+    background-color: #ffffff; /* Content background to match the tab */
+    border: 1px solid #d3b36a; /* Same border as the tab */
+    padding: 20px;
+    margin-top: -20px; /* Pull the content up to meet the tab */
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+}

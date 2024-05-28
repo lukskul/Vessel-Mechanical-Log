@@ -1,7 +1,6 @@
 /**  Global.css  **/
-
-label, input, button {
-    margin: 5px 0;
+body {
+    font-family: Arial, sans-serif;
 }
 
 h1 {

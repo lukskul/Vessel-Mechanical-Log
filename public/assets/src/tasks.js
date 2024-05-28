@@ -1,6 +1,3 @@
-import { state } from './global.js'; 
-import { resetVesselName } from './vessel.js'; 
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const taskOptions = document.querySelectorAll('.task-option');

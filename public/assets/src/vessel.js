@@ -1,11 +1,9 @@
 import { fetchVesselNames, saveData } from './dataService.js'; 
 import { state } from './global.js'; 
-import { vesselSelected } from './buttons.js';
 
 const dataForm = document.getElementById('data-form'); 
 
 //Select Vessel Drop down Box
-
 document.addEventListener('DOMContentLoaded', async function() {
     const vesselInput = document.getElementById('vessel-name');
     const suggestionsContainer = document.getElementById('autocomplete-suggestions');

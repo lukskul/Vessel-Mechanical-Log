@@ -1,0 +1,36 @@
+
+.mainBlockTab {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #f1e7cb; /* Match the background to the folder */
+    padding: 15px;
+    position: relative;
+    top: 40px; /* Adjust to position the main content properly */
+    z-index: -1;
+}
+.tab {
+    position: relative;
+    display: inline-block;
+    background-color: #f1e7cb; /* Tab color */
+    border: 1px solid #d3b36a; /* Border color similar to a folder */
+    border-bottom: none; /* Remove the bottom border to blend with content */
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    padding: 5px 10px;
+    top: -40px; /* Lift the tab to make it look like it's sticking out */
+    z-index: 991; /* Ensure the tab is above the rest of the content */
+    margin-left: 2px; 
+    width: 20%; 
+}
+.tab a {
+    margin-right: 10px; 
+    text-decoration: none;
+    color: #333; /* Text color */
+}
+.content {
+    background-color: #ffffff; /* Content background to match the tab */
+    border: 1px solid #d3b36a; /* Same border as the tab */
+    padding: 20px;
+    margin-top: -20px; /* Pull the content up to meet the tab */
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+}

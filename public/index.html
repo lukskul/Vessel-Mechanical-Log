@@ -15,7 +15,7 @@
             <form id="data-form">
                 <label for="vessel-name"></label>
                 <input type="text" id="vessel-name" name="vessel-name" autocomplete="off" required>
-                <div id="autocomplete-suggestions" class="autocomplete-suggestions"></div>
+                
                 <button id="save-new-vessel-button" class="vesselButton" type="submit"><img src="assets/icons/save.svg" alt="save"></button>
             </form>
         </div>
@@ -25,19 +25,21 @@
             <img src="assets/icons/edit.svg" alt="edit">
         </button>
     </div>
+    <div id="autocomplete-suggestions" class="autocomplete-suggestions"></div>
 
-    <!-- "Log Select -- Select between archive and add-work" -->
-    <div id="main-block-log-buttons" class="full-screen-block">
-      <div class="button-container">
-          <a href="#" class="button" id="archive-button">Work Archive</a>
-      </div>
-      <div class="button-container">
-          <a href="#" class="button" id="add-work-button">Add Work</a>
-      </div>
+    <!-- "Tab Select -- Select between archive and add-work tabs" -->
+    <hr>
+    <div id="main-block-tab" class="mainBlockTab">
+        <div class="tab">
+            <a href="#" class="add" id="add-work-tab">Add</a>
+        </div>
+        <div class="tab">
+            <a href="#" class="archive" id="archive-tab">Archive</a>
+        </div>
     </div>
 
       <!-- Tasks --- "review tasks on vessels or add new work tasks to vessels" -->
-    <div id="main-block-task-form" style="display:none;">
+    <div class="taskMainBlock" id="task-main-block" style="display:block;">
       <form id="tasks">
         <div class="form-group">
             <div id="task-options" class="task-options">
