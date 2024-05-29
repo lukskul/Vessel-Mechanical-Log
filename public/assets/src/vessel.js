@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 alert(response);
                 vessels.push(vesselName);
                 state.setSelectedVessel(vesselName); 
-                console.log('selected Vessel line 63', selectedVessel);                 
+                console.log('selected Vessel line 63', state.selectedVessel);                 
             }).catch(error => {
                 console.error('Error saving vessel name:', error);
                 alert('Error saving vessel name');

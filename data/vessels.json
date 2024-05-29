@@ -1,17 +1,31 @@
 [
   {
-    "vessel-name": "Triton"
+    "vessel-name": "Triton",
+    "updated": true,
+    "unit": true
   },
   {
-    "vessel-name": "Marlin Magic"
+    "vessel-name": "Marlin Magic",
+    "unit": false
   },
   {
-    "vessel-name": "sun"
+    "vessel-name": "sun",
+    "unit": true
   },
   {
-    "vessel-name": "hello"
+    "vessel-name": "hello",
+    "unit": true
   },
   {
-    "vessel-name": "Celebration"
+    "vessel-name": "Celebration",
+    "unit": true
+  },
+  {
+    "vessel-name": "Islander",
+    "unit": "metric"
+  },
+  {
+    "vessel-name": "test",
+    "unit": false
   }
 ]

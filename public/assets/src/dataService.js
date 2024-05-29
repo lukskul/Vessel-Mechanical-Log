@@ -14,7 +14,6 @@ export async function fetchVesselNames() {
     }
 }
 
-
 export async function saveData(id, input) {
     const data = { [id]: input };
 
@@ -28,6 +27,25 @@ export async function saveData(id, input) {
 
     if (!response.ok) {
         throw new Error('Failed to save data');
+    }
+
+    const responseData = await response.text();
+    return responseData;
+}
+
+export async function updateVesselData(vesselName, additionalData = {}) {
+    const data = { "vessel-name": vesselName, ...additionalData };
+
+    const response = await fetch('/update', { // Assume we have an /update endpoint for updates
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to update data');
     }
 
     const responseData = await response.text();

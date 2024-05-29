@@ -15,6 +15,30 @@ app.get('/', (req, res) => {
 
 const dataFilePath = path.join(__dirname, 'data', 'vessels.json');
 
+// Utility function to read the JSON file
+const readData = () => {
+  return new Promise((resolve, reject) => {
+      fs.readFile(dataFilePath, 'utf8', (err, data) => {
+          if (err) {
+              return reject(err);
+          }
+          resolve(JSON.parse(data));
+      });
+  });
+};
+
+// Utility function to write to the JSON file
+const writeData = (data) => {
+  return new Promise((resolve, reject) => {
+      fs.writeFile(dataFilePath, JSON.stringify(data, null, 2), 'utf8', (err) => {
+          if (err) {
+              return reject(err);
+          }
+          resolve();
+      });
+  });
+};
+
 // Function to save New Vessel
 const saveVesselName = (vessels, res) => {
   fs.writeFile(dataFilePath, JSON.stringify(vessels, null, 2), 'utf8', err => {
@@ -54,6 +78,42 @@ app.post('/save', (req, res) => {
   });
 });
 
+// Update vessel data endpoint
+app.post('/update', async (req, res) => {
+  try {
+      const { "vessel-name": vesselName, unit, ...additionalData } = req.body; // Extract unit from request body
+      if (!vesselName) {
+          return res.status(400).send('Vessel name is required');
+      }
+
+      const data = await readData();
+      const vesselIndex = data.findIndex(vessel => vessel['vessel-name'] === vesselName);
+
+      if (vesselIndex === -1) {
+          return res.status(404).send('Vessel not found');
+      }
+
+      // Set the unit type based on the selected value ("metric" or "standard")
+      const unitType = unit === 'metric' ? 'metric' : unit === 'standard' ? 'standard' : undefined;
+
+      if (unitType === undefined) {
+          return res.status(400).send('Invalid unit type');
+      }
+
+      // Update the vessel data with the unit type and additional data
+      data[vesselIndex] = {
+          ...data[vesselIndex],
+          unit: unitType,
+          ...additionalData
+      };
+
+      await writeData(data);
+      res.send('Vessel data updated successfully');
+  } catch (error) {
+      console.error('Error updating vessel data:', error);
+      res.status(500).send('Failed to update vessel data');
+  }
+});
 
 app.get('/vessel-names', (req, res) => {
   fs.readFile(dataFilePath, 'utf8', (err, data) => {
