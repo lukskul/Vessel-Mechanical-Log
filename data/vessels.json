@@ -8,9 +8,10 @@
     "electricMotors": {},
     "shafts": {},
     "props": {
-      "prop-nut": "yes",
-      "standard-size": "1",
-      "metric-size": "none"
+      "prop-nut": "none",
+      "standard-size": "none",
+      "metric-size": "none",
+      "options": "Option 2"
     },
     "thrusters": {},
     "rudders": {},
@@ -43,7 +44,12 @@
     "generators": {},
     "electricMotors": {},
     "shafts": {},
-    "props": {},
+    "props": {
+      "prop-nut": "yes",
+      "standard-size": "none",
+      "metric-size": "12",
+      "options": "2"
+    },
     "thrusters": {},
     "rudders": {},
     "grates": {},
