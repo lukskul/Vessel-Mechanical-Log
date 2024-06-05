@@ -115,7 +115,7 @@ h2 {
     margin: 0 5px;
 }
 
-.autocomplete-suggestions {
+.autocompleteSuggestions {
     background: white;
     border: 1px solid #ccc;
     max-height: 150px;

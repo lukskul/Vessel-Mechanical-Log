@@ -1,7 +1,9 @@
-import { fetchVesselNames, saveData } from './dataService.js'; 
+import { fetchVesselNames, saveData } from './data-service.js'; 
 import { state } from './global.js'; 
+import { showTasks } from './tasks.js'; 
 
 const dataForm = document.getElementById('data-form'); 
+
 
 //Select Vessel Drop down Box
 document.addEventListener('DOMContentLoaded', async function() {
@@ -16,29 +18,32 @@ document.addEventListener('DOMContentLoaded', async function() {
         } catch (error) {
             console.error('Error fetching vessel names:', error);
         }
-
+  
     vessels = await fetchVesselNames(); 
+
+    vessels.forEach(vessel => {
+        console.log('Vessel structure:', vessel);
+    });
 
     vesselInput.addEventListener('input', function() {  
         const query = vesselInput.value.toLowerCase().trim(); // Trim whitespace
         suggestionsContainer.innerHTML = '';
 
         if (query) {
-            const filteredVessels = vessels.filter(vessel => {
-                if (typeof vessel === 'string') {
-                    return vessel.toLowerCase().includes(query);  
-                }
-                return false;
+            const filteredVessels = vessels.filter(vesselName => {
+                console.log('Vessel in filter:', vesselName);
+                return vesselName.toLowerCase().includes(query);  
             });
 
-            filteredVessels.forEach(vessel => {
+            filteredVessels.forEach(filteredVessel => {
                 const suggestionDiv = document.createElement('div');
-                suggestionDiv.textContent = vessel;
+                suggestionDiv.textContent = filteredVessel;
                 suggestionDiv.className = 'suggestion';
                 suggestionDiv.addEventListener('click', function() {
-                    vesselInput.value = vessel;
+                    vesselInput.value = filteredVessel;
                     suggestionsContainer.innerHTML = '';
-                    state.setSelectedVessel(vessel);
+                    state.setSelectedVessel({ 'vessel-name': filteredVessel });
+                    showTasks(); 
                 });
                 suggestionsContainer.appendChild(suggestionDiv); 
             });
@@ -52,12 +57,18 @@ document.addEventListener('DOMContentLoaded', async function() {
         const vesselName = nameInput.value.trim(); // Trim whitespace
         const fieldId = nameInput.id;  
 
-        if (vesselName && !vessels.includes(vesselName)) {
+        if (vesselName && !vessels.some(vessel => vessel[ 'vessel-name' ] === vesselName)) {
             saveData(fieldId, vesselName).then(response => {
                 alert(response);
-                vessels.push(vesselName);
-                state.setSelectedVessel(vesselName); 
-                console.log('selected Vessel line 63', state.selectedVessel);                 
+                const newVessel = { 'vessel-name': vesselName }; 
+                                
+            // Logging for debugging
+            console.log('New vessel:', newVessel);
+            state.setSelectedVessel(newVessel); 
+
+                vessels.push(newVessel); 
+                console.log('selected Vessel line 65 vessel.js', state.selectedVessel);  
+                showTasks();                 
             }).catch(error => {
                 console.error('Error saving vessel name:', error);
                 alert('Error saving vessel name');

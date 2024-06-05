@@ -25,7 +25,7 @@
             <img src="assets/icons/edit.svg" alt="edit">
         </button>
     </div>
-    <div id="autocomplete-suggestions" class="autocomplete-suggestions"></div>
+    <div id="autocomplete-suggestions" class="autocompleteSuggestions"></div>
 
     <!-- "Tab Select -- Select between archive and add-work tabs" -->
     <hr>
@@ -39,7 +39,7 @@
     </div>
 
       <!-- Tasks --- "review tasks on vessels or add new work tasks to vessels" -->
-    <div class="taskMainBlock" id="task-main-block" style="display:block;">
+    <div class="taskMainBlock" id="task-main-block" style="display:none;">
       <form id="tasks">
         <div class="form-group">
             <div id="task-options" class="task-options">
@@ -95,41 +95,9 @@
       </form>
     </div>
 
-    <div>
-        <form id="engine-data-form">
-            <label for="unit-metric">Metric</label>
-            <input type="checkbox" id="unit-metric" name="unit" value="metric">
-            <label for="unit-standard">Standard</label>
-            <input type="checkbox" id="unit-standard" name="unit" value="standard">
-            <br>
-
-            <label for="prop-nut">Prop Nut:</label><br>
-            <select id="prop-nut" name="prop-nut">
-                <option value="none">None</option>
-                <option value="yes">Yes</option>
-            </select><br>
-        
-            <label for="standard-size">Standard Size:</label><br>
-            <select id="standard-size" name="standard-size">
-                <option value="none">Select Size</option>
-                <option value="1">1"</option>
-                <option value="1.5">1.5"</option>
-                <option value="2">2"</option>
-                <!-- Add more options for standard sizes as needed -->
-            </select><br>
-        
-            <label for="metric-size">Metric Size:</label><br>
-            <select id="metric-size" name="metric-size">
-                <option value="none">Select Size</option>
-                <option value="12">12mm</option>
-                <option value="13">13mm</option>
-                <option value="14">14mm</option>
-                <!-- Add more options for metric sizes as needed -->
-            </select><br>
-        
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+    <div id="form-container"></div>
+    <button id="shared-submit-button" type="submit">Submit</button>
+ 
 
     <script src="bundle.js"></script>
   </body>

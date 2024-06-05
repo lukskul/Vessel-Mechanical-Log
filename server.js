@@ -29,14 +29,14 @@ const readData = () => {
 
 // Utility function to write to the JSON file
 const writeData = (data) => {
-  return new Promise((resolve, reject) => {
-      fs.writeFile(dataFilePath, JSON.stringify(data, null, 2), 'utf8', (err) => {
-          if (err) {
-              return reject(err);
-          }
-          resolve();
-      });
-  });
+    return new Promise((resolve, reject) => {
+        fs.writeFile(dataFilePath, JSON.stringify(data, null, 2), 'utf8', (err) => {
+            if (err) {
+                return reject(err);
+            }
+            resolve();
+        });
+    });
 };
 
 // Function to save New Vessel
@@ -51,26 +51,49 @@ const saveVesselName = (vessels, res) => {
 };
 
 app.post('/save', (req, res) => {
-  const requestBody = req.body; // This will contain all the dynamic variables sent in the request
-
-  // Extract the first key-value pair from the request body
-  const key = Object.keys(requestBody)[0];
-  const value = requestBody[key].trim(); // Trim whitespace
+  const requestBody = req.body;
+  const vesselName = requestBody['vessel-name'].trim(); // Assuming the key is 'vessel-name'
 
   fs.readFile(dataFilePath, 'utf8', (err, data) => {
     if (err) {
       console.error('Error reading file:', err);
-      // If file doesn't exist or cannot be read, start with an empty array
-      const vessels = [];
-      vessels.push({ [key]: value });
+      const vessels = [{
+        'vessel-name': vesselName,
+        stats: {},
+        engines: {}, 
+        generators: {}, 
+        electricMotors: {}, 
+        shafts: {}, 
+        props: {}, 
+        thrusters: {},
+        rudders: {},  
+        grates: {}, 
+        zincs: {}, 
+        doors: {}, 
+        misc: {} 
+      }];
       return saveVesselName(vessels, res);
     }
 
     let vessels = JSON.parse(data);
-    const vesselExists = vessels.some((vessel) => vessel[key]?.toLowerCase() === value.toLowerCase());
+    const vesselExists = vessels.some((vessel) => vessel['vessel-name']?.toLowerCase() === vesselName.toLowerCase());
 
     if (!vesselExists) {
-      vessels.push({ [key]: value });
+      vessels.push({
+        'vessel-name': vesselName,
+        stats:{}, 
+        engines: {}, 
+        generators: {}, 
+        electricMotors: {}, 
+        shafts: {}, 
+        props: {}, 
+        thrusters: {},
+        rudders: {},  
+        grates: {}, 
+        zincs: {}, 
+        doors: {}, 
+        misc: {} 
+      });
       saveVesselName(vessels, res);
     } else {
       res.send('Vessel already exists');
@@ -78,42 +101,47 @@ app.post('/save', (req, res) => {
   });
 });
 
-// Update vessel data endpoint
 app.post('/update', async (req, res) => {
   try {
-      const { "vessel-name": vesselName, unit, ...additionalData } = req.body; // Extract unit from request body
-      if (!vesselName) {
-          return res.status(400).send('Vessel name is required');
+      const { "vessel-name": vesselName, ...taskData } = req.body;
+
+      console.log("Received vessel name:", vesselName); // Log received vessel name
+      console.log("Received task data:", taskData); // Log received task data
+
+      if (!vesselName || !taskData) {
+          return res.status(400).json({ error: 'Vessel name and task data are required' });
       }
 
+      const taskType = Object.keys(taskData)[0]; // Extract taskType from taskData
+      const additionalData = taskData[taskType]; // Extract additionalData for the taskType
+
       const data = await readData();
+
       const vesselIndex = data.findIndex(vessel => vessel['vessel-name'] === vesselName);
 
       if (vesselIndex === -1) {
-          return res.status(404).send('Vessel not found');
+          console.error("Vessel not found:", vesselName); // Log vessel not found
+          return res.status(404).json({ error: 'Vessel not found' });
       }
 
-      // Set the unit type based on the selected value ("metric" or "standard")
-      const unitType = unit === 'metric' ? 'metric' : unit === 'standard' ? 'standard' : undefined;
-
-      if (unitType === undefined) {
-          return res.status(400).send('Invalid unit type');
+      if (typeof data[vesselIndex][taskType] !== 'object') {
+          data[vesselIndex][taskType] = {};
       }
 
-      // Update the vessel data with the unit type and additional data
-      data[vesselIndex] = {
-          ...data[vesselIndex],
-          unit: unitType,
-          ...additionalData
-      };
+      // Update the taskType object with additional data
+      Object.assign(data[vesselIndex][taskType], additionalData);
 
       await writeData(data);
-      res.send('Vessel data updated successfully');
+      res.json({
+          message: 'Vessel data updated successfully',
+          vessel: data[vesselIndex] // Ensure this includes the updated vessel data
+      });
   } catch (error) {
       console.error('Error updating vessel data:', error);
-      res.status(500).send('Failed to update vessel data');
+      res.status(500).json({ error: 'Failed to update vessel data' });
   }
 });
+
 
 app.get('/vessel-names', (req, res) => {
   fs.readFile(dataFilePath, 'utf8', (err, data) => {

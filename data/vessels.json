@@ -1,31 +1,191 @@
 [
   {
-    "vessel-name": "Triton",
-    "updated": true,
-    "unit": true
+    "vessel-name": "New Vessel 1",
+    "engines": {
+      "unit": "metric"
+    },
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {
+      "prop-nut": "yes",
+      "standard-size": "1",
+      "metric-size": "none"
+    },
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
   },
   {
-    "vessel-name": "Marlin Magic",
-    "unit": false
+    "vessel-name": "New Vessel 2",
+    "stats": {},
+    "engines": {
+      "unit": "metric"
+    },
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
   },
   {
-    "vessel-name": "sun",
-    "unit": true
+    "vessel-name": "New Vessel 3",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
   },
   {
-    "vessel-name": "hello",
-    "unit": true
+    "vessel-name": "New Vessel 4",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
   },
   {
-    "vessel-name": "Celebration",
-    "unit": true
+    "vessel-name": "New Vessel 5",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
   },
   {
-    "vessel-name": "Islander",
-    "unit": "metric"
+    "vessel-name": "New Vessel 6",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
   },
   {
-    "vessel-name": "test",
-    "unit": false
+    "vessel-name": "New Vessel 7",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
+  },
+  {
+    "vessel-name": "New Vessel 8",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
+  },
+  {
+    "vessel-name": "New Vessel 9",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
+  },
+  {
+    "vessel-name": "New Vessel 10",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
+  },
+  {
+    "vessel-name": "New Vessel 11",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
+  },
+  {
+    "vessel-name": "New Vessel 12",
+    "stats": {},
+    "engines": {
+      "unit": "standard"
+    },
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
   }
 ]
