@@ -1,21 +1,17 @@
 import { loadHTMLBlock } from './form-loader.js';
 import { initializeForm } from './initialize-form.js';
+import { returnButton } from './buttons.js'; 
 
-
-export function showTasks() {
-    var taskMainBlock = document.getElementById("task-main-block"); 
-    taskMainBlock.style.display = "block"; 
-}
+const taskMainBlock = document.getElementById("task-main-block"); 
+const taskOptions = document.querySelectorAll('.task-option');
 
 document.addEventListener('DOMContentLoaded', function() {
-    const taskOptions = document.querySelectorAll('.task-option');
-
-    // Hide other task options and load the corresponding form when one is clicked
     taskOptions.forEach(option => {
         option.addEventListener('click', async function() {
             taskOptions.forEach(opt => {
                 if (opt !== option) {
                     opt.style.display = 'none';
+                    returnButton.style.display = "block"; 
                 }
             });
 
@@ -59,6 +55,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+export function resetTasks() {
+    const formContainer = document.getElementById("form-container");
+    formContainer.innerHTML = ''; // Clear the form container
+    taskOptions.forEach(option => {
+        option.style.display = 'block'; // Show all task options
+    });
+    console.log("Return button has been clicked and tasks are shown again.");
+}
+
+export function showTasks() {
+    taskMainBlock.style.display = "block";
+}
+
+export function showTasksArchive () {
+    console.log("archive button clicked"); 
+    taskMainBlock.style.display = "none";
+}
 
 
 

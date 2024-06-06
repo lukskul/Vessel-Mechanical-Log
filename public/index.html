@@ -24,21 +24,37 @@
         <button id="change-vessel-button" class="vesselButton">
             <img src="assets/icons/edit.svg" alt="edit">
         </button>
+        <div id="return-button" class="returnButton" style="display:none;"> 
+            <img src="assets/icons/return.svg" alt="go-back">
+        </div>
     </div>
     <div id="autocomplete-suggestions" class="autocompleteSuggestions"></div>
 
-    <!-- "Tab Select -- Select between archive and add-work tabs" -->
-    <hr>
-    <div id="main-block-tab" class="mainBlockTab">
-        <div class="tab">
-            <a href="#" class="add" id="add-work-tab">Add</a>
-        </div>
-        <div class="tab">
-            <a href="#" class="archive" id="archive-tab">Archive</a>
+
+    <!-- Archived Tasks-->
+        <!-- Tab Select" -->
+    <div class="tab" id="archive-tab">
+        <h3>Archive</h3>
+    </div>
+
+    <!-- Tasks -->
+    <div id="archive" class="tab-content" style="display: none;">
+        <h2>Archived Tasks for Selected Vessel</h2>
+        <ul id="task-list">
+            <!-- Task items will be dynamically populated here -->
+        </ul>
+        <div id="task-details">
         </div>
     </div>
 
-      <!-- Tasks --- "review tasks on vessels or add new work tasks to vessels" -->
+      <!-- Add Tasks --- "Select tasks to add" -->
+    <!-- "Tab Select" -->
+    <div class="tab" id="add-work-tab">
+        <h3>Add</h3>
+    </div>
+    </div>
+
+     <!-- Tasks -->
     <div class="taskMainBlock" id="task-main-block" style="display:none;">
       <form id="tasks">
         <div class="form-group">
@@ -84,21 +100,12 @@
                     <span>Misc Work</span>
                 </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="work-done">Work Done:</label>
-            <input type="text" id="work-done" name="work-done" required>
-        </div>
-        <div class="form-group">
-            <button type="submit">Save</button>
-        </div>
       </form>
     </div>
 
     <div id="form-container"></div>
     <button id="shared-submit-button" type="submit">Submit</button>
  
-
     <script src="bundle.js"></script>
   </body>
 </html>  

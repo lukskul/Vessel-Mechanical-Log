@@ -1,0 +1,12 @@
+.returnButton {
+    top: 0;
+    left: 25px; 
+    position: relative; 
+}
+
+.returnButton img {
+    display: block;
+    margin: 0 auto 5px;
+    max-width: 20px;
+    max-height: 20px;
+}

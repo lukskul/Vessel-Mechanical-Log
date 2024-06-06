@@ -60,7 +60,9 @@
   {
     "vessel-name": "New Vessel 4",
     "stats": {},
-    "engines": {},
+    "engines": {
+      "unit": "standard"
+    },
     "generators": {},
     "electricMotors": {},
     "shafts": {},

@@ -59,3 +59,44 @@ export async function updateVesselData(vesselName, taskType, additionalData = {}
 
     return responseData; // Return the parsed JSON response
 }
+
+
+
+// export async function loadArchivedTasks() {
+//     const selectedVessel = state.selectedVessel;
+//     if (!selectedVessel) {
+//         alert('No vessel selected');
+//         return;
+//     }
+
+//     try {
+//         const response = await fetch(`/tasks/${selectedVessel['vessel-name']}`);
+//         const tasks = await response.json();
+
+//         const taskList = document.getElementById('task-list');
+//         taskList.innerHTML = '';
+
+//         for (const taskType in tasks) {
+//             const taskItem = document.createElement('li');
+//             taskItem.textContent = taskType;
+//             taskItem.dataset.taskType = taskType;
+//             taskList.appendChild(taskItem);
+//         }
+//     } catch (error) {
+//         console.error('Error fetching tasks:', error);
+//     }
+// }
+
+// document.querySelector('[data-tab="archive"]').addEventListener('click', loadArchivedTasks);
+
+// document.getElementById('task-list').addEventListener('click', (event) => {
+//     const taskType = event.target.dataset.taskType;
+//     if (!taskType) return;
+
+//     const selectedVessel = state.selectedVessel;
+//     const taskData = selectedVessel[taskType];
+
+//     const taskDetails = document.getElementById('task-details');
+//     taskDetails.textContent = JSON.stringify(taskData, null, 2);
+// });
+

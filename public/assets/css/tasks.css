@@ -1,7 +1,11 @@
 
 .taskMainBlock {
-    background-color: #f1e7cb;
-    z-index: 992
+    background-color: #f1e7cb; 
+    position: absolute;
+    top: 26%; 
+    padding: 5%;
+    min-width: 88%; 
+    min-height: 50%; 
 }
 
 .task-options {
