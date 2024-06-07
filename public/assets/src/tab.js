@@ -1,4 +1,5 @@
-    import { showTasks, showTasksArchive } from "./tasks";
+    import { showTasks } from "./tasks";
+    import { showTasksArchive } from "./archive"; 
     
     const addWorkTab = document.getElementById("add-work-tab");
     const archiveTab = document.getElementById("archive-tab");  

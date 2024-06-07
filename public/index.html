@@ -16,17 +16,14 @@
                 <label for="vessel-name"></label>
                 <input type="text" id="vessel-name" name="vessel-name" autocomplete="off" required>
                 
-                <button id="save-new-vessel-button" class="vesselButton" type="submit"><img src="assets/icons/save.svg" alt="save"></button>
+                <button id="save-new-vessel-button" class="button saveButton" type="submit"><img src="assets/icons/save.svg" alt="save"></button>
             </form>
         </div>
         <div id="selected-vessel-heading" class="selectedVesselHeading" style="display:none;">
         </div>
-        <button id="change-vessel-button" class="vesselButton">
-            <img src="assets/icons/edit.svg" alt="edit">
-        </button>
-        <div id="return-button" class="returnButton" style="display:none;"> 
-            <img src="assets/icons/return.svg" alt="go-back">
-        </div>
+        <button id="shared-submit-button" class="button sharedSubmitButton" type="submit" style="display:none;"><img src="assets/icons/save.svg" alt="save"></button>
+        <button id="change-vessel-button" class="button editButton"><img src="assets/icons/edit.svg" alt="edit"></button>
+        <button id="return-button" class="button returnButton" style="display:none;"><img src="assets/icons/return.svg" alt="go-back"></button>
     </div>
     <div id="autocomplete-suggestions" class="autocompleteSuggestions"></div>
 
@@ -36,9 +33,8 @@
     <div class="tab" id="archive-tab">
         <h3>Archive</h3>
     </div>
-
     <!-- Tasks -->
-    <div id="archive" class="tab-content" style="display: none;">
+    <div id="archive-block" class="taskMainBlock archiveBlock" style="display: none;">
         <h2>Archived Tasks for Selected Vessel</h2>
         <ul id="task-list">
             <!-- Task items will be dynamically populated here -->
@@ -53,9 +49,8 @@
         <h3>Add</h3>
     </div>
     </div>
-
      <!-- Tasks -->
-    <div class="taskMainBlock" id="task-main-block" style="display:none;">
+    <div id="task-main-block" class="taskMainBlock"  style="display:none;">
       <form id="tasks">
         <div class="form-group">
             <div id="task-options" class="task-options">
@@ -104,7 +99,6 @@
     </div>
 
     <div id="form-container"></div>
-    <button id="shared-submit-button" type="submit">Submit</button>
  
     <script src="bundle.js"></script>
   </body>

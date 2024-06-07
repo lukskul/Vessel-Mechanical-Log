@@ -1,9 +1,10 @@
 import { resetVessel } from "./vessel";
-import { resetTasks } from "./tasks";
+import { resetTasks, taskMainBlock } from "./tasks";
 
 const edit = document.getElementById('change-vessel-button');
 edit.addEventListener('click', function() {
     resetVessel(); 
+    taskMainBlock.style.display = "none";
 }); 
    
 export const returnButton = document.getElementById('return-button'); 

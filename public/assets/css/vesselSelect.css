@@ -28,25 +28,6 @@
     max-width: 600px;
 }
 
-/* Style for the change vessel button */
-.vesselButton {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-    max-width: 10%;
-    cursor: pointer;
-}
-
-/* Ensure the button floats to the right of the heading */
-.vesselButton img {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: white;
-    padding: 4px;
-}
-
 /* Ensure the heading and button are aligned properly */
 .selectedVesselHeading h2 {
     margin: 0;

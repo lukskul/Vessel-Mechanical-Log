@@ -1,12 +1,17 @@
-.returnButton {
-    top: 0;
-    left: 25px; 
-    position: relative; 
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    max-width: 10%;
+    cursor: pointer;
 }
 
-.returnButton img {
-    display: block;
-    margin: 0 auto 5px;
-    max-width: 20px;
-    max-height: 20px;
+.button img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 4px;
 }

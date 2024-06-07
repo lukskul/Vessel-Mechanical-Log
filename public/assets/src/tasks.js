@@ -2,7 +2,7 @@ import { loadHTMLBlock } from './form-loader.js';
 import { initializeForm } from './initialize-form.js';
 import { returnButton } from './buttons.js'; 
 
-const taskMainBlock = document.getElementById("task-main-block"); 
+export const taskMainBlock = document.getElementById("task-main-block"); 
 const taskOptions = document.querySelectorAll('.task-option');
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -68,10 +68,7 @@ export function showTasks() {
     taskMainBlock.style.display = "block";
 }
 
-export function showTasksArchive () {
-    console.log("archive button clicked"); 
-    taskMainBlock.style.display = "none";
-}
+
 
 
 
