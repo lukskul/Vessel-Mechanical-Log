@@ -1,4 +1,5 @@
-
+import { resetVessel } from "./vessel.js";
+import { state } from "./global.js"
 /*** Server Requests ***/ 
 
 export async function fetchVesselNames() {
@@ -60,32 +61,32 @@ export async function updateVesselData(vesselName, taskType, additionalData = {}
     return responseData; // Return the parsed JSON response
 }
 
+export async function loadArchivedTasks() {
+    if (state.addMode === false) {
+        const selectedVessel = state.selectedVessel;
+        if (!selectedVessel) {
+            resetVessel(); 
+            return;
+        }
 
+        try {
+            const response = await fetch(`/tasks/${selectedVessel['vessel-name']}`);
+            const tasks = await response.json();
 
-// export async function loadArchivedTasks() {
-//     const selectedVessel = state.selectedVessel;
-//     if (!selectedVessel) {
-//         alert('No vessel selected');
-//         return;
-//     }
+            const taskList = document.getElementById('task-list');
+            taskList.innerHTML = '';
 
-//     try {
-//         const response = await fetch(`/tasks/${selectedVessel['vessel-name']}`);
-//         const tasks = await response.json();
-
-//         const taskList = document.getElementById('task-list');
-//         taskList.innerHTML = '';
-
-//         for (const taskType in tasks) {
-//             const taskItem = document.createElement('li');
-//             taskItem.textContent = taskType;
-//             taskItem.dataset.taskType = taskType;
-//             taskList.appendChild(taskItem);
-//         }
-//     } catch (error) {
-//         console.error('Error fetching tasks:', error);
-//     }
-// }
+            for (const taskType in tasks) {
+                const taskItem = document.createElement('li');
+                taskItem.textContent = taskType;
+                taskItem.dataset.taskType = taskType;
+                taskList.appendChild(taskItem);
+            }
+        } catch (error) {
+            console.error('Error fetching tasks:', error);
+        }
+    }
+}
 
 // document.querySelector('[data-tab="archive"]').addEventListener('click', loadArchivedTasks);
 

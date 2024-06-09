@@ -1,0 +1,34 @@
+/* Top Vessel Banner */
+.vesselDisplay {
+    position: fixed;
+    min-width: 100%; 
+    top: 0; 
+    height: 5%; 
+    background-color: white; 
+    border-bottom: 3px #333 solid;
+    z-index: 9; 
+    text-align: center;
+    font-size: 1.3rem; 
+    font-weight: bold; 
+}
+
+/* Bottom Menu Bar */
+.menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0%; 
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 9999; 
+    display: flex;
+    justify-content: center;
+}
+
+.menuBoxItems {
+    width: 100%; 
+}
+

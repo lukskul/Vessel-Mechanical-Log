@@ -1,16 +1,16 @@
 
 .taskMainBlock {
-    background-color: #f1e7cb; 
+    background-color: white;  
     position: absolute;
-    top: 26%; 
-    padding: 5%;
-    min-width: 88%; 
-    min-height: 50%; 
+    top: 5%; 
+    padding: 2%;
+    min-width: 100%; 
+    min-height: 150%; 
 }
 
 .archiveBlock {
-    background-color: black; 
-    color: white; 
+    background-color: black;
+    color: white;   
 }
 
 .task-options {

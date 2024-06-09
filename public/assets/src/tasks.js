@@ -1,6 +1,8 @@
 import { loadHTMLBlock } from './form-loader.js';
 import { initializeForm } from './initialize-form.js';
-import { returnButton } from './buttons.js'; 
+import { back } from './buttons.js'; 
+import { state } from './global.js'; 
+import { loadArchivedTasks } from './data-service.js';
 
 export const taskMainBlock = document.getElementById("task-main-block"); 
 const taskOptions = document.querySelectorAll('.task-option');
@@ -11,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             taskOptions.forEach(opt => {
                 if (opt !== option) {
                     opt.style.display = 'none';
-                    returnButton.style.display = "block"; 
+                    back.style.display = "block"; 
                 }
             });
 
@@ -57,15 +59,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
 export function resetTasks() {
     const formContainer = document.getElementById("form-container");
-    formContainer.innerHTML = ''; // Clear the form container
+    formContainer.innerHTML = ''; 
     taskOptions.forEach(option => {
-        option.style.display = 'block'; // Show all task options
+        option.style.display = 'block'; 
     });
-    console.log("Return button has been clicked and tasks are shown again.");
+}
+
+export function hideTasks() {
+    taskMainBlock.style.display = "none"; 
 }
 
 export function showTasks() {
-    taskMainBlock.style.display = "block";
+    console.log("hello"); 
+    taskMainBlock.style.display = 'block'; 
 }
 
 

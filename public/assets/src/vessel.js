@@ -1,9 +1,9 @@
 import { fetchVesselNames, saveData } from './data-service.js'; 
 import { state } from './global.js'; 
 import { showTasks } from './tasks.js'; 
+import { saveVessel } from './buttons.js'; 
 
 const dataForm = document.getElementById('data-form'); 
-
 
 //Select Vessel Drop down Box
 document.addEventListener('DOMContentLoaded', async function() {
@@ -14,16 +14,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         // Fetch vessel names
         try {
             vessels = await fetchVesselNames(vessels);
-            console.log('Fetched vessels:', vessels);
         } catch (error) {
             console.error('Error fetching vessel names:', error);
         }
-  
-    vessels = await fetchVesselNames(); 
-
-    vessels.forEach(vessel => {
-        console.log('Vessel structure:', vessel);
-    });
 
     vesselInput.addEventListener('input', function() {  
         const query = vesselInput.value.toLowerCase().trim(); // Trim whitespace
@@ -31,7 +24,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         if (query) {
             const filteredVessels = vessels.filter(vesselName => {
-                console.log('Vessel in filter:', vesselName);
                 return vesselName.toLowerCase().includes(query);  
             });
 
@@ -40,6 +32,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 suggestionDiv.textContent = filteredVessel;
                 suggestionDiv.className = 'suggestion';
                 suggestionDiv.addEventListener('click', function() {
+                    saveVessel.style.display = "none"; 
                     vesselInput.value = filteredVessel;
                     suggestionsContainer.innerHTML = '';
                     state.setSelectedVessel({ 'vessel-name': filteredVessel });

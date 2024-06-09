@@ -9,47 +9,43 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    <div id="vessel-display" class="vesselDisplay" style="display:none;"></div>
+
     <!-- Vessel Select -->
     <div class="main-vessel-block">
         <div id="vessel-form" class="vesselForm" style="display:block;">
             <form id="data-form">
                 <label for="vessel-name"></label>
                 <input type="text" id="vessel-name" name="vessel-name" autocomplete="off" required>
-                
-                <button id="save-new-vessel-button" class="button saveButton" type="submit"><img src="assets/icons/save.svg" alt="save"></button>
+                <button id="save-vessel-button" class="button saveVesselButton" type="submit" display="block"><img src="assets/icons/save.svg" alt="save"></button>
             </form>
+            <div id="autocomplete-suggestions" class="autocompleteSuggestions"></div>
         </div>
-        <div id="selected-vessel-heading" class="selectedVesselHeading" style="display:none;">
-        </div>
-        <button id="shared-submit-button" class="button sharedSubmitButton" type="submit" style="display:none;"><img src="assets/icons/save.svg" alt="save"></button>
-        <button id="change-vessel-button" class="button editButton"><img src="assets/icons/edit.svg" alt="edit"></button>
-        <button id="return-button" class="button returnButton" style="display:none;"><img src="assets/icons/return.svg" alt="go-back"></button>
+
     </div>
-    <div id="autocomplete-suggestions" class="autocompleteSuggestions"></div>
-
-
+    <!-- Menu -->
+    <div id="menu" class="menu" >
+        <div class="menuBoxItems">
+            <button id="archive-button" class="button"><img src="assets/icons/archive.svg" alt="archive"></button>
+            <button id="add-work-button" class="button"><img src="assets/icons/plus.svg" alt="save"></button>
+            <button id="change-vessel-button" class="button"><img src="assets/icons/magnifier.svg" alt="search"></button>
+            <button id="return-button" class="button" style="display:none;"><img src="assets/icons/return.svg" alt="go-back"></button>
+        </div>
+    </div>
+    <!---->
+ 
     <!-- Archived Tasks-->
-        <!-- Tab Select" -->
-    <div class="tab" id="archive-tab">
-        <h3>Archive</h3>
-    </div>
     <!-- Tasks -->
     <div id="archive-block" class="taskMainBlock archiveBlock" style="display: none;">
         <h2>Archived Tasks for Selected Vessel</h2>
         <ul id="task-list">
             <!-- Task items will be dynamically populated here -->
         </ul>
-        <div id="task-details">
-        </div>
+        <div id="task-details"></div>
     </div>
 
-      <!-- Add Tasks --- "Select tasks to add" -->
-    <!-- "Tab Select" -->
-    <div class="tab" id="add-work-tab">
-        <h3>Add</h3>
-    </div>
-    </div>
-     <!-- Tasks -->
+    <!-- Add Tasks --- "Select tasks to add" -->
+    <!-- Tasks -->
     <div id="task-main-block" class="taskMainBlock"  style="display:none;">
       <form id="tasks">
         <div class="form-group">
@@ -99,7 +95,12 @@
     </div>
 
     <div id="form-container"></div>
- 
+
+    <div>
+        <button id="shared-submit-button" class="button" type="submit"><img src="assets/icons/edit.svg" alt="save"></button>
+        <div id="success-popup" class="popup hidden"></div>
+    </div>
+
     <script src="bundle.js"></script>
   </body>
 </html>  

@@ -1,9 +1,8 @@
 import { updateVesselData } from './data-service.js'; 
-import { state } from './global.js'; 
+import { state, showSuccessPopup } from './global.js'; 
 
 export function initializeForm(form, taskType) {
-    const vesselName = state.selectedVessel['vessel-name']; // Ensure we get the vessel name as a string
-    console.log(vesselName, "loggin from initialize-form", taskType, " tasktype");  
+    const vesselName = state.selectedVessel['vessel-name']; 
 
     if (form) {
         const submitButton = document.getElementById("shared-submit-button");
@@ -38,7 +37,7 @@ export function initializeForm(form, taskType) {
                         console.log("Server response:", updatedData); // Log the server response
                         // Check if updatedData is valid
                         if (updatedData && updatedData.message === 'Vessel data updated successfully' && updatedData.vessel) {
-                            alert(updatedData.message); // Alert the success message
+                            showSuccessPopup('Success!');
                             const updatedVessel = updatedData.vessel;
                             if (!state.selectedVessel[taskType]) {
                                 state.selectedVessel[taskType] = {};

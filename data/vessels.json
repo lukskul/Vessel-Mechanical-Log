@@ -1,3 +1,46 @@
 [
-
+  {
+    "vessel-name": "Islander",
+    "stats": {},
+    "engines": {
+      "unit": "metric"
+    },
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {
+      "Nut Size": "2",
+      "Allthread": "1 1/2",
+      "Taper": "Standard",
+      "Bore": "1 1/2"
+    },
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
+  },
+  {
+    "vessel-name": "Marlin Magic",
+    "stats": {},
+    "engines": {
+      "unit": "standard"
+    },
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {
+      "Nut Size": "Nut Size",
+      "Allthread": "Allthread",
+      "Taper": "Standard",
+      "Bore": "Bore"
+    },
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
+  }
 ]
