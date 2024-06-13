@@ -1,6 +1,9 @@
 import { resetVessel } from "./vessel.js";
-import { state } from "./global.js"
-/*** Server Requests ***/ 
+import { state } from "./global.js";
+import { loadTaskSVG } from "./tasksSVG.js"; 
+
+const taskList = document.getElementById('task-list');
+const taskOptions = document.querySelectorAll('.task-option');
 
 export async function fetchVesselNames() {
     try {
@@ -62,10 +65,11 @@ export async function updateVesselData(vesselName, taskType, additionalData = {}
 }
 
 export async function loadArchivedTasks() {
-    if (state.addMode === false) {
+    if (!state.addMode) {
+        console.log(state.addMode);
         const selectedVessel = state.selectedVessel;
         if (!selectedVessel) {
-            resetVessel(); 
+            resetVessel();
             return;
         }
 
@@ -73,31 +77,42 @@ export async function loadArchivedTasks() {
             const response = await fetch(`/tasks/${selectedVessel['vessel-name']}`);
             const tasks = await response.json();
 
-            const taskList = document.getElementById('task-list');
-            taskList.innerHTML = '';
-
-            for (const taskType in tasks) {
-                const taskItem = document.createElement('li');
-                taskItem.textContent = taskType;
-                taskItem.dataset.taskType = taskType;
-                taskList.appendChild(taskItem);
-            }
+            taskOptions.forEach(option => {
+                const taskType = option.getAttribute('data-task');
+                if (tasks[taskType] && Object.keys(tasks[taskType]).length > 0) {
+                    option.style.display = 'block'; // Show the task option if there is data
+                } else {
+                    option.style.display = 'none'; // Hide the task option if no data is available
+                }
+            });
         } catch (error) {
             console.error('Error fetching tasks:', error);
         }
     }
 }
 
-// document.querySelector('[data-tab="archive"]').addEventListener('click', loadArchivedTasks);
+export async function showTaskData(taskType) {
+    try {
+        const response = await fetch(`/tasks/${state.selectedVessel['vessel-name']}`);
+        const tasks = await response.json();
+        const taskData = tasks[taskType];
 
-// document.getElementById('task-list').addEventListener('click', (event) => {
-//     const taskType = event.target.dataset.taskType;
-//     if (!taskType) return;
+        if (!taskData || Object.keys(taskData).length === 0) {
+            formContainer.innerHTML = `<p>No data available for ${taskType}.</p>`;
+        } else {
+            formContainer.innerHTML = `<h3>${taskType} Data</h3>`;
+            for (const key in taskData) {
+                const p = document.createElement('p');
+                p.textContent = `${key}: ${taskData[key]}`;
+                formContainer.appendChild(p);
+            }
+        }
 
-//     const selectedVessel = state.selectedVessel;
-//     const taskData = selectedVessel[taskType];
+        loadTaskSVG(taskType);
 
-//     const taskDetails = document.getElementById('task-details');
-//     taskDetails.textContent = JSON.stringify(taskData, null, 2);
-// });
-
+    } catch (error) {
+        console.error('Error fetching task data:', error);
+        formContainer.innerHTML = `<p>Error loading data for ${taskType}.</p>`;
+    }
+}
+    

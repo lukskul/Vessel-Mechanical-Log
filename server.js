@@ -165,6 +165,35 @@ app.get('/vessel-names', (req, res) => {
 });
 
 
+app.get('/tasks/:vesselName', (req, res) => {
+  const vesselName = req.params.vesselName;
+  console.log(`Fetching tasks for vessel: ${vesselName}`); // Log vessel name for debugging
+
+  fs.readFile(dataFilePath, 'utf8', (err, data) => {
+      if (err) {
+          console.error('Error reading tasks file:', err);
+          return res.status(500).json({ error: 'Internal Server Error' });
+      }
+
+      try {
+          const tasks = JSON.parse(data);
+          const vesselTasks = tasks.find(task => task['vessel-name'] === vesselName);
+
+          if (!vesselTasks) {
+              return res.status(404).json({ error: 'Vessel not found' });
+          }
+
+          console.log(`Found tasks for vessel: ${vesselName}`, vesselTasks); // Log found tasks for debugging
+          res.json(vesselTasks);
+      } catch (parseErr) {
+          console.error('Error parsing tasks data:', parseErr);
+          res.status(500).json({ error: 'Internal Server Error' });
+      }
+  });
+});
+
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

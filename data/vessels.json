@@ -9,10 +9,10 @@
     "electricMotors": {},
     "shafts": {},
     "props": {
-      "Nut Size": "2",
-      "Allthread": "1 1/2",
+      "Nut Size": "Nut Size",
+      "Allthread": "Allthread",
       "Taper": "Standard",
-      "Bore": "1 1/2"
+      "Bore": "Bore"
     },
     "thrusters": {},
     "rudders": {},
@@ -25,7 +25,7 @@
     "vessel-name": "Marlin Magic",
     "stats": {},
     "engines": {
-      "unit": "standard"
+      "unit": "metric"
     },
     "generators": {},
     "electricMotors": {},
@@ -33,6 +33,61 @@
     "props": {
       "Nut Size": "Nut Size",
       "Allthread": "Allthread",
+      "Taper": "Standard",
+      "Bore": "Bore"
+    },
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
+  },
+  {
+    "vessel-name": "flkaf",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
+  },
+  {
+    "vessel-name": "760-774-3736",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {
+      "Nut Size": "Nut Size",
+      "Allthread": "Allthread",
+      "Taper": "Standard",
+      "Bore": "Bore"
+    },
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
+  },
+  {
+    "vessel-name": "Desperado",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {
+      "Nut Size": "1 3/4",
+      "Allthread": "1 3/4",
       "Taper": "Standard",
       "Bore": "Bore"
     },

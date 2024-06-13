@@ -1,4 +1,3 @@
-/* styles.css */
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
@@ -10,10 +9,8 @@
     animation: shake 0.5s;
 }
 
-
 .popup {
-    position: relative;
-    display: inline; 
+    position: fixed; 
     transform: translateX(-50%);
     background-color: rgb(134, 222, 134);
     color: white;
@@ -21,8 +18,8 @@
     border-radius: 5px;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    top: -5px; 
-    right: -10px
+    bottom: 15%; 
+    left: 50%; 
 }
 
 .popup.show {

@@ -9,12 +9,15 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div id="vessel-display" class="vesselDisplay" style="display:none;"></div>
-
+    <div id="task-identifier" class="taskIdentifier"></div>   
+    <div id="vessel-display-div" class="vesselDisplay" style="display:none;"></div> 
+    <button id="change-vessel-button" class="button" style="display:block;"><img src="assets/icons/magnifier.svg" alt="search"></button>
+    
     <!-- Vessel Select -->
     <div class="main-vessel-block">
         <div id="vessel-form" class="vesselForm" style="display:block;">
-            <form id="data-form">
+            <form id="data-form" class="vesselDataForm">
+                <h1 class="vesselFormLabel">Vessel</h1>
                 <label for="vessel-name"></label>
                 <input type="text" id="vessel-name" name="vessel-name" autocomplete="off" required>
                 <button id="save-vessel-button" class="button saveVesselButton" type="submit" display="block"><img src="assets/icons/save.svg" alt="save"></button>
@@ -24,80 +27,76 @@
 
     </div>
     <!-- Menu -->
-    <div id="menu" class="menu" >
+    <div id="menu" class="menu" > 
         <div class="menuBoxItems">
-            <button id="archive-button" class="button"><img src="assets/icons/archive.svg" alt="archive"></button>
-            <button id="add-work-button" class="button"><img src="assets/icons/plus.svg" alt="save"></button>
-            <button id="change-vessel-button" class="button"><img src="assets/icons/magnifier.svg" alt="search"></button>
-            <button id="return-button" class="button" style="display:none;"><img src="assets/icons/return.svg" alt="go-back"></button>
+            <button id="archive-button" class="button" style="display:block;"><img src="assets/icons/archive.svg" alt="archive"></button>
+            <button id="add-work-button" class="button" style="display:block;"><img src="assets/icons/plus.svg" alt="save"></button>
+            <button id="return-button" class="button" style="display:block;"><img src="assets/icons/return.svg" alt="go-back"></button>
+            <button id="shared-submit-button" class="button" type="submit" style="display:block;"><img src="assets/icons/edit.svg" alt="save"></button>
         </div>
     </div>
     <!---->
- 
-    <!-- Archived Tasks-->
-    <!-- Tasks -->
-    <div id="archive-block" class="taskMainBlock archiveBlock" style="display: none;">
-        <h2>Archived Tasks for Selected Vessel</h2>
-        <ul id="task-list">
-            <!-- Task items will be dynamically populated here -->
-        </ul>
-        <div id="task-details"></div>
-    </div>
 
-    <!-- Add Tasks --- "Select tasks to add" -->
     <!-- Tasks -->
-    <div id="task-main-block" class="taskMainBlock"  style="display:none;">
-      <form id="tasks">
+    <div id="task-main-block" class="taskMainBlock" style="display: none;">
+        <ul id="task-list">
+        <!-- Task items will be dynamically populated here -->
+        </ul>
+        <form id="tasks">
         <div class="form-group">
             <div id="task-options" class="task-options">
-                <div class="task-option" data-task="engines">
-                    <img src="assets/icons/engine.svg" alt="Engines">
-                    <span>Engine</span>
-                </div>
-                <div class="task-option" data-task="generators">
-                    <img src="assets/icons/generator.svg" alt="Generator">
-                    <span>Generator</span>
-                </div>
-                <div class="task-option" data-task="electricMotors">
-                    <img src="assets/icons/motor.svg" alt="Electric Motors">
-                    <span>Electric motor</span>
-                </div>
-                <div class="task-option" data-task="shafts">
-                    <img src="assets/icons/shaft.png" alt="Shafts">
-                    <span>Shaft and Coupler</span>
-                </div>
-                <div class="task-option" data-task="props">
-                    <img src="assets/icons/props.svg" alt="Props">
-                    <span>Propeller</span>
-                </div>
-                <div class="task-option" data-task="bow-thrusters">
-                    <img src="./assets/icons/bowThruster.svg" alt="Bow Thrusters">
-                    <span>Bow Thruster</span>
-                </div>
-                <div class="task-option" data-task="sea-screens">
-                    <img src="./assets/icons/screen.svg" alt="Sea Screens">
-                    <span>Sea Screens</span>
-                </div>
-                <div class="task-option" data-task="zincs">
-                    <img src="assets/icons/zincs.svg" alt="Zincs">
-                    <span>Zincs</span>
-                </div>
-                <div class="task-option" data-task="doors">
-                    <img src="assets/icons/door.svg" alt="doors"> 
-                    <span>Doors</span>
-                </div>
-                <div class="task-option" data-task="misc">
-                    <img src="assets/icons/plus.svg" alt="Add New">
-                    <span>Misc Work</span>
-                </div>
+            <div class="task-option" data-task="engines">
+                <img class="svg-icon" src="assets/icons/engine.svg" alt="Engines">
+                <span>Engine</span>
             </div>
-      </form>
+            <div class="task-option" data-task="generators">
+                <img class="svg-icon" src="assets/icons/generator.svg" alt="Generator">
+                <span>Generator</span>
+            </div>
+            <div class="task-option" data-task="electricMotors">
+                <img class="svg-icon" src="assets/icons/motor.svg" alt="Motors">
+                <span>Motor</span>
+            </div>
+            <div class="task-option" data-task="shafts">
+                <img class="svg-icon" src="assets/icons/shaft.png" alt="Shafts">
+                <span>Shafting</span>
+            </div>
+            <div class="task-option" data-task="props">
+                <img class="svg-icon" src="assets/icons/props.svg" alt="Props">
+                <span>Propeller</span>
+            </div>
+            <div class="task-option" data-task="bow-thrusters">
+                <img class="svg-icon" src="./assets/icons/bowThruster.svg" alt="Thrusters">
+                <span>Thruster</span>
+            </div>
+            <div class="task-option" data-task="rudder">
+                <img class="svg-icon" src="./assets/icons/rudder.svg" alt="Rudder">
+                <span>Rudder</span>
+            </div>
+            <div class="task-option" data-task="sea-screens">
+                <img class="svg-icon" src="./assets/icons/screen.svg" alt="Screens">
+                <span>Screens</span>
+            </div>
+            <div class="task-option" data-task="zincs">
+                <img class="svg-icon" src="assets/icons/zincs.svg" alt="Zincs">
+                <span>Zincs</span>
+            </div>
+            <div class="task-option" data-task="doors">
+                <img class="svg-icon" src="assets/icons/door.svg" alt="Doors">
+                <span>Doors</span>
+            </div>
+            <div class="task-option" data-task="misc">
+                <img class="svg-icon" src="assets/icons/plus.svg" alt="Add New">
+                <span>Misc</span>
+            </div>
+            </div>
+        </div>
+        </form>
     </div>
 
     <div id="form-container"></div>
 
     <div>
-        <button id="shared-submit-button" class="button" type="submit"><img src="assets/icons/edit.svg" alt="save"></button>
         <div id="success-popup" class="popup hidden"></div>
     </div>
 

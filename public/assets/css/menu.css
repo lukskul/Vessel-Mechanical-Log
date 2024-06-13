@@ -1,34 +1,74 @@
-/* Top Vessel Banner */
 .vesselDisplay {
     position: fixed;
-    min-width: 100%; 
-    top: 0; 
-    height: 5%; 
-    background-color: white; 
+    min-width: 100%;
+    top: 0;
+    height: 10%;
+    background-color: white;
     border-bottom: 3px #333 solid;
-    z-index: 9; 
+    z-index: 9;
     text-align: center;
-    font-size: 1.3rem; 
-    font-weight: bold; 
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 2%;
 }
+
+.taskIdentifier {
+    position: fixed; 
+    width: 80px; 
+    height: 80px; 
+    padding: 1%; 
+    border-radius: 50%;
+    left: 20px; 
+    top: -10px; 
+    z-index: 999;
+}
+
+.logo {
+    background-color: black; 
+    width: 50px; 
+    height: 50px; 
+    top: 0px; 
+}
+
+.taskIdentifier img {
+    width: 100%; 
+    height: 100%; 
+    display: block; 
+}
+
+.taskIdentifier::before {
+    content: '';
+    position: absolute;
+    top: -5px; 
+    left: -5px; 
+    right: -5px;
+    bottom: -5px; 
+    border: 2px solid #0ff;
+    border-radius: 50%; 
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+    z-index: -1; 
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
 
 /* Bottom Menu Bar */
 .menu {
     position: fixed;
     bottom: 0;
     width: 100%;
-    left: 0%; 
-    background-color: #333;
+    background-color: white;
     color: white;
     text-align: center;
     padding: 10px 0;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
-    z-index: 9999; 
-    display: flex;
+    z-index: 9999;
     justify-content: center;
 }
 
 .menuBoxItems {
-    width: 100%; 
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 

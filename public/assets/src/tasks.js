@@ -1,61 +1,103 @@
 import { loadHTMLBlock } from './form-loader.js';
 import { initializeForm } from './initialize-form.js';
-import { back } from './buttons.js'; 
-import { state } from './global.js'; 
+import { state } from './global.js';
 import { loadArchivedTasks } from './data-service.js';
+import { loadTaskSVG, loadDefaultLogo } from './tasksSVG.js'; 
 
 export const taskMainBlock = document.getElementById("task-main-block"); 
 const taskOptions = document.querySelectorAll('.task-option');
+const formContainer = document.getElementById('form-container');
+const taskIdentifier = document.getElementById('task-identifier');
 
-document.addEventListener('DOMContentLoaded', function() {
-    taskOptions.forEach(option => {
-        option.addEventListener('click', async function() {
-            taskOptions.forEach(opt => {
-                if (opt !== option) {
-                    opt.style.display = 'none';
-                    back.style.display = "block"; 
-                }
-            });
+export async function showTasks() {
+    console.log(state.addMode, " from show tasks function.");
 
-            const taskType = option.getAttribute('data-task');
+    taskMainBlock.style.display = "block";
+    formContainer.innerHTML = ''; 
 
-            let htmlFile;
+    if (state.addMode) { 
+        taskOptions.forEach(option => {
+            option.style.display = 'block';
 
-            switch (taskType) {
-                case 'engines':
-                    htmlFile = 'assets/html/engine.html';
-                    break;
-                case 'props':
-                    htmlFile = 'assets/html/props.html';
-                    break;
-                // Add more cases as needed
-                default:
-                    console.error('Unknown task type:', taskType);
-                    return;
-            }
+            option.removeEventListener('click', handleTaskClick);
+            option.addEventListener('click', handleTaskClick);
+        });
+    } else {
+        taskOptions.forEach(option => {
+            option.style.display = 'none'; 
+        });
+        await loadArchivedTasks();
+    }
+}
 
-            try {
-                await loadHTMLBlock('form-container', htmlFile);
-                console.log(htmlFile), 'html file'; 
-                // Ensure the form is ready before initializing
-                setTimeout(() => {
-                    console.log("before"); 
-                    const form = document.querySelector(`#${taskType}`);
-                    console.log("after"); 
-                    if (form) {
-                        console.log("inside the if statement ", form); 
-                        initializeForm(form, taskType);
-                    } else {
-                        console.error('Form not found after loading HTML');
-                    }
-                }, 50); // Delay to ensure form is loaded
+async function handleTaskClick(event) {
+    const option = event.currentTarget;
+    const taskType = option.getAttribute('data-task');
+    taskIdentifier.innerText = taskType;
 
-            } catch (error) {
-                console.error('Error loading form:', error);
-            }
-        });  
+    taskOptions.forEach(opt => {
+        opt.style.display = 'none';
     });
-});
+
+    loadTaskSVG(taskType);
+
+    if (state.addMode) {
+
+        let htmlFile;
+
+        switch (taskType) {
+            case 'engines':
+                htmlFile = 'assets/html/engine.html';
+                break;
+            case 'props':
+                htmlFile = 'assets/html/props.html';
+                break;
+            // Add more cases as needed
+            default:
+                console.error('Unknown task type:', taskType);
+                return;
+        }
+
+        try {
+            await loadHTMLBlock('form-container', htmlFile);
+            console.log(htmlFile, 'html file');
+
+            setTimeout(() => {
+                const form = document.querySelector(`#${taskType}`);
+                if (form) {
+                    initializeForm(form, taskType);
+                } else {
+                    console.error('Form not found after loading HTML');
+                }
+            }, 50);
+
+        } catch (error) {
+            console.error('Error loading form:', error);
+        }
+    } else {
+
+        try {
+            const response = await fetch(`/tasks/${state.selectedVessel['vessel-name']}`);
+            const tasks = await response.json();
+            const taskData = tasks[taskType];
+
+            if (!taskData || Object.keys(taskData).length === 0) {
+                formContainer.innerHTML = `<p>No data available for ${taskType}.</p>`;
+            } else {
+                formContainer.innerHTML = `<h3>${taskType} Data</h3>`;
+                for (const key in taskData) {
+                    const p = document.createElement('p');
+                    p.textContent = `${key}: ${taskData[key]}`;
+                    formContainer.appendChild(p);
+                }
+            }
+        } catch (error) {
+            console.error('Error fetching task data:', error);
+            formContainer.innerHTML = `<p>Error loading data for ${taskType}.</p>`;
+        }
+    }
+}
+
 
 export function resetTasks() {
     const formContainer = document.getElementById("form-container");
@@ -63,18 +105,20 @@ export function resetTasks() {
     taskOptions.forEach(option => {
         option.style.display = 'block'; 
     });
+    loadDefaultLogo();
 }
 
 export function hideTasks() {
     taskMainBlock.style.display = "none"; 
 }
 
-export function showTasks() {
-    console.log("hello"); 
-    taskMainBlock.style.display = 'block'; 
-}
 
 
+
+
+
+
+ 
 
 
 

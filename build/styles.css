@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap);
 *,
 *::before,
 *::after {
@@ -12,11 +13,6 @@
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
     display: block;
-}
-
-body {
-    line-height: 1;
-    font-family: sans-serif; /* Change to your preferred default font */
 }
 
 ol, ul {
@@ -42,126 +38,252 @@ table {
     display: none;
 }
 
-
-
-.main-vessel-block {
-    width: 70%; 
-    margin: 15% auto 0;
-    text-align: center;
+.hidden {
+    opacity: 0;
 }
 
-#data-form {
-    display: flex;
-    align-items: center; 
-    margin: 0 25%; 
-    border: 1px solid grey; 
+body {
+    background: radial-gradient(circle, #1b2735, #090a0f);
+    color: #00ff99;
+    font-family: 'Orbitron', sans-serif;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
 }
 
-#vessel-name {
-    width: 100%;
-    padding: 11px;
-    font-size: 16px;
-    box-sizing: border-box;
+#form-container {
+    padding-bottom: 100px; 
+    margin-bottom: 20px; 
+    padding-top: 100px; 
 }
 
-.autocompleteSuggestions { 
-    padding: 10px; 
+.vesselDisplay, #task-main-block {
+    overflow-y: auto;
+    padding-bottom: 50px; 
+}
+
+
+
+
+.vesselForm {
+    width: 40%; 
+    margin-left: 33%; 
+    margin-top: 15%; 
     cursor: pointer;
-    text-align: left;
-    margin-left: 23%;
+    position: relative;
+    transition: transform 0.3s ease;
+    text-align: center;
+    color: white;
+}
+
+.vesselDataForm {
+    margin-bottom: 5%; 
+}
+
+.vesselFormLabel {
+    display: flex; 
+    justify-content: flex-start;
+    margin-bottom: 2%; 
+}
+
+.vesselForm::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.vesselForm:hover::before {
+    opacity: 1;
+}
+
+.vesselForm input,
+
+.vesselForm input {
+    width: 80%;
+    height: 41px; 
+    padding: 2%; 
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
 }
 
 .suggestion {
-    padding: 1%; 
+    padding: 4%; 
+    padding-top: 0px; 
+    display: flex;
+    justify-content: flex-end;
 }
 
 
-
-
-.taskMainBlock {
-    background-color: white;  
-    position: absolute;
-    top: 5%; 
-    padding: 2%;
-    min-width: 100%; 
-    min-height: 150%; 
-}
-
-.archiveBlock {
-    background-color: black;
-    color: white;   
-}
 
 .task-options {
     display: flex;
     flex-wrap: wrap;
-}
-.task-option {
-    flex: 1 1 30%;
-    margin: 5px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
+    justify-content: center;
+    padding-top: 15%;
+    gap: 80px;
+  }
+  
+  .task-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+    border: 2px solid transparent;
+    border-radius: 10px;
     cursor: pointer;
-}
-.task-option:hover {
-    background-color: #e9e9e9;
-}
-.task-option img {
-    display: block;
-    margin: 0 auto 5px;
-    max-width: 40px;
-    max-height: 40px;
-}
-.task-option.selected {
-    background-color: #cfe2f3;
-}
-/* Top Vessel Banner */
+    position: relative;
+    transition: transform 0.3s ease;
+    text-align: center;
+    color: white;
+    margin-bottom: 5%; 
+  }
+  
+  .task-option::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid #0ff;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  
+  .task-option:hover::before {
+    opacity: 1;
+  }
+  
+  .task-option img {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .task-option span {
+    font-size: 1.2em;
+  }
+  
 .vesselDisplay {
     position: fixed;
-    min-width: 100%; 
-    top: 0; 
-    height: 5%; 
-    background-color: white; 
+    min-width: 100%;
+    top: 0;
+    height: 10%;
+    background-color: white;
     border-bottom: 3px #333 solid;
-    z-index: 9; 
+    z-index: 9;
     text-align: center;
-    font-size: 1.3rem; 
-    font-weight: bold; 
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 2%;
 }
+
+.taskIdentifier {
+    position: fixed; 
+    width: 80px; 
+    height: 80px; 
+    padding: 1%; 
+    border-radius: 50%;
+    left: 20px; 
+    top: -10px; 
+    z-index: 999;
+}
+
+.logo {
+    background-color: black; 
+    width: 50px; 
+    height: 50px; 
+    top: 0px; 
+}
+
+.taskIdentifier img {
+    width: 100%; 
+    height: 100%; 
+    display: block; 
+}
+
+.taskIdentifier::before {
+    content: '';
+    position: absolute;
+    top: -5px; 
+    left: -5px; 
+    right: -5px;
+    bottom: -5px; 
+    border: 2px solid #0ff;
+    border-radius: 50%; 
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+    z-index: -1; 
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
 
 /* Bottom Menu Bar */
 .menu {
     position: fixed;
     bottom: 0;
     width: 100%;
-    left: 0%; 
-    background-color: #333;
+    background-color: white;
     color: white;
     text-align: center;
     padding: 10px 0;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
-    z-index: 9999; 
-    display: flex;
+    z-index: 9999;
     justify-content: center;
 }
 
 .menuBoxItems {
-    width: 100%; 
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 
+/* Menu Button */
 .button {
+    position: relative; /* Ensure the pseudo-element is positioned relative to the button */
     width: 40px; 
     height: 40px; 
     padding: 8px; 
-    background-color: #ffffff; 
     border-radius: 50%; 
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
     cursor: pointer;
     border: solid 1px black; 
+    background-color: white; 
+    transition: background-color 0.3s ease;
 }
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: -5px; /* Adjust to move the glow behind the button */
+    left: -5px; /* Adjust to move the glow behind the button */
+    right: -5px; /* Adjust to move the glow behind the button */
+    bottom: -5px; /* Adjust to move the glow behind the button */
+    border: 2px solid #0ff;
+    border-radius: 50%; /* Match the button's border-radius */
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+    z-index: -1; /* Ensure the glow is behind the button */
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.button:hover::before {
+    opacity: 1;
+}
+
 
 .button img {
     width: 100%;
@@ -169,26 +291,29 @@ table {
     display: block;
 }
 
-.saveVesselButton {
-    cursor: pointer;
-    margin-left: 10px;  
-    border: black solid 1px; 
+.svg-icon {
+    filter: brightness(0) invert(1); /* Changes black SVGs to white */
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Adjust as needed */
 }
 
-#return-button {
-    float: left;
-    margin-left: 5%; 
-    margin-right: -10%;  
+ #change-vessel-button {
+    margin-left: 90%;
+    position: fixed; 
+    z-index: 999;  
+    top: 5px; 
+}
+
+.saveVesselButton {
+    float: right; 
+    padding: 0px; 
 }
 
 #shared-submit-button {
-    text-align: center; 
-    margin-top: 3%;
-    margin-left: 47%; 
+    padding: 0px;
 }
 
 
-/* styles.css */
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     25% { transform: translateX(-5px); }
@@ -200,10 +325,8 @@ table {
     animation: shake 0.5s;
 }
 
-
 .popup {
-    position: relative;
-    display: inline; 
+    position: fixed; 
     transform: translateX(-50%);
     background-color: rgb(134, 222, 134);
     color: white;
@@ -211,10 +334,83 @@ table {
     border-radius: 5px;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    top: -5px; 
-    right: -10px
+    bottom: 15%; 
+    left: 50%; 
 }
 
 .popup.show {
     opacity: 1;
 }
+
+.container {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff99;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: -25%; 
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
+}
+
+.retro-form {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    color: #00ff99;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00ff99;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #00ff99;
+    text-shadow: 0 0 5px #00ff99;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #00ff99;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ff99;
+    font-size: 1em;
+    box-shadow: inset 0 0 5px rgba(0, 255, 153, 0.5);
+}
+
+.form-group input:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00ff99;
+}
+
+.submit-button {
+    padding: 10px;
+    background: #00ff99;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.submit-button:hover {
+    background: #00cc77;
+    box-shadow: 0 0 10px #00ff99;
+}
+
+.submit-button:active {
+    background: #009955;
+    box-shadow: 0 0 15px #00ff99;
+}
+

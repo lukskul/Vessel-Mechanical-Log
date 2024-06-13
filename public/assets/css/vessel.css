@@ -1,33 +1,54 @@
-
-.main-vessel-block {
-    width: 70%; 
-    margin: 15% auto 0;
-    text-align: center;
-}
-
-#data-form {
-    display: flex;
-    align-items: center; 
-    margin: 0 25%; 
-    border: 1px solid grey; 
-}
-
-#vessel-name {
-    width: 100%;
-    padding: 11px;
-    font-size: 16px;
-    box-sizing: border-box;
-}
-
-.autocompleteSuggestions { 
-    padding: 10px; 
+.vesselForm {
+    width: 40%; 
+    margin-left: 33%; 
+    margin-top: 15%; 
     cursor: pointer;
-    text-align: left;
-    margin-left: 23%;
+    position: relative;
+    transition: transform 0.3s ease;
+    text-align: center;
+    color: white;
+}
+
+.vesselDataForm {
+    margin-bottom: 5%; 
+}
+
+.vesselFormLabel {
+    display: flex; 
+    justify-content: flex-start;
+    margin-bottom: 2%; 
+}
+
+.vesselForm::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.vesselForm:hover::before {
+    opacity: 1;
+}
+
+.vesselForm input,
+
+.vesselForm input {
+    width: 80%;
+    height: 41px; 
+    padding: 2%; 
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
 }
 
 .suggestion {
-    padding: 1%; 
+    padding: 4%; 
+    padding-top: 0px; 
+    display: flex;
+    justify-content: flex-end;
 }
 
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -12,11 +14,6 @@
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section {
     display: block;
-}
-
-body {
-    line-height: 1;
-    font-family: sans-serif; /* Change to your preferred default font */
 }
 
 ol, ul {
@@ -41,4 +38,32 @@ table {
 .none {
     display: none;
 }
+
+.hidden {
+    opacity: 0;
+}
+
+body {
+    background: radial-gradient(circle, #1b2735, #090a0f);
+    color: #00ff99;
+    font-family: 'Orbitron', sans-serif;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+}
+
+#form-container {
+    padding-bottom: 100px; 
+    margin-bottom: 20px; 
+    padding-top: 100px; 
+}
+
+.vesselDisplay, #task-main-block {
+    overflow-y: auto;
+    padding-bottom: 50px; 
+}
+
+
 

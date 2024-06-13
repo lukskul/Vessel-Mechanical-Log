@@ -1,53 +1,65 @@
-<form id="props"> 
-    <h3>Prop Removal</h3>
-    <fieldset>
-        <legend>Nut</legend>
-        <label for="dropdown">Nut Size:</label>
-        <select id="dropdown" name="Nut Size">
-            <option value="Nut Size"> Select a size </option>
-            <option value="1 1/2">1 1/2"</option>
-            <option value="1 3/4">1 3/4"</option>
-            <option value="2">2" </option>
-            <!-- Add more options as needed -->
-        </select>
-    </fieldset>
-    <fieldset>
-        <legend>Pulling holes</legend>
-        <label for="dropdown">Allthread Sizes:</label>
-        <select id="dropdown" name="Allthread">
-            <option value="Allthread"> Select a size </option>
-            <option value="1 1/2">Option 1 - 1 1/2"</option>
-            <option value="1 3/4">Option 2 - 1 3/4"</option>
-            <option value="2">Option 3 - 2" </option>
-            <!-- Add more options as needed -->
-        </select>
-    </fieldset>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro 80s Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="props" class="retro-form"> 
+            <h3 class="form-title">Prop Removal</h3>
+            <fieldset class="form-group">
+                <legend>Nut</legend>
+                <label for="nut-dropdown">Nut Size:</label>
+                <select id="nut-dropdown" name="Nut Size">
+                    <option value="Nut Size"> Select a size </option>
+                    <option value="1 1/2">1 1/2"</option>
+                    <option value="1 3/4">1 3/4"</option>
+                    <option value="2">2" </option>
+                    <!-- Add more options as needed -->
+                </select>
+            </fieldset>
+            <fieldset class="form-group">
+                <legend>Pulling holes</legend>
+                <label for="allthread-dropdown">Allthread Sizes:</label>
+                <select id="allthread-dropdown" name="Allthread">
+                    <option value="Allthread"> Select a size </option>
+                    <option value="1 1/2">Option 1 - 1 1/2"</option>
+                    <option value="1 3/4">Option 2 - 1 3/4"</option>
+                    <option value="2">Option 3 - 2" </option>
+                    <!-- Add more options as needed -->
+                </select>
+            </fieldset>
 
-    <h3>PropShop Identification</h3>
-    <fieldset>
-        <legend>Taper:</legend>
-        <label for="Taper">
-        <input type="radio" id="option1" name="Taper" value="Standard" checked>
-        Standard
-        </label>
-        <br>
-        <label for="Taper">
-        <input type="radio" id="option2" name="Taper" value="Metric">
-        Metric
-        </label>
-        <br>
-    </fieldset>
+            <h3 class="form-title">PropShop Identification</h3>
+            <fieldset class="form-group">
+                <legend>Taper:</legend>
+                <label>
+                    <input type="radio" id="option1" name="Taper" value="Standard" checked>
+                    Standard
+                </label>
+                <br>
+                <label>
+                    <input type="radio" id="option2" name="Taper" value="Metric">
+                    Metric
+                </label>
+                <br>
+            </fieldset>
 
-    <fieldset>
-        <legend>Bore</legend>
-        <label for="dropdown">Choose an option:</label>
-        <select id="dropdown" name="Bore">
-        <option value="Bore"> Select a Bore Size </option>
-        <option value="1 1/2">1 1/2"</option>
-        <option value="1 3/4">1 3/4"</option>
-        <option value="2">2" </option>
-        <!-- Add more options as needed -->
-        </select>
-    </fieldset>
-
-</form>
+            <fieldset class="form-group">
+                <legend>Bore</legend>
+                <label for="bore-dropdown">Choose an option:</label>
+                <select id="bore-dropdown" name="Bore">
+                    <option value="Bore"> Select a Bore Size </option>
+                    <option value="1 1/2">1 1/2"</option>
+                    <option value="1 3/4">1 3/4"</option>
+                    <option value="2">2" </option>
+                    <!-- Add more options as needed -->
+                </select>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

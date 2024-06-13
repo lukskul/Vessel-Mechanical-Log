@@ -1,4 +1,5 @@
-// global.js
+import { showTasks } from "./tasks";
+import { loadDefaultLogo } from "./tasksSVG";
 
 export const state = {
     selectedVessel: null,
@@ -9,10 +10,11 @@ export const state = {
             this.selectedVessel = null;
         } else {
             this.selectedVessel = vessel;
+            showTasks(); 
         }
 
         const vesselForm = document.getElementById('vessel-form');
-        const selectedVesselHeading = document.getElementById('vessel-display');
+        const selectedVesselHeading = document.getElementById('vessel-display-div');
         
         if (this.selectedVessel == null) {
             vesselForm.style.display = 'block'; 
@@ -22,6 +24,7 @@ export const state = {
             selectedVesselHeading.textContent = `${this.selectedVessel['vessel-name'] || 'None'}`;
             vesselForm.style.display = 'none';
             selectedVesselHeading.style.display = 'block';
+            loadDefaultLogo(); 
         }
     }
 };

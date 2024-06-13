@@ -1,17 +1,15 @@
 import { fetchVesselNames, saveData } from './data-service.js'; 
 import { state } from './global.js'; 
 import { showTasks } from './tasks.js'; 
-import { saveVessel } from './buttons.js'; 
 
 const dataForm = document.getElementById('data-form'); 
 
-//Select Vessel Drop down Box
 document.addEventListener('DOMContentLoaded', async function() {
     const vesselInput = document.getElementById('vessel-name');
     const suggestionsContainer = document.getElementById('autocomplete-suggestions');
+
     let vessels = [];
 
-        // Fetch vessel names
         try {
             vessels = await fetchVesselNames(vessels);
         } catch (error) {
@@ -32,10 +30,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                 suggestionDiv.textContent = filteredVessel;
                 suggestionDiv.className = 'suggestion';
                 suggestionDiv.addEventListener('click', function() {
-                    saveVessel.style.display = "none"; 
+        
                     vesselInput.value = filteredVessel;
                     suggestionsContainer.innerHTML = '';
-                    state.setSelectedVessel({ 'vessel-name': filteredVessel });
+                    state.setSelectedVessel({ 'vessel-name': filteredVessel }); 
                     showTasks(); 
                 });
                 suggestionsContainer.appendChild(suggestionDiv); 
@@ -55,9 +53,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 alert(response);
                 const newVessel = { 'vessel-name': vesselName }; 
                                 
-            // Logging for debugging
-            console.log('New vessel:', newVessel);
-            state.setSelectedVessel(newVessel); 
+                state.setSelectedVessel(newVessel); 
 
                 vessels.push(newVessel); 
                 console.log('selected Vessel line 65 vessel.js', state.selectedVessel);  
@@ -75,10 +71,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 });
 
 export function resetVessel() {
-    state.setSelectedVessel(null); // Reset the selected vessel
-    dataForm.reset(); // Clear the form inputs 
+    state.setSelectedVessel(null); 
+    dataForm.reset(); 
     console.log("Vessel Selected from resetVesselName", state.selectedVessel); 
 }
 
-
- 

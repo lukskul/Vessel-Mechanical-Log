@@ -1,50 +1,67 @@
 import { resetVessel } from "./vessel";
 import { showTasks, resetTasks, hideTasks } from "./tasks";
-import { showTasksArchive, hideTasksArchive } from "./archive"; 
-import { state, shakeAlert, resetShakeAlert } from "./global"; 
+import { state, shakeAlert, resetShakeAlert, showSuccessPopup } from "./global"; 
+
 
 export const saveVessel = document.getElementById('save-vessel-button');  
 
-const addWork = document.getElementById("add-work-button");
+export const addWork = document.getElementById("add-work-button");
 addWork.addEventListener('click', function() {
     if(state.selectedVessel != null) {
+        state.addMode = true;
+        resetTasks(); 
         showTasks(); 
         resetShakeAlert(); 
+
     } else {
         shakeAlert(); 
     }
 })  
 
 const archive = document.getElementById("archive-button");
-archive.addEventListener('click', function() {
-    if(state.selectedVessel != null) {
-        showTasksArchive(); 
-        resetShakeAlert(); 
-    } else {
-        shakeAlert(); 
-    } 
-})
-
-const edit = document.getElementById('change-vessel-button');
-edit.addEventListener('click', function() {
-    resetVessel(); 
-    hideTasks(); 
-    hideTasksArchive(); 
-    saveVessel.style.display = "block"; 
-}); 
-   
-export const back = document.getElementById('return-button'); 
-back.addEventListener('click', function() {
-    if (back.style.display === "block") {
+archive.addEventListener('click', async function () {
+    if (state.selectedVessel != null) {
+        state.addMode = false;
         resetTasks(); 
-        back.style.display = "none"; 
+        showTasks(); 
+        resetShakeAlert();
+
+    } else {
+        shakeAlert();
     }
 });
 
+export const edit = document.getElementById('change-vessel-button');
+edit.addEventListener('click', function() {
+    if(state.selectedVessel != null) { 
+        resetShakeAlert();  
+        resetVessel(); 
+        resetTasks(); 
+        hideTasks(); 
 
+    } else {
+        shakeAlert(); 
+    }
+}); 
 
- 
+export const back = document.getElementById('return-button'); 
+back.addEventListener('click', function() {
+    if(state.selectedVessel != null) {
+        resetShakeAlert(); 
+        resetTasks();
+        showTasks();  
+    } else {
+        shakeAlert(); 
+    }
+});
 
-
-
-
+export const sharedSubmitButton = document.getElementById('shared-submit-button'); 
+sharedSubmitButton.addEventListener('click', function() {
+    if(state.selectedVessel != null && state.addMode === true) {
+        showSuccessPopup("Saved!"); 
+        resetShakeAlert(); 
+    } else {
+        shakeAlert(); 
+        console.log("wo buddy you are not in add mode.")
+    }
+})
