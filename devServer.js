@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'build')));
@@ -164,7 +164,6 @@ app.get('/vessel-names', (req, res) => {
   });
 });
 
-
 app.get('/tasks/:vesselName', (req, res) => {
   const vesselName = req.params.vesselName;
   console.log(`Fetching tasks for vessel: ${vesselName}`); // Log vessel name for debugging
@@ -191,8 +190,6 @@ app.get('/tasks/:vesselName', (req, res) => {
       }
   });
 });
-
-
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

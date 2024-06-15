@@ -5,9 +5,11 @@ import { loadTaskSVG } from "./tasksSVG.js";
 const taskList = document.getElementById('task-list');
 const taskOptions = document.querySelectorAll('.task-option');
 
+//const jsonUrl = 'https://lukskul.github.io/Vessels/build/vessels.json';
+
 export async function fetchVesselNames() {
     try {
-
+        //const response = await fetch(jsonUrl); 
         const response = await fetch('/vessel-names');
         const data = await response.json();
         const vesselNames = data.map(vessel => vessel['vessel-name']).filter(name => typeof name === 'string');
@@ -16,7 +18,7 @@ export async function fetchVesselNames() {
 
     } catch (error) {
         console.error('Error fetching vessel names:', error);
-        return [];
+        return [];    
     }
 }
 

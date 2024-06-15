@@ -2,9 +2,4 @@
 # dependencies
 /node_modules
 
-# production
-#/build
-#/server.js
-#/webpack.config.js
-#/public
 
