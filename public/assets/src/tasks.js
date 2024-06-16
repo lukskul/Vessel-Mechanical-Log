@@ -47,10 +47,10 @@ async function handleTaskClick(event) {
 
         switch (taskType) {
             case 'engines':
-                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/assets/html/engine.html';
+                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/engine.html';
                 break;
             case 'props':
-                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/assets/html/props.html';
+                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/props.html';
                 break;
             // Add more cases as needed
             default:
