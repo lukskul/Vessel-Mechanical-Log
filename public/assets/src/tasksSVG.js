@@ -1,3 +1,5 @@
+//TasksSVG will put the task image in the menu left corner
+
 const taskIdentifier = document.getElementById('task-identifier');
 
 export function loadTaskSVG(taskType) {
