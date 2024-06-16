@@ -51,7 +51,7 @@ async function handleTaskClick(event) {
                 break;
             case 'props':
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/props.html';
-                break;
+                break;    
             // Add more cases as needed
             default:
                 console.error('Unknown task type:', taskType);
