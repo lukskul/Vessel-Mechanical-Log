@@ -9,7 +9,7 @@
     "watch": "onchange './public/assets/src/**/*.js' './public/assets/css/**/*.css' -- npm run build",
     "server": "node server.js",
     "start": "npm-run-all --parallel watch server",
-    "deploy": "gh-pages -d build"
+    "deploy": "master -d build"
   },
   "repository": {
     "type": "git",
