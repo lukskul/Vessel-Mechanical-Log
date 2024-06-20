@@ -142,7 +142,6 @@ app.post('/update', async (req, res) => {
   }
 });
 
-
 app.get('/vessel-names', (req, res) => {
   fs.readFile(dataFilePath, 'utf8', (err, data) => {
       if (err) {
@@ -153,9 +152,37 @@ app.get('/vessel-names', (req, res) => {
           const vessels = JSON.parse(data);
           // Ensure vessels is an array of objects with 'name' properties
           if (Array.isArray(vessels)) {
+            const vesselNamesAndUnits = vessels.map(vessel => ({
+              name: vessel['vessel-name'],
+              unitSystem: vessel.stats && vessel.stats.unitSystem ? vessel.stats.unitSystem : 'standard' // Default to 'standard'
+          }));
               res.json(vessels);
           } else {
               res.json([]);
+          }
+      } catch (parseError) {
+          console.error('Error parsing JSON:', parseError);
+          res.status(500).send('Internal Server Error');
+      }
+  });
+});
+
+app.get('/vessel-unit-system/:vesselName', (req, res) => {
+  const vesselName = decodeURIComponent(req.params.vesselName);
+
+  fs.readFile(dataFilePath, 'utf8', (err, data) => {
+      if (err) {
+          console.error('Error reading file:', err);
+          return res.status(500).send('Internal Server Error');
+      }
+      try {
+          const vessels = JSON.parse(data);
+          const vessel = vessels.find(v => v['vessel-name'] === vesselName);
+
+          if (vessel && vessel.stats && vessel.stats.unitSystem) {
+              res.json({ unitSystem: vessel.stats.unitSystem });
+          } else {
+              res.status(404).send('Vessel not found or unit system not specified');
           }
       } catch (parseError) {
           console.error('Error parsing JSON:', parseError);
@@ -181,7 +208,6 @@ app.get('/tasks/:vesselName', (req, res) => {
           if (!vesselTasks) {
               return res.status(404).json({ error: 'Vessel not found' });
           }
-
           console.log(`Found tasks for vessel: ${vesselName}`, vesselTasks); // Log found tasks for debugging
           res.json(vesselTasks);
       } catch (parseErr) {

@@ -1,6 +1,7 @@
 import { resetVessel } from "./vessel";
 import { showTasks, resetTasks, hideTasks } from "./tasks";
 import { state, shakeAlert, resetShakeAlert, showSuccessPopup } from "./global"; 
+import { resetUnitSystem } from "./unit-system";
 
 
 export const saveVessel = document.getElementById('save-vessel-button');  
@@ -36,6 +37,7 @@ edit.addEventListener('click', function() {
     if(state.selectedVessel != null) { 
         resetShakeAlert();  
         resetVessel(); 
+        resetUnitSystem(); 
         resetTasks(); 
         hideTasks(); 
 

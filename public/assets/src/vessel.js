@@ -1,6 +1,7 @@
 import { fetchVesselNames, saveData } from './data-service.js'; 
 import { state } from './global.js'; 
-import { showTasks } from './tasks.js'; 
+import { showTasks } from './tasks.js';
+import { fetchUnitSystem } from "./unit-system"; 
 
 const dataForm = document.getElementById('data-form'); 
 
@@ -33,8 +34,11 @@ document.addEventListener('DOMContentLoaded', async function() {
         
                     vesselInput.value = filteredVessel;
                     suggestionsContainer.innerHTML = '';
-                    state.setSelectedVessel({ 'vessel-name': filteredVessel }); 
-                    showTasks(); 
+                    state.setSelectedVessel({ 
+                        'vessel-name': filteredVessel,
+                     }); 
+                    showTasks();
+                    fetchUnitSystem();  
                 });
                 suggestionsContainer.appendChild(suggestionDiv); 
             });
@@ -73,6 +77,5 @@ document.addEventListener('DOMContentLoaded', async function() {
 export function resetVessel() {
     state.setSelectedVessel(null); 
     dataForm.reset(); 
-    console.log("Vessel Selected from resetVesselName", state.selectedVessel); 
 }
 

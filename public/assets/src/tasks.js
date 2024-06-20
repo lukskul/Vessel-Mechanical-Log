@@ -52,7 +52,8 @@ async function handleTaskClick(event) {
             case 'props':
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/props.html';
                 break;    
-            // Add more cases as needed
+            case 'zincs':
+                htmlFile = 'https://lukskul.github.io.Vessel-MechanicalLog/public/assets/html/zincs.html'; 
             default:
                 console.error('Unknown task type:', taskType);
                 return;
@@ -60,7 +61,6 @@ async function handleTaskClick(event) {
 
         try {
             await loadHTMLBlock('form-container', htmlFile);
-            console.log(htmlFile, 'html file');
 
             setTimeout(() => {
                 const form = document.querySelector(`#${taskType}`);

@@ -65,7 +65,6 @@ export async function updateVesselData(vesselName, taskType, additionalData = {}
 
 export async function loadArchivedTasks() {
     if (!state.addMode) {
-        console.log(state.addMode);
         const selectedVessel = state.selectedVessel;
         if (!selectedVessel) {
             resetVessel();
