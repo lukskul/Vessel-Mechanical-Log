@@ -6,35 +6,16 @@
     <title>Zincs</title>
 </head>
 <body>
-    <div class="form-container">
-        <form id="zincs">
+<body>
+    <div class="container">
+        <form id="zincs" class="retro-form">
             <div class="form-group">
-                <label for="overall-length">Overall Length of New Zinc:</label>
-                <input type="number" id="overall-length" name="overallLength" required>
+                <label for="zinc-count">Total zincs</label>
+                <input type="number" id="zinc-count" name="zinc-count" required>
             </div>
-            <div class="form-group">
-                <label for="distance-between-studs">Distance Between Studs (Center to Center):</label>
-                <input type="number" id="distance-between-studs" name="distanceBetweenStuds" required>
-            </div>
-            <button type="submit">Calculate</button>
         </form>
-        <div class="result" id="result"></div>
+
     </div>
 
-    <script>
-        document.getElementById('calculation-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting the traditional way
-
-            // Get the input values
-            const overallLength = parseFloat(document.getElementById('overall-length').value);
-            const distanceBetweenStuds = parseFloat(document.getElementById('distance-between-studs').value);
-
-            // Perform the calculation: (overallLength - distanceBetweenStuds) / 2
-            const result = (overallLength - distanceBetweenStuds) / 2;
-
-            // Display the result
-            document.getElementById('result').textContent = `Result: ${result}`;
-        });
-    </script>
 </body>
 </html>

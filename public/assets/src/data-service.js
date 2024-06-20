@@ -10,7 +10,7 @@ export async function fetchVesselNames() {
         const response = await fetch('/vessel-names');
         const data = await response.json();
         const vesselNames = data.map(vessel => vessel['vessel-name']).filter(name => typeof name === 'string');
-
+  
         return vesselNames
 
     } catch (error) {
