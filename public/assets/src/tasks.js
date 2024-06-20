@@ -56,7 +56,7 @@ async function handleTaskClick(event) {
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html'; 
             default:
                 console.error('Unknown task type:', taskType);
-                return;
+                return;  
         }
 
         try {
