@@ -14,7 +14,7 @@ addWork.addEventListener('click', function() {
         showTasks(); 
         resetShakeAlert(); 
 
-    } else {
+    } else {  
         shakeAlert(); 
     }
 })  

@@ -49,6 +49,7 @@ body {
     justify-content: center;
     align-items: center;
     overflow-y: scroll;
+    margin-bottom: 20%; 
     margin: 0;
     padding: 0;
 }
@@ -56,12 +57,10 @@ body {
 #form-container {
     padding-bottom: 100px; 
     margin-bottom: 20px; 
-    padding-top: 100px; 
 }
 
 .vesselDisplay, #task-main-block {
     overflow-y: auto;
-    padding-bottom: 50px; 
 }
 
 
@@ -183,9 +182,11 @@ body {
     height: 10%;
     background-color: white;
     border-bottom: 3px #333 solid;
+    color: black;
+    text-shadow: 1px 1px #00ff99;
     z-index: 9;
     text-align: center;
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: bold;
     padding: 2%;
 }
@@ -416,7 +417,6 @@ input:checked + .slider:before {
     border: 2px solid #00ff99;
     border-radius: 10px;
     padding: 20px;
-    margin-top: 10%; 
     box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
     min-height: 150%; 
 }
@@ -484,3 +484,22 @@ input:checked + .slider:before {
     box-shadow: 0 0 15px #00ff99;
 }
 
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    margin-right: 1em; /* Space between label and input */
+}
+
+.form-group input.zincStyleCount {
+    width: 90px; /* Width to fit 3-digit numbers */
+    padding: 0.5em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.addButton {
+    float: right; 
+}

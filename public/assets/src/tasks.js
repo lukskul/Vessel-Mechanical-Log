@@ -3,6 +3,7 @@ import { initializeForm } from './initialize-form.js';
 import { state } from './global.js';
 import { loadArchivedTasks } from './data-service.js';
 import { loadTaskSVG, loadDefaultLogo } from './tasksSVG.js'; 
+import { afterLoad } from './zincs.js';
 
 export const taskMainBlock = document.getElementById("task-main-block"); 
 const taskOptions = document.querySelectorAll('.task-option');
@@ -53,8 +54,8 @@ async function handleTaskClick(event) {
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/props.html';
                 break;    
             case 'zincs':
-                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
-                //htmlFile = 'assets/html/zincs.html'; 
+                //htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
+                htmlFile = 'assets/html/zincs.html'; 
                 break;
             default:
                 console.error('Unknown task type:', taskType);
@@ -62,7 +63,7 @@ async function handleTaskClick(event) {
         }
 
         try {
-            await loadHTMLBlock('form-container', htmlFile);
+            await loadHTMLBlock('form-container', htmlFile, afterLoad);
 
             setTimeout(() => {
                 const form = document.querySelector(`#${taskType}`);

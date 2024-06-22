@@ -1,21 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-document-id="zincs-form-page">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zincs</title>
 </head>
 <body>
-<body>
     <div class="container">
         <form id="zincs" class="retro-form">
-            <div class="form-group">
-                <label for="zinc-count">Total zincs</label>
-                <input type="number" id="zinc-count" name="zinc-count" required>
+            <div id="form-sections">
+                <div class="form-section container">
+
+                    <div class="form-group">
+                        <label for="zinc-style-1">Zinc Style</label>
+                        <select id="zinc-style-1" name="zinc-style-1" required>
+                            <option value="">Zinc Type</option>
+                            <option value="hull-anode">Hull Anode</option>
+                            <option value="propeller-anode">Propeller Anode</option>
+                            <option value="rudder-anode">Rudder Anode</option>
+                            <option value="trim-tab-anode">Trim Tab Anode</option>
+                            <option value="shaft-anode">Shaft Anode</option>
+                            <option value="engine-anode">Engine Anode</option>
+                            <option value="hull-plate-anode">Hull Plate Anode</option>
+                            <option value="keel-anode">Keel Anode</option>
+                            <option value="collar-anode">Collar Anode</option>
+                            <option value="disc-anode">Disc Anode</option>
+                            <option value="streamlined-anode">Streamlined Anode</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="zinc-style-count-1">Number of this style</label>
+                        <input type="number" class="zincStyleCount" id="zinc-style-count-1" name="zinc-style-count-1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="material-1">Material</label>
+                        <select id="material-1" name="material-1" required>
+                            <option value="">Material</option>
+                            <option value="zinc">Zinc</option>
+                            <option value="aluminum">Aluminum</option>
+                            <option value="magnesium">Magnesium</option>
+                        </select>
+                    </div>
+                </div>
             </div>
         </form>
-
+        <button id="add-button" class="button addButton" style="display:block;"><img src="assets/icons/plus.svg" alt="add"></button>
     </div>
-
 </body>
 </html>

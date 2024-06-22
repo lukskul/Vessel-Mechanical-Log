@@ -1,0 +1,19 @@
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    margin-right: 1em; /* Space between label and input */
+}
+
+.form-group input.zincStyleCount {
+    width: 90px; /* Width to fit 3-digit numbers */
+    padding: 0.5em;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.addButton {
+    float: right; 
+}

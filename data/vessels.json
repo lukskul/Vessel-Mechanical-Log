@@ -43,7 +43,11 @@
     "thrusters": {},
     "rudders": {},
     "grates": {},
-    "zincs": {},
+    "zincs": {
+      "zinc-style": "hull-anode",
+      "zinc-style-count": "40",
+      "material": "aluminum"
+    },
     "doors": {},
     "misc": {}
   },
@@ -71,7 +75,9 @@
   },
   {
     "vessel-name": "Delta Billy",
-    "stats": {},
+    "stats": {
+      "unitSystem": "standard"
+    },
     "engines": {},
     "generators": {},
     "electricMotors": {},
@@ -81,7 +87,15 @@
     "rudders": {},
     "grates": {},
     "zincs": {
-      "zinc-count": "60"
+      "zinc-style-1": "hull-anode",
+      "zinc-style-count-1": "20",
+      "material-1": "aluminum",
+      "zinc-style-2": "propeller-anode",
+      "zinc-style-count-2-count": "40",
+      "2-material": "aluminum",
+      "zinc-style-3": "engine-anode",
+      "zinc-style-count-3-count": "6",
+      "3-material": "aluminum"
     },
     "doors": {},
     "misc": {}
