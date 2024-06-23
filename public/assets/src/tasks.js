@@ -54,10 +54,10 @@ async function handleTaskClick(event) {
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/props.html';
                 break;    
             case 'zincs':
-                //htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
-                htmlFile = 'assets/html/zincs.html';     
-                break;
-            default:
+                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
+                //htmlFile = 'assets/html/zincs.html';     
+                break;  
+            default:  
                 console.error('Unknown task type:', taskType);
                 return;  
         }
