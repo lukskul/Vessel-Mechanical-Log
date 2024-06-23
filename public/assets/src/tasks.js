@@ -54,8 +54,8 @@ async function handleTaskClick(event) {
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/props.html';
                 break;    
             case 'zincs':
-                //htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
-                htmlFile = 'assets/html/zincs.html';     
+                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
+                //htmlFile = 'assets/html/zincs.html';     
                 break;
             default:
                 console.error('Unknown task type:', taskType);
@@ -72,7 +72,7 @@ async function handleTaskClick(event) {
                 } else {
                     console.error('Form not found after loading HTML');
                 }
-            }, 50);
+            }, 50);  
 
         } catch (error) {
             console.error('Error loading form:', error);
