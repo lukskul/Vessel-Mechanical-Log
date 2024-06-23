@@ -45,15 +45,16 @@
 }
 
  #change-vessel-button {
-    margin-left: 90%;
+    margin-left: 88%;
     position: fixed; 
     z-index: 999;  
-    top: 5px; 
+    top: 2px; 
 }
 
 .saveVesselButton {
     float: right; 
     padding: 0px; 
+    margin-left: -5px
 }
 
 #shared-submit-button {

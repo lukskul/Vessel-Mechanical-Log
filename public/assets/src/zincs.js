@@ -9,10 +9,11 @@ export function afterLoad() {
         newSection.innerHTML = `
             <div class="container">
                 <div class="form-group">
-                    <label for="zinc-style-${sectionCount}">Zinc Style</label>
-                    <select id="zinc-style-${sectionCount}" name="zinc-style-${sectionCount}" required>
-                        <option value="">Select a style</option>
+                    <label for="zinc-location-${sectionCount}">Location</label>
+                    <select id="zinc-location-${sectionCount}" name="zinc-location-${sectionCount}" required>
+                        <option value="">Select</option>
                         <option value="hull-anode">Hull Anode</option>
+                        <option value="sea-chest-anode">Sea Chest Anode</option>
                         <option value="propeller-anode">Propeller Anode</option>
                         <option value="rudder-anode">Rudder Anode</option>
                         <option value="trim-tab-anode">Trim Tab Anode</option>
@@ -26,13 +27,13 @@ export function afterLoad() {
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="zinc-style-count-${sectionCount}">Number of this style</label>
-                    <input type="number" id="zinc-style-count-${sectionCount}" name="zinc-style-count-${sectionCount}-count" required>
+                    <label for="zinc-count-${sectionCount}">Amount</label>
+                    <input type="number" id="zinc-count-${sectionCount}" name="zinc-count-${sectionCount}" required>
                 </div>
                 <div class="form-group">
                     <label for="material-${sectionCount}">Material</label>
                     <select id="material-${sectionCount}" name="material-${sectionCount}" required>
-                        <option value="">Select a material</option>
+                        <option value="">Select</option>
                         <option value="zinc">Zinc</option>
                         <option value="aluminum">Aluminum</option>
                         <option value="magnesium">Magnesium</option>

@@ -52,6 +52,9 @@ export function loadDefaultLogo() {
             if (svgElement) {
                 svgElement.classList.add('taskIdentifier');
                 svgElement.style.backgroundColor = 'black';
+                svgElement.style.height = '65px'; 
+                svgElement.style.width = '65px'; 
+                svgElement.style.top = '2px';
             } else {
                 console.error('Icon not found');
             }

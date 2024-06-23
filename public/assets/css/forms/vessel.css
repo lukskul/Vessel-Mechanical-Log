@@ -1,7 +1,7 @@
 .vesselForm {
-    width: 40%; 
-    margin-left: 33%; 
-    margin-top: 15%; 
+    width: 60%; 
+    margin-left: 20%; 
+    margin-top: 30%; 
     cursor: pointer;
     position: relative;
     transition: transform 0.3s ease;
@@ -10,7 +10,7 @@
 }
 
 .vesselDataForm {
-    margin-bottom: 5%; 
+    margin-bottom: 10%; 
 }
 
 .vesselFormLabel {
@@ -38,8 +38,8 @@
 .vesselForm input,
 
 .vesselForm input {
-    width: 80%;
-    height: 41px; 
+    width: 85%;
+    height: 41px;
     padding: 2%; 
     box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
 }
