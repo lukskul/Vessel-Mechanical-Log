@@ -38,7 +38,7 @@
 .vesselForm input,
 
 .vesselForm input {
-    width: 85%;
+    width: 75%;
     height: 41px;
     padding: 2%; 
     box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
@@ -48,7 +48,7 @@
     padding: 4%; 
     padding-top: 0px; 
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 

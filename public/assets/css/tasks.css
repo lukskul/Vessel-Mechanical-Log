@@ -51,4 +51,8 @@
   .task-option span {
     font-size: 1.2em;
   }
+
+  .taskMainBlock {
+    margin-top: 5%; 
+  }
   

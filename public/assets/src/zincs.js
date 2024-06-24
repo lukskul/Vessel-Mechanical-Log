@@ -11,19 +11,15 @@ export function afterLoad() {
                 <div class="form-group">
                     <label for="zinc-location-${sectionCount}">Location</label>
                     <select id="zinc-location-${sectionCount}" name="zinc-location-${sectionCount}" required>
-                        <option value="">Select</option>
-                        <option value="hull-anode">Hull Anode</option>
-                        <option value="sea-chest-anode">Sea Chest Anode</option>
-                        <option value="propeller-anode">Propeller Anode</option>
-                        <option value="rudder-anode">Rudder Anode</option>
-                        <option value="trim-tab-anode">Trim Tab Anode</option>
-                        <option value="shaft-anode">Shaft Anode</option>
-                        <option value="engine-anode">Engine Anode</option>
-                        <option value="hull-plate-anode">Hull Plate Anode</option>
-                        <option value="keel-anode">Keel Anode</option>
-                        <option value="collar-anode">Collar Anode</option>
-                        <option value="disc-anode">Disc Anode</option>
-                        <option value="streamlined-anode">Streamlined Anode</option>
+                    <option value="hull">Hull</option>
+                    <option value="propeller">Propeller</option>
+                    <option value="bow thruster">BowThruster</option>
+                    <option value="jets">Jets</option>
+                    <option value="rudder">Rudder</option>
+                    <option value="trim-tab">Trim Tab</option>
+                    <option value="shaft">Shaft</option>
+                    <option value="engine">Engine</option>
+                    <option value="keel">Keel</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -33,7 +29,6 @@ export function afterLoad() {
                 <div class="form-group">
                     <label for="material-${sectionCount}">Material</label>
                     <select id="material-${sectionCount}" name="material-${sectionCount}" required>
-                        <option value="">Select</option>
                         <option value="zinc">Zinc</option>
                         <option value="aluminum">Aluminum</option>
                         <option value="magnesium">Magnesium</option>
