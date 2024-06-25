@@ -13,11 +13,13 @@ export function afterLoad() {
                     <select id="zinc-location-${sectionCount}" name="zinc-location-${sectionCount}" required>
                     <option value="hull">Hull</option>
                     <option value="propeller">Propeller</option>
+                    <option value="rope-guard">Rope-Guard</option>
                     <option value="bow thruster">BowThruster</option>
                     <option value="jets">Jets</option>
                     <option value="rudder">Rudder</option>
                     <option value="trim-tab">Trim Tab</option>
                     <option value="shaft">Shaft</option>
+                    <option value="sea-chest">Sea Chest</option>
                     <option value="engine">Engine</option>
                     <option value="keel">Keel</option>
                     </select>
