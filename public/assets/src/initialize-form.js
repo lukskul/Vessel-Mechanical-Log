@@ -31,7 +31,6 @@ export function initializeForm(form, taskType) {
             }
 
             if (vesselName && taskType) {
-                console.log("Submitting data:", { vesselName, taskType, formData });
                 updateVesselData(vesselName, taskType, formData) // Pass vesselName as a string
                     .then(updatedData => {
                         console.log("Server response:", updatedData); // Log the server response

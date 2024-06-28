@@ -19,7 +19,24 @@
     "thrusters": {},
     "rudders": {},
     "grates": {},
-    "zincs": {},
+    "zincs": {
+      "zinc-location-1": "hull",
+      "zinc-count-1": "8",
+      "material-1": "zinc",
+      "key-2": {
+        "location-1": "hull",
+        "count-1": "34",
+        "material-1": "zinc"
+      },
+      "key-3": {
+        "location-1": "sea-chest",
+        "count-1": "35",
+        "material-1": "zinc",
+        "location-2": "shaft",
+        "count-2": "2",
+        "material-2": "zinc"
+      }
+    },
     "doors": {},
     "misc": {}
   },
@@ -43,11 +60,7 @@
     "thrusters": {},
     "rudders": {},
     "grates": {},
-    "zincs": {
-      "zinc-style": "hull-anode",
-      "zinc-style-count": "40",
-      "material": "aluminum"
-    },
+    "zincs": {},
     "doors": {},
     "misc": {}
   },
@@ -86,16 +99,78 @@
     "thrusters": {},
     "rudders": {},
     "grates": {},
+    "zincs": {},
+    "doors": {},
+    "misc": {}
+  },
+  {
+    "vessel-name": "test",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
     "zincs": {
-      "zinc-style-1": "hull-anode",
-      "zinc-style-count-1": "20",
-      "material-1": "aluminum",
-      "zinc-style-2": "propeller-anode",
-      "zinc-style-count-2-count": "40",
-      "2-material": "aluminum",
-      "zinc-style-3": "engine-anode",
-      "zinc-style-count-3-count": "6",
-      "3-material": "aluminum"
+      "zincs-1": {
+        "location-1": "hull",
+        "count-1": "34",
+        "material-1": "zinc",
+        "location-2": "sea-chest",
+        "count-2": "5",
+        "material-2": "zinc"
+      },
+      "zincs-2": {
+        "location-1": "hull",
+        "count-1": "25",
+        "material-1": "magnesium"
+      },
+      "zincs-3": {
+        "location-1": "hull",
+        "count-1": "34",
+        "material-1": "zinc",
+        "location-2": "jets",
+        "count-2": "52",
+        "material-2": "zinc",
+        "location-3": "trim-tab",
+        "count-3": "23",
+        "material-3": "magnesium"
+      },
+      "key-4": {
+        "location-1": "engine",
+        "count-1": "5",
+        "material-1": "zinc"
+      }
+    },
+    "doors": {},
+    "misc": {}
+  },
+  {
+    "vessel-name": "Test 2",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {
+      "key-1": {
+        "location-1": "hull",
+        "count-1": "34",
+        "material-1": "zinc",
+        "location-2": "engine",
+        "count-2": "5",
+        "material-2": "zinc",
+        "location-3": "trim-tab",
+        "count-3": "4",
+        "material-3": "magnesium"
+      }
     },
     "doors": {},
     "misc": {}

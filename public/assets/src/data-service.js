@@ -92,17 +92,39 @@ export async function loadArchivedTasks() {
 export async function showTaskData(taskType) {
     try {
         const response = await fetch(`/tasks/${state.selectedVessel['vessel-name']}`);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const tasks = await response.json();
         const taskData = tasks[taskType];
+
+        formContainer.innerHTML = ''; // Clear previous content
 
         if (!taskData || Object.keys(taskData).length === 0) {
             formContainer.innerHTML = `<p>No data available for ${taskType}.</p>`;
         } else {
-            formContainer.innerHTML = `<h3>${taskType} Data</h3>`;
+            const header = document.createElement('h3');
+            header.textContent = `${taskType} Data`;
+            formContainer.appendChild(header);
+
+            // Recursive function to format nested object values
+            const formatValue = (value, indent = 0) => {
+                const indentation = ' '.repeat(indent * 2);
+                if (typeof value === 'object' && value !== null) {
+                    return Object.entries(value)
+                        .map(([key, val]) => `${indentation}${key}: ${formatValue(val, indent + 1)}`)
+                        .join('\n');
+                }
+                return value;
+            };
+
             for (const key in taskData) {
-                const p = document.createElement('p');
-                p.textContent = `${key}: ${taskData[key]}`;
-                formContainer.appendChild(p);
+                if (taskData.hasOwnProperty(key)) {
+                    const pre = document.createElement('pre');
+                    pre.textContent = `${key}:\n${formatValue(taskData[key], 1)}`;
+                    formContainer.appendChild(pre);
+                }
             }
         }
 
@@ -113,4 +135,3 @@ export async function showTaskData(taskType) {
         formContainer.innerHTML = `<p>Error loading data for ${taskType}.</p>`;
     }
 }
-    

@@ -9,8 +9,8 @@ export function afterLoad() {
         newSection.innerHTML = `
             <div class="container">
                 <div class="form-group">
-                    <label for="zinc-location-${sectionCount}">Location</label>
-                    <select id="zinc-location-${sectionCount}" name="zinc-location-${sectionCount}" required>
+                    <label for="location-${sectionCount}">Location</label>
+                    <select id="location-${sectionCount}" name="location-${sectionCount}" required>
                     <option value="hull">Hull</option>
                     <option value="propeller">Propeller</option>
                     <option value="rope-guard">Rope-Guard</option>
@@ -25,8 +25,8 @@ export function afterLoad() {
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="zinc-count-${sectionCount}">Amount</label>
-                    <input type="number" id="zinc-count-${sectionCount}" name="zinc-count-${sectionCount}" required>
+                    <label for="count-${sectionCount}">Amount</label>
+                    <input type="number" id="count-${sectionCount}" name="count-${sectionCount}" required>
                 </div>
                 <div class="form-group">
                     <label for="material-${sectionCount}">Material</label>
@@ -39,7 +39,7 @@ export function afterLoad() {
             </div>
         `;
         formSections.appendChild(newSection);
-        console.log(`New section added with id zinc-count-${sectionCount}`); // Debugging statement
+        console.log(`New section added with id zinc-${sectionCount}`); // Debugging statement
     }
 
     // window.deleteFormSection = function(sectionId) {

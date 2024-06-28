@@ -101,12 +101,24 @@ app.post('/save', (req, res) => {
   });
 });
 
+// Function to get next available number for a task type
+const getNextNumber = (vessel, task) => {
+  let maxNumber = 0;
+  if (vessel[task]) {
+    const keys = Object.keys(vessel[task]);
+    keys.forEach(key => {
+      const match = key.match(/-(\d+)$/);
+      if (match && parseInt(match[1]) > maxNumber) {
+        maxNumber = parseInt(match[1]);
+      }
+    });
+  }
+  return maxNumber + 1;
+};
+
 app.post('/update', async (req, res) => {
   try {
       const { "vessel-name": vesselName, ...taskData } = req.body;
-
-      console.log("Received vessel name:", vesselName); // Log received vessel name
-      console.log("Received task data:", taskData); // Log received task data
 
       if (!vesselName || !taskData) {
           return res.status(400).json({ error: 'Vessel name and task data are required' });
@@ -128,8 +140,10 @@ app.post('/update', async (req, res) => {
           data[vesselIndex][taskType] = {};
       }
 
-      // Update the taskType object with additional data
-      Object.assign(data[vesselIndex][taskType], additionalData);
+    const nextNumber = getNextNumber(data[vesselIndex], taskType);
+
+    // Update the taskType object with additional data
+    Object.assign(data[vesselIndex][taskType], { [`${taskType}-Entry-${nextNumber}`]: additionalData })
 
       await writeData(data);
       res.json({
@@ -193,7 +207,6 @@ app.get('/vessel-unit-system/:vesselName', (req, res) => {
 
 app.get('/tasks/:vesselName', (req, res) => {
   const vesselName = req.params.vesselName;
-  console.log(`Fetching tasks for vessel: ${vesselName}`); // Log vessel name for debugging
 
   fs.readFile(dataFilePath, 'utf8', (err, data) => {
       if (err) {
@@ -208,8 +221,8 @@ app.get('/tasks/:vesselName', (req, res) => {
           if (!vesselTasks) {
               return res.status(404).json({ error: 'Vessel not found' });
           }
-          console.log(`Found tasks for vessel: ${vesselName}`, vesselTasks); // Log found tasks for debugging
           res.json(vesselTasks);
+          
       } catch (parseErr) {
           console.error('Error parsing tasks data:', parseErr);
           res.status(500).json({ error: 'Internal Server Error' });
