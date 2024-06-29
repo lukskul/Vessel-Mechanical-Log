@@ -53,8 +53,8 @@ async function handleTaskClick(event) {
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/props.html';
                 break;    
             case 'zincs':
-                //htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
-                htmlFile = 'assets/html/zincs.html';     
+                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
+                //htmlFile = 'assets/html/zincs.html';     
                 break;  
             default:  
                 console.error('Unknown task type:', taskType);
@@ -89,8 +89,11 @@ async function handleTaskClick(event) {
             formContainer.innerHTML = ''; // Clear previous content
     
             if (!taskData || Object.keys(taskData).length === 0) {
+
                 formContainer.innerHTML = `<p>No data available for ${taskType}.</p>`;
+
             } else {
+                
                 const header = document.createElement('h3');
                 header.textContent = `${taskType} Data`;
                 formContainer.appendChild(header);

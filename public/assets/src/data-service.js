@@ -120,7 +120,9 @@ export async function showTaskData(taskType) {
             };
 
             for (const key in taskData) {
+
                 if (taskData.hasOwnProperty(key)) {
+
                     const pre = document.createElement('pre');
                     pre.textContent = `${key}:\n${formatValue(taskData[key], 1)}`;
                     formContainer.appendChild(pre);

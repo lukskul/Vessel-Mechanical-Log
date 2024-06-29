@@ -174,5 +174,29 @@
     },
     "doors": {},
     "misc": {}
+  },
+  {
+    "vessel-name": "Test 3",
+    "stats": {},
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {
+      "zincs-Entry-1": {
+        "location-1": "hull",
+        "count-1": "53",
+        "material-1": "zinc",
+        "location-2": "rudder",
+        "count-2": "23",
+        "material-2": "zinc"
+      }
+    },
+    "doors": {},
+    "misc": {}
   }
 ]
