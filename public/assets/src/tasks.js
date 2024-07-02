@@ -14,7 +14,7 @@ export async function showTasks() {
 
     taskMainBlock.style.display = "block";
     formContainer.innerHTML = ''; 
-
+    console.log("Adding data ", state.addMode)
     if (state.addMode) { 
         taskOptions.forEach(option => {
             option.style.display = 'block';
@@ -27,7 +27,7 @@ export async function showTasks() {
             option.style.display = 'none'; 
         });
         await loadArchivedTasks();
-    }
+    }  
 }
 
 async function handleTaskClick(event) {
@@ -56,6 +56,10 @@ async function handleTaskClick(event) {
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
                 //htmlFile = 'assets/html/zincs.html';     
                 break;  
+            case 'shafts':
+                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/shafts.html';
+                //htmlFile = 'assets/html/shafts.html';
+                break;
             default:  
                 console.error('Unknown task type:', taskType);
                 return;  
@@ -109,11 +113,26 @@ async function handleTaskClick(event) {
                     return value;
                 };
     
-                for (const key in taskData) {
-                    if (taskData.hasOwnProperty(key)) {
-                        const pre = document.createElement('pre');
-                        pre.textContent = `${key}:\n${formatValue(taskData[key], 1)}`;
-                        formContainer.appendChild(pre);
+                for (const entry in taskData) {
+                    if (taskData.hasOwnProperty(entry)) {
+                      // Create a new div element for each entry
+                      const entryDiv = document.createElement('div');
+                      entryDiv.className = 'container';
+                      entryDiv.textContent = entry;
+                      formContainer.appendChild(entryDiv);
+                  
+                      const entryData = taskData[entry];
+                      for (const key in entryData) {
+                        if (entryData.hasOwnProperty(key)) {
+                          // Create a new div element for each key-value pair within the entry
+                          const div = document.createElement('div');
+                          div.className = 'padding';
+                          div.textContent = `${key}: ${entryData[key]}`;
+                          
+                          // Append the div to the formContainer
+                          formContainer.appendChild(div);
+                        }
+                      }
                     }
                 }
             }

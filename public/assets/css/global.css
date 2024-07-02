@@ -64,5 +64,9 @@ body {
     overflow-y: auto;
 }
 
+.padding {
+    padding: 2%; 
+}
+
 
 

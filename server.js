@@ -59,7 +59,9 @@ app.post('/save', (req, res) => {
       console.error('Error reading file:', err);
       const vessels = [{
         'vessel-name': vesselName,
-        stats: {},
+        stats: {
+          unitSystem: "standard"
+        },
         engines: {}, 
         generators: {}, 
         electricMotors: {}, 
@@ -81,7 +83,9 @@ app.post('/save', (req, res) => {
     if (!vesselExists) {
       vessels.push({
         'vessel-name': vesselName,
-        stats:{}, 
+        stats:{
+          unitSystem: "standard"
+        }, 
         engines: {}, 
         generators: {}, 
         electricMotors: {}, 
