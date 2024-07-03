@@ -248,7 +248,45 @@
     "thrusters": {},
     "rudders": {},
     "grates": {},
-    "zincs": {},
+    "zincs": {
+      "zincs-Entry-1": {
+        "location-1": "hull",
+        "material-1": "zinc",
+        "location-2": "hull",
+        "material-2": "zinc"
+      }
+    },
+    "doors": {},
+    "misc": {}
+  },
+  {
+    "vessel-name": "test5",
+    "stats": {
+      "unitSystem": "standard"
+    },
+    "engines": {},
+    "generators": {},
+    "electricMotors": {},
+    "shafts": {},
+    "props": {},
+    "thrusters": {},
+    "rudders": {},
+    "grates": {},
+    "zincs": {
+      "zincs-Entry-1": {
+        "location-1": "hull",
+        "count-1": "5",
+        "material-1": "zinc",
+        "location-2": "propeller",
+        "count-2": "6",
+        "material-2": "zinc"
+      },
+      "zincs-Entry-2": {
+        "location-1": "rope-guard",
+        "count-1": "6",
+        "material-1": "zinc"
+      }
+    },
     "doors": {},
     "misc": {}
   }

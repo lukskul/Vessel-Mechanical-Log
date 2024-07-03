@@ -1,14 +1,14 @@
 // CSS
 import '../css/global.css';
-import '../css/forms/vessel.css'; 
 import '../css/tasks.css'; 
 import '../css/menu.css'; 
 import '../css/button.css'; 
 import '../css/animation.css'; 
-import '../css/forms/form.css'; 
-import '../css/forms/zincs.css'; 
 
 // Forms Css
+import '../css/forms/vessel.css'; 
+import '../css/forms/form.css'; 
+import '../css/forms/zincs.css'; 
 
 // Javascript
 import './data-service.js';
@@ -19,11 +19,8 @@ import './tasksSVG.js';
 import './tasks.js';   
 import './form-loader.js'; 
 import './initialize-form.js';
-import './unit-system.js';   
-import './zincs.js'; 
+import './unit-system.js';    
 
-//Forms Javascript
-import './forms-js/shafts.js'
 
 
   

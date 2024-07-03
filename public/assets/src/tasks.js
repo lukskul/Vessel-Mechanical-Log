@@ -3,7 +3,6 @@ import { initializeForm } from './initialize-form.js';
 import { state } from './global.js';
 import { loadArchivedTasks } from './data-service.js';
 import { loadTaskSVG, loadDefaultLogo } from './tasksSVG.js'; 
-import { afterLoad } from './zincs.js';
 
 export const taskMainBlock = document.getElementById("task-main-block"); 
 const taskOptions = document.querySelectorAll('.task-option');
@@ -44,21 +43,20 @@ async function handleTaskClick(event) {
     if (state.addMode) {
 
         let htmlFile;
+        let scriptFile; 
 
-        switch (taskType) {
-            case 'engines':
-                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/engine.html';
-                break;
-            case 'props':
-                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/props.html';
-                break;    
+        switch (taskType) {   
             case 'zincs':
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
-                //htmlFile = 'assets/html/zincs.html';     
+                //htmlFile = 'assets/html/zincs.html'; 
+                scriptFile = 'https://lukskul.github.io/Vessel-Mechanical-log/public/assets/src/forms/zincs.js';
+                //scriptFile = 'assets/src/forms/zincs.js';     
                 break;  
             case 'shafts':
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/shafts.html';
                 //htmlFile = 'assets/html/shafts.html';
+                scriptFile = 'https://lukskul.github.io/Vessel-Mechanical-log/public/assets/src/forms/shafts.js'; 
+                //scriptFile = 'assets/src/forms/shafts.js'; 
                 break;
             default:  
                 console.error('Unknown task type:', taskType);
@@ -66,8 +64,8 @@ async function handleTaskClick(event) {
         }
 
         try {
-            await loadHTMLBlock('form-container', htmlFile, afterLoad);
-
+            await loadHTMLBlock('form-container', htmlFile, scriptFile);
+  
             setTimeout(() => {
                 const form = document.querySelector(`#${taskType}`);
                 if (form) {

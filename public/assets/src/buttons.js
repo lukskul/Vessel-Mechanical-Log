@@ -35,7 +35,7 @@ archive.addEventListener('click', async function () {
 export const edit = document.getElementById('change-vessel-button');
 edit.addEventListener('click', function() {
     if(state.selectedVessel != null) { 
-        resetShakeAlert();  
+        //resetShakeAlert();  
         resetVessel(); 
         resetUnitSystem(); 
         resetTasks(); 

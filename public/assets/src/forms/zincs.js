@@ -1,4 +1,4 @@
-export function afterLoad() {
+
     let sectionCount = 1;
 
     function addFormSection() {
@@ -55,4 +55,3 @@ export function afterLoad() {
     document.getElementById('add-button').onclick = function() {
         addFormSection();
     };
-}

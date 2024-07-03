@@ -70,61 +70,6 @@ body {
 
 
 
-.vesselForm {
-    width: 60%; 
-    margin-left: 20%; 
-    margin-top: 30%; 
-    cursor: pointer;
-    position: relative;
-    transition: transform 0.3s ease;
-    text-align: center;
-    color: white;
-}
-
-.vesselDataForm {
-    margin-bottom: 10%; 
-}
-
-.vesselFormLabel {
-    display: flex; 
-    justify-content: flex-start;
-    margin-bottom: 2%; 
-}
-
-.vesselForm::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    z-index: -1;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-}
-
-.vesselForm:hover::before {
-    opacity: 1;
-}
-
-.vesselForm input,
-
-.vesselForm input {
-    width: 75%;
-    height: 41px;
-    padding: 2%; 
-    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
-}
-
-.suggestion {
-    padding: 4%; 
-    padding-top: 0px; 
-    display: flex;
-    justify-content: center;
-}
-
-
-
 .task-options {
     display: flex;
     flex-wrap: wrap;
@@ -420,6 +365,61 @@ input:checked + .slider:before {
 .popup.show {
     opacity: 1;
 }
+.vesselForm {
+    width: 60%; 
+    margin-left: 20%; 
+    margin-top: 30%; 
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+    text-align: center;
+    color: white;
+}
+
+.vesselDataForm {
+    margin-bottom: 10%; 
+}
+
+.vesselFormLabel {
+    display: flex; 
+    justify-content: flex-start;
+    margin-bottom: 2%; 
+}
+
+.vesselForm::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.vesselForm:hover::before {
+    opacity: 1;
+}
+
+.vesselForm input,
+
+.vesselForm input {
+    width: 75%;
+    height: 41px;
+    padding: 2%; 
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+}
+
+.suggestion {
+    padding: 4%; 
+    padding-top: 0px; 
+    display: flex;
+    justify-content: center;
+}
+
+
+
 
 .container {
     background: rgba(0, 0, 0, 0.8);
