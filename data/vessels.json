@@ -254,6 +254,21 @@
         "material-1": "zinc",
         "location-2": "hull",
         "material-2": "zinc"
+      },
+      "zincs-Entry-2": {
+        "location-1": "keel",
+        "count-1": "7",
+        "material-1": "zinc"
+      },
+      "zincs-Entry-3": {
+        "location-1": "keel",
+        "count-1": "7",
+        "material-1": "zinc"
+      },
+      "zincs-Entry-4": {
+        "location-1": "keel",
+        "count-1": "7",
+        "material-1": "zinc"
       }
     },
     "doors": {},
@@ -267,7 +282,12 @@
     "engines": {},
     "generators": {},
     "electricMotors": {},
-    "shafts": {},
+    "shafts": {
+      "shafts-Entry-1": {
+        "couplerBoltCount": "44",
+        "couplerPullerAssembly": "strongBack"
+      }
+    },
     "props": {},
     "thrusters": {},
     "rudders": {},

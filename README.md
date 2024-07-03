@@ -8,4 +8,24 @@ This Server.js is saving Vessel data into data/vessels.json and this is for test
 
 This Repository is strictly controlling the Script and Style functionality and all pushed changes into github will instantly translate to the Heroku Site. 
 
+
+## Making edits 
+            ```
+            //htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/shafts.html';
+            htmlFile = 'assets/html/shafts.html';
+            //scriptFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/src/forms/shafts.js'; 
+            scriptFile = 'assets/src/forms/shafts.js'; 
+            break;
+            ```
+
+## Final Build
+            ```
+                        case 'zincs':
+                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
+                //htmlFile = 'assets/html/zincs.html'; 
+                scriptFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/src/forms/zincs.js';
+                //scriptFile = 'assets/src/forms/zincs.js';     
+                break;  
+                ```
+                
 ![VML](public/assets/icons/wrench-hammer.svg)

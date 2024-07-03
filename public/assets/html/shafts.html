@@ -3,23 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zincs</title>
+    <title>MVL-Shafting</title>
 </head>
 <body>
-    <div class="container">
-        <form id="shafts" class="retro-form">
-            <div class="container">
-                <label for="shafts">How many shafts?</label>
-                <input type="number" id="shafts" name="shafts" min="0" max="6" required>
-                <br><br>
-                <label for="position">Choose a position:</label>
-                <select id="position" name="position" required>
-                    <option value="">Please select a number of shafts first</option>
-                </select>
-                <br><br>
+    <form id="shafts">
+        <div class="form-title">
+            <h2>Shafting</h2>
+        </div>
+        <br>
+        <!-- Coupler Information -->
+        <h2>Coupler</h2>
+        <div class="container">
+            <div class="form-group">
+                <label for="couplerBoltCount">Bolt Count:</label>
+                <input type="number" id="couplerBoltCount" name="couplerBoltCount" required>
             </div>
-        </form>
-        <button id="add-button" class="button addButton" style="display:block;"><img src="assets/icons/plus.svg" alt="add"></button>
-    </div>
+            <div class="form-group">
+                <label for="couplerBoltSizes">Bolt Sizes (mm/inches):</label>
+                <input type="text" id="couplerBoltSizes" name="couplerBoltSizes" required>
+            </div>
+        </div>
+        <h2>Coupler Retaining Nut</h2>
+        <div class="container">
+            <div class="form-group">
+                <label for="retainingNutSizes">Sizes (mm/inches):</label>
+                <input type="text" id="retainingNutSizes" name="retainingNutSizes" required>
+            </div>
+            <div class="form-group">
+                <label for="retainingNutSetScrews">Set Screws:</label>
+                <input type="text" id="retainingNutSetScrews" name="retainingNutSetScrews" required>
+            </div>
+        </div>
+        <h3>Coupler Removal</h3>
+        <div class="container">
+            <div class="form-group">
+                <label for="couplerPullerAssembly">Puller/Removal Assembly:</label>
+                <select id="couplerPullerAssembly" name="couplerPullerAssembly" required>
+                    <option value="strongBack">Strong Back</option>
+                    <!-- Add more options as needed -->
+                </select>
+            </div>
+        </div>
+
+        <!-- Shaft Seal Information -->
+        <h2>Shaft Seal</h2>
+        <div class="container">
+            <div class="form-group">
+                <label for="shaftSealType">Type:</label>
+                <input type="text" id="shaftSealType" name="shaftSealType" required>
+            </div>
+            <div class="form-group">
+                <label for="setScrewCount">Set Screw Count:</label>
+                <input type="number" id="setScrewCount" name="setScrewCount" required>
+            </div>
+            <div class="form-group">
+                <label for="setScrewSizes">Set Screw Sizes (mm/inches):</label>
+                <input type="text" id="setScrewSizes" name="setScrewSizes" required>
+            </div>
+        </div>
+
+        <!-- Shaft Wiper Information -->
+        <h2>Shaft Wiper</h2>
+        <div class="container">
+            <div class="form-group">
+                <label for="shaftWiper">Mounting Hardware</label>
+                <input type="text" id="shaftWiper" name="shaftWiper" required>
+            </div>
+        </div>
+
+        <!-- Additional Notes -->
+        <div class="container">
+            <h2>Additional Notes</h2>
+            <div class="form-group">
+                <label for="additionalNotes">Additional Notes:</label>
+                <textarea id="additionalNotes" name="additionalNotes"></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+        
 </body>
 </html>
