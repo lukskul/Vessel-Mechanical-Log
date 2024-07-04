@@ -34,11 +34,12 @@
                 <input type="text" id="retainingNutSetScrews" name="retainingNutSetScrews" required>
             </div>
         </div>
-        <h3>Coupler Removal</h3>
+        <h2>Coupler Removal</h2>
         <div class="container">
             <div class="form-group">
                 <label for="couplerPullerAssembly">Puller/Removal Assembly:</label>
                 <select id="couplerPullerAssembly" name="couplerPullerAssembly" required>
+                    <option value="-">-</option>
                     <option value="strongBack">Strong Back</option>
                     <!-- Add more options as needed -->
                 </select>
@@ -50,16 +51,17 @@
         <div class="container">
             <div class="form-group">
                 <label for="shaftSealType">Type:</label>
-                <input type="text" id="shaftSealType" name="shaftSealType" required>
+                <select id="shaftSealType" name="shaftSealType" required>
+                    <option value="-">-</option>
+                    <option value="stuffing-box">Stuffing Box</option>
+                    <option value="pss-seal">Packingless Shaft Seal (PSS)</option>
+                    <option value="lip-seal">Lip Seals</option>
+                </select>
             </div>
-            <div class="form-group">
-                <label for="setScrewCount">Set Screw Count:</label>
-                <input type="number" id="setScrewCount" name="setScrewCount" required>
-            </div>
-            <div class="form-group">
-                <label for="setScrewSizes">Set Screw Sizes (mm/inches):</label>
-                <input type="text" id="setScrewSizes" name="setScrewSizes" required>
-            </div>
+
+            <!-- Placeholder for additional questions -->
+            <div id="additionalShaftSealQuestions"></div>
+
         </div>
 
         <!-- Shaft Wiper Information -->

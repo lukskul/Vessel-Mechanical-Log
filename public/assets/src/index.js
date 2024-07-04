@@ -12,7 +12,7 @@ import '../css/forms/zincs.css';
 
 // Javascript
 import './data-service.js';
-import './global.js'; 
+import './global.js';   
 import './buttons.js'; 
 import './vessel.js';  
 import './tasksSVG.js';    

@@ -6,7 +6,7 @@ export const state = {
     addMode: true,  //Add mode is add task data set to true.  False will show archived data.
 
     async setSelectedVessel(vessel) {
-        if (typeof vessel === 'string') {
+        if (typeof vessel === 'string') {  
             this.selectedVessel = null;
         } else {
             this.selectedVessel = vessel; 

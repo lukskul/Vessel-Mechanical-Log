@@ -4,7 +4,7 @@ export function loadHTMLBlock(containerId, blockFile, scriptFile) {
             .then(response => response.text())
             .then(html => {
                 document.getElementById(containerId).innerHTML = html;
-                if (scriptFile) {
+                if (scriptFile) {  
                     loadScript(scriptFile)
                         .then(() => {
                             resolve();

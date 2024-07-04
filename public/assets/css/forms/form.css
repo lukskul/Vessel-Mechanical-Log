@@ -71,3 +71,8 @@
     background: #009955;
     box-shadow: 0 0 15px #00ff99;
 }
+
+.container h3 {
+    text-align: center;
+    margin-bottom: 2%; 
+}
