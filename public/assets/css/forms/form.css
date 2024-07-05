@@ -7,7 +7,6 @@
     box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
     min-height: 150%; 
     margin-top: 2%; 
-    z-index: 49; 
 }
 
 .retro-form {
@@ -27,7 +26,6 @@
 
 .form-group {
     margin-bottom: 20px;
-    z-index: 149; 
 }
 
 .form-group label {
@@ -79,11 +77,25 @@
     margin-bottom: 2%; 
 }
 
-.information-container {
-     display: none;
-     z-index: 99; 
+.informationButton { 
+    cursor: pointer; 
+    float: right; 
+    top: -32px; 
 }
 
-#toggle-container { 
-    cursor: pointer; 
+.informationButton .svg-icon {
+    filter: none; 
+}
+
+.informationContainer {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid #00ff99;
+    border-radius: 10px;
+    padding: 20px;
+    border-top: none; 
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
+    min-height: 150%; 
+    margin-top: 2%; 
+    display: none;
+
 }

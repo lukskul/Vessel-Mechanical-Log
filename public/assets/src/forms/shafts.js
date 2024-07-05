@@ -1,21 +1,20 @@
 
-console.log("The form is loaded");
+console.log("loaded Shafting Form");
 
-const toggleContainers = document.querySelectorAll('#toggle-container');
-toggleContainers.forEach(div => {
-    div.addEventListener('click', function() {
-        const container = this.querySelector('.information-container');
-        if (container) {
-            container.style.display = container.style.display === 'none' ? 'block' : 'none';
+const toggleButtons = document.querySelectorAll('.informationButton');
+toggleButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const container = this.nextElementSibling;
+        const img = this.querySelector('img');
+        if (container.classList.contains('informationContainer')) {
+            if (container.style.display === 'none') {
+                container.style.display = 'block';
+                img.src = 'assets/icons/less.svg'; // Change to the "less" icon
+            } else {
+                container.style.display = 'none';
+                img.src = 'assets/icons/more.svg'; // Change to the "more" icon
+            }
         }
-    });
-
-    // Prevent input clicks from toggling the container
-    const inputs = div.querySelectorAll('input, select, textarea');
-    inputs.forEach(input => {
-        input.addEventListener('click', function(event) {
-            event.stopPropagation();
-        });
     });
 });
 
