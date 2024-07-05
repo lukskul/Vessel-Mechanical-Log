@@ -9,9 +9,15 @@ toggleContainers.forEach(div => {
             container.style.display = container.style.display === 'none' ? 'block' : 'none';
         }
     });
+
+    // Prevent input clicks from toggling the container
+    const inputs = div.querySelectorAll('input, select, textarea');
+    inputs.forEach(input => {
+        input.addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    });
 });
-
-
 
 //Section 4- Shaft Seal
 
