@@ -1,17 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="-12 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    
-    <title>knife</title>
-    <desc>Created with Sketch Beta.</desc>
-    <defs>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-</defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-166.000000, -465.000000)" fill="#000000">
-            <path d="M168,465 L167,465 C166.448,465 166,465.448 166,466 L166,495 C166,496.104 166.896,497 168,497 C169.104,497 170,496.104 170,495 L170,483 L174,483 C174,471.22 168,465 168,465" id="knife" sketch:type="MSShapeGroup">
-
-</path>
-        </g>
-    </g>
+<svg
+   version="1.1"
+   id="svg627"
+   width="853.33331"
+   height="853.33331"
+   viewBox="0 0 853.33331 853.33331"
+   sodipodi:docname="rudder.svg"
+   inkscape:version="1.2.2 (b0a8486, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs631" />
+  <sodipodi:namedview
+     id="namedview629"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.27656251"
+     inkscape:cx="-74.124292"
+     inkscape:cy="444.74575"
+     inkscape:window-width="1309"
+     inkscape:window-height="652"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g633" />
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g633">
+    <path
+       style="fill:#000000;stroke-width:1.06667"
+       d="m 472.06327,831.03217 c -0.88,-0.19731 -12.88,-1.12811 -26.66667,-2.06844 -44.8341,-3.05795 -64.46315,-4.78981 -68.26666,-6.02314 -5.12047,-1.66038 -12.19289,-6.64856 -15.41376,-10.87134 -5.92576,-7.76908 -5.77795,-6.36122 -9.64798,-91.89751 -0.90248,-19.94667 -2.34403,-51.38667 -3.20346,-69.86667 -0.85943,-18.48 -2.29808,-49.68 -3.19699,-69.33333 -6.02039,-131.62585 -5.56176,-122.81559 -8.07692,-155.15537 -1.13876,-14.64211 -2.34025,-35.52211 -2.67,-46.39999 -0.87531,-28.87544 -6.31857,-26.19275 55.09594,-27.1538 27.21402,-0.42585 49.72749,-1.1645 50.02993,-1.64143 0.30245,-0.47692 3.2748,-1.42989 6.60524,-2.1177 10.53831,-2.17641 18.7664,-10.1257 21.04476,-20.3317 1.02881,-4.60861 0.97658,-40.82817 -0.38498,-267.018561 -0.46763,-77.685225 -0.46763,-77.685225 4.54196,-79.905162 7.21135,-3.195619 23.53455,-3.875397 32.80449,-1.366139 3.79301,1.026721 7.1096,2.211759 7.3702,2.633418 0.2606,0.421659 0.73603,15.6068549 1.05651,33.744881 0.32049,18.138026 0.80848,36.338229 1.08442,40.444896 0.27595,4.106666 0.76234,19.946665 1.08086,35.200005 0.31851,15.253332 0.80213,33.013332 1.07469,39.466662 0.27255,6.45334 0.75036,22.29334 1.06181,35.2 0.31144,12.90667 0.7958,30.90667 1.07634,40 0.90583,29.3614 1.5617,52.31462 2.13349,74.66667 0.86857,33.95327 1.65158,49.26152 2.73321,53.4356 2.17989,8.41236 9.75421,15.77765 18.78781,18.26931 4.45424,1.22858 4.45424,1.22858 5.02139,9.82849 0.31194,4.72996 1.61441,106.87553 2.8944,226.99014 2.22542,208.834 2.24501,218.60559 0.44756,223.31214 -4.18025,10.94581 -11.74639,16.05608 -25.99223,17.55544 -8.56452,0.9014 -48.82198,1.21059 -52.42536,0.40263 z"
+       id="path637" />
+  </g>
 </svg>
