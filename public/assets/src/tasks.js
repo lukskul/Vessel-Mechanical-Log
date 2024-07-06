@@ -62,7 +62,7 @@ async function handleTaskClick(event) {
                 console.error('Unknown task type:', taskType);
                 return;      
         }
-    
+
         try {
             await loadHTMLBlock('form-container', htmlFile, scriptFile);
   
