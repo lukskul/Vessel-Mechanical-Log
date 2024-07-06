@@ -514,8 +514,9 @@ input:checked + .slider:before {
     border: 2px solid #00ff99;
     border-radius: 10px;
     padding: 20px;
-    border-top: none; 
-    box-shadow: 0 0 20px rgba(0, 255, 153, 0.5);
+    border-top: none;
+    border-right: none;  
+    border-bottom: none;
     min-height: 150%; 
     margin-top: 2%; 
     display: none;

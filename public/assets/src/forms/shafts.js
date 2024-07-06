@@ -1,7 +1,7 @@
 
 console.log("loaded Shafting Form");
 
-const toggleButtons = document.querySelectorAll('.informationButton');
+const toggleButtons = document.querySelectorAll('#toggle-button');
 toggleButtons.forEach(button => {
     button.addEventListener('click', function() {
         const container = this.nextElementSibling;
