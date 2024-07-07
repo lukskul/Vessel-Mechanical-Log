@@ -1,10 +1,18 @@
-export function loadHTMLBlock(containerId, blockFile, scriptFile) {
+import { changeLanguage, language } from "./language";
+
+export function loadHTMLBlock(containerId, blockFile, scriptFile, callback) {
     return new Promise((resolve, reject) => {
         fetch(blockFile)
             .then(response => response.text())
             .then(html => {
                 document.getElementById(containerId).innerHTML = html;
-                if (scriptFile) {  
+
+                if (language) {
+                    console.log('Language is in spanish.');
+                    changeLanguage(language); 
+                }
+
+                if (scriptFile) {
                     loadScript(scriptFile)
                         .then(() => {
                             resolve();
@@ -39,7 +47,6 @@ function loadScript(url) {
         document.head.appendChild(script);
     });
 }
-
 
 
   

@@ -11,6 +11,7 @@ import '../css/forms/form.css';
 import '../css/forms/zincs.css'; 
 
 // Javascript
+import './language.js'; 
 import './data-service.js';
 import './global.js';   
 import './buttons.js'; 

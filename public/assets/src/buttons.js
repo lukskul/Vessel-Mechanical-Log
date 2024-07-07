@@ -37,7 +37,7 @@ edit.addEventListener('click', function() {
     if(state.selectedVessel != null) { 
         //resetShakeAlert();  
         resetVessel(); 
-        resetUnitSystem(); 
+        //resetUnitSystem(); 
         resetTasks(); 
         hideTasks(); 
 

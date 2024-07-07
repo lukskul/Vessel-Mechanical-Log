@@ -60,7 +60,7 @@ async function handleTaskClick(event) {
                 break;
             default:      
                 console.error('Unknown task type:', taskType);
-                return;      
+                return;        
         }
 
         try {

@@ -1,22 +1,19 @@
 
 console.log("loaded Shafting Form");
 
-const toggleButtons = document.querySelectorAll('#toggle-button');
-toggleButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        const container = this.nextElementSibling;
-        const img = this.querySelector('img');
-        if (container.classList.contains('informationContainer')) {
-            if (container.style.display === 'none') {
-                container.style.display = 'block';
-                img.src = 'assets/icons/less.svg'; // Change to the "less" icon
-            } else {
-                container.style.display = 'none';
-                img.src = 'assets/icons/more.svg'; // Change to the "more" icon
-            }
+function toggleButtonClick(button) {
+    const container = button.nextElementSibling;
+    const img = button.querySelector('img');
+    if (container.classList.contains('informationContainer')) {
+        if (container.style.display === 'none') {
+            container.style.display = 'block';
+            img.src = 'assets/icons/less.svg'; // Change to the "less" icon
+        } else {
+            container.style.display = 'none';
+            img.src = 'assets/icons/more.svg'; // Change to the "more" icon
         }
-    });
-});
+    }
+}
 
 //Section 4- Shaft Seal
 

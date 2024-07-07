@@ -15,6 +15,9 @@ app.get('/', (req, res) => {
 
 const dataFilePath = path.join(__dirname, 'data', 'vessels.json');
 
+//look for language js files here
+app.use(express.static(path.join(__dirname, 'language')));
+
 // Utility function to read the JSON file
 const readData = () => {
   return new Promise((resolve, reject) => {

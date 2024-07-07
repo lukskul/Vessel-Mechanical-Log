@@ -511,16 +511,10 @@ input:checked + .slider:before {
 
 .informationContainer {
     background: rgba(0, 0, 0, 0.8);
-    border: 2px solid #00ff99;
-    border-radius: 10px;
     padding: 20px;
-    border-top: none;
-    border-right: none;  
-    border-bottom: none;
     min-height: 150%; 
     margin-top: 2%; 
     display: none;
-
 }
 
 .form-group {

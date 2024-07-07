@@ -7,14 +7,14 @@
 </head>
 <body>
     <form id="shafts">
-        <div class="form-title">
+        <div class="form-title" data-translate="form-title">
             <h2>Shafting</h2>
         </div>
         <br>
         <!-- Coupler Information -->
         <div class="container">
-            <h2>Coupler</h2>
-            <button type="button" id="toggle-button" class="button informationButton">
+            <h2 data-translate="coupler">Coupler</h2>
+            <button type="button" id="toggle-button" class="button informationButton" onclick="toggleButtonClick(this)">
                 <img class="svg-icon" src="assets/icons/more.svg" alt="More">
             </button>
             <div id="information-container" class="informationContainer">
@@ -23,13 +23,13 @@
                     <input type="number" id="couplerBoltCount" name="couplerBoltCount" required>
                 </div>
                 <div class="form-group">
-                    <label for="couplerBoltSizes">Bolt Sizes (mm/inches):</label>
+                    <label for="couplerBoltSizes" data-translate="couplerBoltSizes">Bolt Sizes (mm/inches):</label>
                     <input type="text" id="couplerBoltSizes" name="couplerBoltSizes" required>
                 </div>
             
                 <div class="container">
-                    <h2>Retaining Nut</h2>
-                    <button type="button" id="toggle-button" class="button informationButton">
+                    <h2 data-translate="retainingNut">Retaining Nut</h2>
+                    <button type="button" id="toggle-button" class="button informationButton" onclick="toggleButtonClick(this)">
                         <img class="svg-icon" src="assets/icons/more.svg" alt="More">
                     </button>
                     <div class="informationContainer">
@@ -42,13 +42,13 @@
             
                         <!-- Set Screws -->
                         <div class="form-group">
-                            <label for="setScrewCount">Set Screw Count:</label>
+                            <label for="setScrewCount" data-translate="setScrewCount">Set Screw Count:</label>
                             <select id="setScrewCount" name="setScrewCount" required>
                                 <!-- Options here... -->
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="setScrewSize">Set Screw Size:</label>
+                            <label for="setScrewSize" data-translate="setScrewSize">Set Screw Size:</label>
                             <select id="setScrewSize" name="setScrewSize" required>
                                 <!-- Options here... -->
                             </select>
@@ -57,16 +57,16 @@
                 </div>
 
                     <div class="container">
-                        <h2>Removal</h2>
-                        <button type="button" id="toggle-button" class="button informationButton">
+                        <h2 data-translate="removal">Removal</h2>
+                        <button type="button" id="toggle-button" class="button informationButton" onclick="toggleButtonClick(this)">
                             <img class="svg-icon" src="assets/icons/more.svg" alt="More">
                         </button>
                         <div class="informationContainer">
                             <div class="form-group">
-                                <label for="couplerPullerAssembly">Puller/Removal Assembly:</label>
+                                <label for="couplerPullerAssembly" data-translate="couplerPullerAssembly">Puller/Removal Assembly:</label>
                                 <select id="couplerPullerAssembly" name="couplerPullerAssembly" required>
                                     <option value="-">-</option>
-                                    <option value="strongBack">Strong Back</option>
+                                    <option value="strongBack" data-translate="strongBack">Strong Back</option>
                                     <!-- Add more options as needed -->
                                 </select>
                             </div>
@@ -74,13 +74,13 @@
                     </div>
                                         <!-- Additional Notes -->
                     <div class="container">
-                        <h2>Additional Notes</h2>
-                        <button type="button" id="toggle-button" class="button informationButton">
+                        <h2 data-translate="additionalNotes">Additional Notes</h2>
+                        <button type="button" id="toggle-button" class="button informationButton" onclick="toggleButtonClick(this)">
                             <img class="svg-icon" src="assets/icons/more.svg" alt="More">
                         </button>
                         <div class="informationContainer">
                             <div class="form-group">
-                                <label for="additionalNotes">Additional Notes:</label>
+                                <label for="additionalNotes" data-translate="additionalNotes">Additional Notes:</label>
                                 <textarea id="additionalNotes" name="additionalNotes"></textarea>
                             </div>
                         </div>
@@ -92,18 +92,18 @@
 
         <!-- Shaft Seal Information -->
         <div class="container">
-            <h2>Shaft Seal</h2>
-            <button type="button" id="toggle-button" class="button informationButton">
+            <h2 data-translate="shaftSeal">Shaft Seal</h2>
+            <button type="button" id="toggle-button" class="button informationButton" onclick="toggleButtonClick(this)">
                 <img class="svg-icon" src="assets/icons/more.svg" alt="More">
             </button>
             <div id="information-container" class="informationContainer">
                 <div class="form-group">
-                    <label for="shaftSealType">Type:</label>
+                    <label for="shaftSealType" data-translate="shaftSealType">Type:</label>
                     <select id="shaftSealType" name="shaftSealType" required>
                         <option value="-">-</option>
-                        <option value="stuffing-box">Stuffing Box</option>
-                        <option value="pss-seal">Packingless Shaft Seal (PSS)</option>
-                        <option value="lip-seal">Lip Seals</option>
+                        <option value="stuffing-box" data-translate="stuffing-box">Stuffing Box</option>
+                        <option value="pss-seal" data-translate="pss-seal">PSS (Packingless Shaft Seal)</option>
+                        <option value="lip-seal" data-translate="lip-seal">Lip Seal</option>
                     </select>
                 </div>
     
@@ -112,13 +112,13 @@
 
                         <!-- Additional Notes -->
                 <div class="container">
-                    <h2>Additional Notes</h2>
-                    <button type="button" id="toggle-button" class="button informationButton">
+                    <h2 data-translate="additionalNotes">Additional Notes</h2>
+                    <button type="button" id="toggle-button" class="button informationButton" onclick="toggleButtonClick(this)">
                         <img class="svg-icon" src="assets/icons/more.svg" alt="More">
                     </button>
                     <div id="information-container" class="informationContainer">
                         <div class="form-group">
-                            <label for="additionalNotes">Additional Notes:</label>
+                            <label for="additionalNotes" data-translate="additionalNotes">Additional Notes:</label>
                             <textarea id="additionalNotes" name="additionalNotes"></textarea>
                         </div>
                     </div>
@@ -128,13 +128,13 @@
 
         <!-- Shaft Wiper Information -->
         <div class="container">
-            <h2>Shaft Wiper</h2>
-            <button type="button" id="toggle-button" class="button informationButton">
+            <h2 data-translate="shaftWiper">Shaft Wiper</h2>
+            <button type="button" id="toggle-button" class="button informationButton" onclick="toggleButtonClick(this)">
                 <img class="svg-icon" src="assets/icons/more.svg" alt="More">
             </button>
             <div id="informationer-container" class="informationContainer">
                 <div class="form-group">
-                    <label for="shaftWiper">Mounting Hardware</label>
+                    <label for="shaftWiper" data-translate="shaftWiper">Mounting Hardware</label>
                     <input type="text" id="shaftWiper" name="shaftWiper" required>
                 </div>
             </div>

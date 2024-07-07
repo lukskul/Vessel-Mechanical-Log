@@ -17,34 +17,32 @@
     <div class="main-vessel-block">
         <div id="vessel-form" class="vesselForm" style="display:block;">
             <form id="data-form" class="vesselDataForm">
-                <h1 class="vesselFormLabel">Vessel</h1>
+                <h1 class="vesselFormLabel" data-translate="vesselFormLabel">Vessel</h1>
                 <label for="vessel-name"></label>
                 <input type="text" id="vessel-name" name="vessel-name" autocomplete="off" required>
                 <button id="save-vessel-button" class="button saveVesselButton" type="submit" display="block"><img src="assets/icons/save.svg" alt="save"></button>
             </form>
             <div id="autocomplete-suggestions" class="autocompleteSuggestions"></div>
         </div>
-
     </div>
+
     <!-- Menu -->
-    <div id="menu" class="menu" > 
+    <div id="menu" class="menu"> 
         <div class="menuBoxItems">
             <button id="archive-button" class="button" style="display:block;"><img src="assets/icons/archive.svg" alt="archive"></button>
             <button id="add-work-button" class="button" style="display:block;"><img src="assets/icons/plus.svg" alt="save"></button>
             <button id="return-button" class="button" style="display:block;"><img src="assets/icons/return.svg" alt="go-back"></button>
             <button id="shared-submit-button" class="button" type="submit" style="display:block;"><img src="assets/icons/edit.svg" alt="save"></button>
-            <div class="menu-item">
+            <button id="language-select" class="button"><img src="assets/icons/globe.svg" alt="globe"></button>
+            <!-- <div class="menu-item">
                 <label class="switch">
                     <input type="checkbox" id="unit-toggle-switch">
                     <span class="slider round"></span>
                 </label>
                 <span>Unit</span>
-            </div>
-
+            </div> -->
         </div>
     </div>
-    <!---->
-
     <!-- Tasks -->
     <div id="task-main-block" class="taskMainBlock" style="display: none;">
         <ul id="task-list">
@@ -55,47 +53,47 @@
             <div id="task-options" class="task-options">
             <div class="task-option" data-task="engines">
                 <img class="svg-icon" src="assets/icons/engine.svg" alt="Engines">
-                <span>Engine</span>
+                <span data-translate="engine">Engine</span>
             </div>
             <div class="task-option" data-task="generators">
                 <img class="svg-icon" src="assets/icons/generator.svg" alt="Generator">
-                <span>Generator</span>
+                <span data-translate="generator">Generator</span>
             </div>
             <div class="task-option" data-task="electricMotors">
                 <img class="svg-icon" src="assets/icons/motor.svg" alt="Motors">
-                <span>Motor</span>
+                <span data-translate="motor">Motor</span>
             </div>
             <div class="task-option" data-task="shafts">
                 <img class="svg-icon" src="assets/icons/shafts.svg" alt="Shafts">
-                <span>Shafting</span>
+                <span data-translate="shafting">Shafting</span>
             </div>
             <div class="task-option" data-task="props">
                 <img class="svg-icon" src="assets/icons/props.svg" alt="Props">
-                <span>Propeller</span>
+                <span data-translate="propeller">Propeller</span>
             </div>
             <div class="task-option" data-task="bow-thrusters">
                 <img class="svg-icon" src="assets/icons/bowThruster.svg" alt="Thrusters">
-                <span>Thruster</span>
+                <span data-translate="thruster">Thruster</span>
             </div>
             <div class="task-option" data-task="rudder">
                 <img class="svg-icon" src="assets/icons/rudder.svg" alt="Rudder">
-                <span>Rudder</span>
+                <span data-translate="rudder">Rudder</span>
             </div>
             <div class="task-option" data-task="sea-screens">
                 <img class="svg-icon" src="assets/icons/screen.svg" alt="Screens">
-                <span>Screens</span>
+                <span data-translate="screens">Screens</span>
             </div>
             <div class="task-option" data-task="zincs">
                 <img class="svg-icon" src="assets/icons/zincs.svg" alt="Zincs">
-                <span>Zincs</span>
+                <span data-translate="zincs">Zincs</span>
             </div>
             <div class="task-option" data-task="doors">
                 <img class="svg-icon" src="assets/icons/door.svg" alt="Doors">
-                <span>Doors</span>
+                <span data-translate="doors">Doors</span>
             </div>
             <div class="task-option" data-task="misc">
                 <img class="svg-icon" src="assets/icons/plus.svg" alt="Add New">
-                <span>Misc</span>
+                <span data-translate="misc">Misc</span>
             </div>
             </div>
         </div>
@@ -103,11 +101,9 @@
     </div>
 
     <div id="form-container"></div>
-
     <div>
         <div id="success-popup" class="popup hidden"></div>
     </div>
-
     <script src="bundle.js"></script>
   </body>
-</html>  
+</html>
