@@ -1,5 +1,6 @@
 export function changeLanguage(language) {
-    fetch(`${language}.json`)
+    //fetch(`${language}.json`)
+    fetch(`/language/${language}.json`)
       .then(response => response.json())
       .then(data => {
         document.querySelectorAll('[data-translate]').forEach(element => {
