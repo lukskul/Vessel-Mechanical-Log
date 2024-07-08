@@ -7,10 +7,9 @@ export function loadHTMLBlock(containerId, blockFile, scriptFile, callback) {
             .then(html => {
                 document.getElementById(containerId).innerHTML = html;
 
-                if (language) {
-                    console.log('Language is in spanish.');
-                    changeLanguage(language); 
-                }
+                console.log('Language is in spanish.');
+                changeLanguage(language); 
+                
 
                 if (scriptFile) {
                     loadScript(scriptFile)

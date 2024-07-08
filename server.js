@@ -15,8 +15,21 @@ app.get('/', (req, res) => {
 
 const dataFilePath = path.join(__dirname, 'data', 'vessels.json');
 
-//look for local language js files in language folder in project directory
-app.use(express.static(path.join(__dirname, 'language')));
+// Endpoint to serve language files from the local `language` folder
+app.get('/language/:fileName', (req, res) => {
+  const { fileName } = req.params;
+  const filePath = path.join(__dirname, 'language', fileName);
+  
+  fs.readFile(filePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error('Error reading file:', err);
+      res.status(500).send('Internal Server Error');
+      return;
+    }
+    res.setHeader('Content-Type', 'application/json');
+    res.send(data);
+  });
+});
 
 // Utility function to read the JSON file
 const readData = () => {
