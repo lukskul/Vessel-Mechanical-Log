@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 const dataFilePath = path.join(__dirname, 'data', 'vessels.json');
 
-//look for language js files here
+//look for local language js files in language folder in project directory
 app.use(express.static(path.join(__dirname, 'language')));
 
 // Utility function to read the JSON file
