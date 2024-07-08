@@ -16,7 +16,6 @@ function toggleButtonClick(button) {
 }
 
 //Section 4- Shaft Seal
-
 document.getElementById('shaftSealType').addEventListener('change', function() {
     var additionalQuestions = document.getElementById('additionalShaftSealQuestions');
     additionalQuestions.innerHTML = ''; 
