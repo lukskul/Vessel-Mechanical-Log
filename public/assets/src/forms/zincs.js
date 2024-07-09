@@ -11,29 +11,29 @@
                 <div class="form-group">
                     <label for="location-${sectionCount}">Location</label>
                     <select id="location-${sectionCount}" name="location-${sectionCount}" required>
-                    <option value="hull">Hull</option>
-                    <option value="propeller">Propeller</option>
-                    <option value="rope-guard">Rope-Guard</option>
-                    <option value="bow thruster">BowThruster</option>
-                    <option value="jets">Jets</option>
-                    <option value="rudder">Rudder</option>
-                    <option value="trim-tab">Trim Tab</option>
-                    <option value="shaft">Shaft</option>
-                    <option value="sea-chest">Sea Chest</option>
-                    <option value="engine">Engine</option>
-                    <option value="keel">Keel</option>
+                    <option value="hull" data-translate="hull">Hull</option>
+                    <option value="propeller" data-translate="propeller">Propeller</option>
+                    <option value="rope-guard" data-translate="ropeGuard">Rope-Guard</option>
+                    <option value="bow thruster" data-translate="bowThruster">BowThruster</option>
+                    <option value="jets" data-translate="jets">Jets</option>
+                    <option value="rudder" data-translate="rudder">Rudder</option>
+                    <option value="trim-tab" data-translate="trimTab">Trim Tab</option>
+                    <option value="shaft" data-translate="shaft">Shaft</option>
+                    <option value="sea-chest" data-translate="seaChest">Sea Chest</option>
+                    <option value="coolers" data-translate="coolers">Coolers</option>
+                    <option value="engine" data-translate="engine">Engine</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="count-${sectionCount}">Amount</label>
+                    <label for="count-${sectionCount}" data-translate="amount">Amount</label>
                     <input type="number" id="count-${sectionCount}" name="count-${sectionCount}" required>
                 </div>
                 <div class="form-group">
-                    <label for="material-${sectionCount}">Material</label>
+                    <label for="material-${sectionCount}" data-translate="material">Material</label>
                     <select id="material-${sectionCount}" name="material-${sectionCount}" required>
-                        <option value="zinc">Zinc</option>
-                        <option value="aluminum">Aluminum</option>
-                        <option value="magnesium">Magnesium</option>
+                        <option value="zinc" data-translate="zinc">Zinc</option>
+                        <option value="aluminum" data-translate="aluminum">Aluminum</option>
+                        <option value="magnesium" data-translate="magnesium">Magnesium</option>
                     </select>
                 </div>
             </div>

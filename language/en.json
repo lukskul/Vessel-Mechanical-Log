@@ -29,5 +29,20 @@
   "thruster": "Thruster",
   "vesselDisplay": "Vessel Display",
   "vesselFormLabel": "Vessel",
-  "zincs": "Zincs"
+  "zincs": "Zincs",
+
+  "amount": "Cantidad",
+  "aluminum": "Aluminio",
+  "bowThruster": "Propulsor de proa",
+  "coolers": "Enfriadores",
+  "hull": "Casco",
+  "jets": "Jets",
+  "location": "Ubicación",
+  "magnesium": "Magnesio",
+  "material": "Material",
+  "ropeGuard": "Protector de cuerda",
+  "seaChest": "Cofre de mar",
+  "shaft": "Eje",
+  "trimTab": "Aleta de ajuste",
+  "zinc": "Zinc"
 }

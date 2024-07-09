@@ -59,7 +59,7 @@ async function handleTaskClick(event) {
                 //scriptFile = 'assets/src/forms/shafts.js'; 
                 break;
             default:      
-                console.error('Unknown task type:', taskType);
+                console.error('Unknown task type:', taskType);  
                 return;        
         }
 
