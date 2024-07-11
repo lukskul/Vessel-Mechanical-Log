@@ -5,7 +5,9 @@
   "couplerBolt": "Coupler Bolt", 
   "assembly": "Assembly",
   "doors": "Doors",
+  "electricMotor": "Electric Motors",
   "engine": "Engine",
+  "fan": "Fan", 
   "generator": "Generator",
   "lipSeal": "Lip Seal",
   "misc": "Misc",
@@ -44,6 +46,8 @@
   "seaChest": "Sea Chest",
   "shaft": "Shaft",
   "trimTab": "Trim Tab",
-  "zinc": "Zinc"
+  "zinc": "Zinc",
+
+  "thread": "Thread"
 }
 

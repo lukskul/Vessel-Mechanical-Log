@@ -5,7 +5,9 @@
   "coupler": "Acoplador",
   "couplerBolt": "Perno de Acoplamiento",
   "doors": "Puertas",
+  "electricMotor": "Motor Eléctrico",
   "engine": "Motor",
+  "fan": "Ventilador",
   "generator": "Generador",
   "lipSeal": "Sello de labio",
   "misc": "Varios",
@@ -44,5 +46,7 @@
   "seaChest": "Cofre de mar",
   "shaft": "Eje",
   "trimTab": "Aleta de ajuste",
-  "zinc": "Zinc"
+  "zinc": "Zinc", 
+
+  "thread": "Rosca"
 }

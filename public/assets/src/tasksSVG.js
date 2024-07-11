@@ -18,7 +18,7 @@ export function loadTaskSVG(taskType) {
         case 'shafts':
             svgFile = 'assets/icons/shafts.svg'; 
             break; 
-        case 'motor':
+        case 'electricMotors':
             svgFile = 'assets/icons/motor.svg'; 
             break; 
         // Add more cases as needed
