@@ -58,7 +58,10 @@ async function handleTaskClick(event) {
                 scriptFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/src/forms/shafts.js'; 
                 //scriptFile = 'assets/src/forms/shafts.js'; 
                 break;
-            default:      
+            case 'motor':
+                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/motor.html';
+                //htmlFile = 'assets/html/motor.html'; 
+            default:        
                 console.error('Unknown task type:', taskType);  
                 return;        
         }

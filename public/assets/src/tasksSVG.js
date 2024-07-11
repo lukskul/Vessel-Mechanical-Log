@@ -18,6 +18,9 @@ export function loadTaskSVG(taskType) {
         case 'shafts':
             svgFile = 'assets/icons/shafts.svg'; 
             break; 
+        case 'motor':
+            svgFile = 'assets/icons/motor.svg'; 
+            break; 
         // Add more cases as needed
         default:
             console.error('Unknown task type for SVG:', taskType);

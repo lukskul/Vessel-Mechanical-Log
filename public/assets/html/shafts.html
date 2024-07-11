@@ -18,19 +18,22 @@
                 <img class="svg-icon" src="assets/icons/more.svg" alt="More">
             </button>
             <div id="information-container" class="informationContainer">
-                <div class="form-group">
-                    <label for="couplerBoltCount" data-translate="boltCount">Bolt Count:</label>
-                    <input type="number" id="couplerBoltCount" name="couplerBoltCount" required>
-                </div>
-                <div class="form-group">
-                    <label for="couplerBoltSizes" data-translate="couplerBoltSizes">Bolt Sizes (mm/inches):</label>
-                    <input type="text" id="couplerBoltSizes" name="couplerBoltSizes" required>
+                <div class="container">
+                    <h2 data-translate="couplerBolt">Coupler Bolt</h2>
+                    <div class="form-group">
+                        <label for="couplerBoltCount" data-translate="count">Count</label>
+                        <input type="number" id="couplerBoltCount" name="couplerBoltCount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="couplerBoltSizes" data-translate="size">Size</label>
+                        <input type="text" id="couplerBoltSizes" name="couplerBoltSizes" required>
+                    </div>
                 </div>
                 <!-- Retaining Nut-->
                 <div class="container">
                     <h2 data-translate="retainingNut">Retaining Nut</h2>
                         <div class="form-group">
-                            <label for="retainingNutSizes" data-translate="size">Size:</label>
+                            <label for="retainingNutSizes" data-translate="size">Size</label>
                             <select id="retainingNutSizes" name="retainingNutSizes" required>
                                 <option value=""></option>
                                 <option value="0.5">.5 inches</option>
@@ -58,8 +61,9 @@
                         </div>
             
                         <!-- Set Screws -->
+                        <h2 data-translate="retainingNutSetScrew">Retaining nut Set Screw</h2>
                         <div class="form-group">
-                            <label for="setScrewCount" data-translate="setScrewCount">Set Screw Count:</label>
+                            <label for="setScrewCount" data-translate="count">Count</label>
                             <select id="setScrewCount" name="setScrewCount" required>
                                 <option value=""></option>
                                 <option value="1">1</option>
@@ -73,7 +77,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="setScrewSize" data-translate="setScrewSize">Set Screw Size:</label>
+                            <label for="setScrewSize" data-translate="size">size</label>
                             <select id="setScrewSize" name="setScrewSize" required>
                                 <option value=""></option>
                                 <option value="1/4-20">1/4-20</option>
