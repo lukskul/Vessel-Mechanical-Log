@@ -63,7 +63,7 @@ async function handleTaskClick(event) {
                 //htmlFile = 'assets/html/electricMotors.html'; 
                 break; 
             default:        
-                console.error('Unknown task type:', taskType);  
+                console.error('Unknown task type:', taskType);    
                 return;        
         }
 
