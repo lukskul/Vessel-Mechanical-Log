@@ -49,6 +49,8 @@
     position: fixed; 
     z-index: 999;  
     top: 2px; 
+    width: 55px;
+    height: 55px; 
 }
 
 .saveVesselButton {

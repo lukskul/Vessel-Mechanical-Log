@@ -77,6 +77,7 @@ export function loadDefaultLogo() {
             if (svgElement) {
                 svgElement.classList.add('taskIdentifier');
                 svgElement.style.backgroundColor = 'black';
+                svgElement.style.border= '2px solid white';
                 svgElement.style.height = '55px'; 
                 svgElement.style.width = '55px'; 
                 svgElement.style.top = '2px';
