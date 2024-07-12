@@ -47,13 +47,13 @@ async function handleTaskClick(event) {
 
         switch (taskType) {   
             case 'zincs':
-                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
+                //htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
                 //htmlFile = 'assets/html/zincs.html'; 
                 scriptFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/src/forms/zincs.js';
                 //scriptFile = 'assets/src/forms/zincs.js';     
                 break;  
             case 'shafts':
-                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/shafts.html';
+                //htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/shafts.html';
                 //htmlFile = 'assets/html/shafts.html';
                 scriptFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/src/forms/shafts.js'; 
                 //scriptFile = 'assets/src/forms/shafts.js'; 
