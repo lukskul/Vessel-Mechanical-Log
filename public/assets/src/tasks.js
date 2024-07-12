@@ -61,13 +61,13 @@ async function handleTaskClick(event) {
             case 'electricMotors':
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/electricMotors.html';
                 //htmlFile = 'assets/html/electricMotors.html'; 
-                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/src/forms/electricMotors.js'; 
+                scriptFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/src/forms/electricMotors.js'; 
                 //scriptFile = 'assets/src/forms/electricMotors.js'; 
                 break; 
             default:            
                 console.error('Unknown task type:', taskType);    
                 return;        
-        }
+        }  
 
         try {
             await loadHTMLBlock('form-container', htmlFile, scriptFile);

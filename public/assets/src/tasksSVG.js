@@ -6,26 +6,45 @@ export function loadTaskSVG(taskType) {
     let svgFile;
 
     switch (taskType) {
+        case 'electricMotors':
+            svgFile = 'assets/icons/motor.svg'; 
+            break; 
         case 'engines':
             svgFile = 'assets/icons/engine.svg';
             break;
         case 'props':
             svgFile = 'assets/icons/props.svg';
             break;
-        case 'zincs':
-            svgFile = 'assets/icons/zincs.svg';
-            break;
         case 'shafts':
             svgFile = 'assets/icons/shafts.svg'; 
             break; 
-        case 'electricMotors':
-            svgFile = 'assets/icons/motor.svg'; 
+        case 'generators':
+            svgFile = 'assets/icons/generator.svg'; 
             break; 
+        case 'thrusters':
+            svgFile = 'assets/icons/bowThruster.svg'; 
+            break;     
+        case 'rudder':
+            svgFile = 'assets/icons/rudder.svg'; 
+            break; 
+        case 'sea-screens':
+            svgFile = 'assets/icons/screen.svg'; 
+            break; 
+        case 'doors':
+            svgFile = 'assets/icons/door.svg'; 
+            break; 
+        case 'zincs':
+            svgFile = 'assets/icons/zincs.svg';
+            break;
+        case 'misc':
+            svgFile = 'assets/icons/plus.svg'; 
+            break; 
+
         // Add more cases as needed
         default:
             console.error('Unknown task type for SVG:', taskType);
             return;
-    }
+    }  
 
     fetch(svgFile)
         .then(response => response.text())
