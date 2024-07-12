@@ -47,19 +47,19 @@ async function handleTaskClick(event) {
 
         switch (taskType) {   
             case 'zincs':
-                //htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
+                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/zincs.html';
                 //htmlFile = 'assets/html/zincs.html'; 
                 scriptFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/src/forms/zincs.js';
                 //scriptFile = 'assets/src/forms/zincs.js';     
                 break;  
             case 'shafts':
-                //htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/shafts.html';
+                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/shafts.html';
                 //htmlFile = 'assets/html/shafts.html';
                 scriptFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/src/forms/shafts.js'; 
                 //scriptFile = 'assets/src/forms/shafts.js'; 
-                break;
+                break;  
             case 'electricMotors':
-                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/electricMotor.html';
+                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/electricMotors.html';
                 //htmlFile = 'assets/html/electricMotors.html'; 
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/src/forms/electricMotors.js'; 
                 //scriptFile = 'assets/src/forms/electricMotors.js'; 
