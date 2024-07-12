@@ -21,7 +21,7 @@ export function loadTaskSVG(taskType) {
         case 'generators':
             svgFile = 'assets/icons/generator.svg'; 
             break; 
-        case 'thrusters':
+        case 'bow-thrusters':
             svgFile = 'assets/icons/bowThruster.svg'; 
             break;     
         case 'rudder':
