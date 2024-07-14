@@ -1,5 +1,6 @@
 import { updateVesselData } from './data-service.js'; 
-import { state, showSuccessPopup } from './global.js'; 
+import { state } from './global.js'; 
+import { showSuccessPopup } from './alert.js';
 
 export function initializeForm(form, taskType) {
     const vesselName = state.selectedVessel['vessel-name']; 

@@ -1,19 +1,28 @@
-#error-container {
+#success-popup {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.8);
-    border: 2px solid #00ff00;
+    width: 100%; 
+    border: 2px solid;
     padding: 20px;
     text-align: center;
     display: none;
     z-index: 1000;
 }
 
-#error-message {
+.error-message {
+    color: #ff0000;
+    border-color: #ff0000;
     font-size: 24px;
     animation: flicker 1.5s infinite alternate;
+}
+
+.success-message {
+    color: #00ff00;
+    border-color: #00ff00;
+    font-size: 24px;
 }
 
 @keyframes flicker {

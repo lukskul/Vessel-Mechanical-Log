@@ -1,7 +1,8 @@
 import { resetVessel } from "./vessel";
 import { showTasks, resetTasks, hideTasks } from "./tasks";
-import { state, shakeAlert, resetShakeAlert, showSuccessPopup } from "./global"; 
+import { state } from "./global"; 
 import { resetUnitSystem } from "./unit-system";
+import { showSuccessPopup, shakeAlert, resetShakeAlert } from "./alert";
 
 
 export const saveVessel = document.getElementById('save-vessel-button');  

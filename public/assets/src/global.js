@@ -1,6 +1,5 @@
 import { showTasks } from "./tasks";
 import { loadDefaultLogo } from "./tasksSVG";
-import { showError } from "./alert";
 
 export const state = {
     selectedVessel: null,
@@ -29,37 +28,6 @@ export const state = {
     }
 };
 
-let shakeCounter = 0;
 
-export function shakeAlert() {
-    const vesselNameDiv = document.getElementById('data-form'); 
 
-    vesselNameDiv.classList.add('shake'); 
-    
-    vesselNameDiv.addEventListener('animationend', function() {
-        vesselNameDiv.classList.remove('shake');
-    }, { once: true });
-
-    shakeCounter++;
-
-    if (shakeCounter > 2) {
-        showError('Please select a vessel.');
-        shakeCounter = 0; 
-    }
-}
-
-export function resetShakeAlert() {
-    shakeCounter = 0;
-}
-
-export function showSuccessPopup(message) {
-    const popup = document.getElementById('success-popup');
-    popup.textContent = message;
-    popup.classList.add('show');
-
-    // Hide the popup after 2 seconds
-    setTimeout(() => {
-        popup.classList.remove('show');
-    }, 2000);
-}
 
