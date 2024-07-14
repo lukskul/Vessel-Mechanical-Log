@@ -1,4 +1,4 @@
-const messageContainer = document.getElementById('success-popup');
+const messageContainer = document.getElementById('alert-popup');
 let shakeCounter = 0;
 
 export function shakeAlert() {

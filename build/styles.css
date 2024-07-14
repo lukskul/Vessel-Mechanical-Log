@@ -374,7 +374,7 @@ input:checked + .slider:before {
 .popup.show {
     opacity: 1;
 }
-#success-popup {
+#alert-popup {
     position: fixed;
     top: 50%;
     left: 50%;
