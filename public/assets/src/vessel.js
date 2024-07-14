@@ -1,3 +1,4 @@
+import { showError } from './alert.js';
 import { fetchVesselNames, saveData } from './data-service.js'; 
 import { state } from './global.js'; 
 import { showTasks } from './tasks.js';
@@ -64,12 +65,12 @@ document.addEventListener('DOMContentLoaded', async function() {
                 showTasks();                 
             }).catch(error => {
                 console.error('Error saving vessel name:', error);
-                alert('Error saving vessel name');
+                showError('Error saving vessel name');
             });
         } else if (!vesselName) {
-            alert('Vessel name cannot be empty');
+            showError('Vessel name cannot be empty');
         } else {
-            alert('Vessel name already exists');
+            showError('Vessel name already exists');
         }
     });
 });

@@ -1,5 +1,6 @@
 import { showTasks } from "./tasks";
 import { loadDefaultLogo } from "./tasksSVG";
+import { showError } from "./alert";
 
 export const state = {
     selectedVessel: null,
@@ -42,7 +43,7 @@ export function shakeAlert() {
     shakeCounter++;
 
     if (shakeCounter > 2) {
-        alert('Please select a vessel.');
+        showError('Please select a vessel.');
         shakeCounter = 0; 
     }
 }

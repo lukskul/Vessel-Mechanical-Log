@@ -4,6 +4,7 @@ import '../css/tasks.css';
 import '../css/menu.css'; 
 import '../css/button.css'; 
 import '../css/animation.css'; 
+import '../css/alert.css'; 
 
 // Forms Css
 import '../css/forms/vessel.css'; 
