@@ -1,6 +1,7 @@
 import { updateVesselData } from './data-service.js'; 
 import { state } from './global.js'; 
 import { showSuccessPopup } from './alert.js';
+import { language } from './language.js';
 
 export function initializeForm(form, taskType) {
     const vesselName = state.selectedVessel['vessel-name']; 
@@ -36,8 +37,17 @@ export function initializeForm(form, taskType) {
                     .then(updatedData => {
                         console.log("Server response:", updatedData); // Log the server response
                         // Check if updatedData is valid
-                        if (updatedData && updatedData.message === 'Vessel data updated successfully' && updatedData.vessel) {
+                        if (updatedData && updatedData.message === 'Vessel data updated successfully' && updatedData.vessel && language === "en") {
                             showSuccessPopup('Success!');
+                            const updatedVessel = updatedData.vessel;
+                            if (!state.selectedVessel[taskType]) {
+                                state.selectedVessel[taskType] = {};
+                            }
+                            // Assuming updatedData includes the updated vessel data
+                            Object.assign(state.selectedVessel[taskType], updatedVessel[taskType]);
+                            console.log("Updated state:", state.selectedVessel); // Log the updated state
+                        } else if (updatedData && updatedData.message === 'Vessel data updated successfully' && updatedData.vessel && language === "es") {
+                            showSuccessPopup('Éxito!');
                             const updatedVessel = updatedData.vessel;
                             if (!state.selectedVessel[taskType]) {
                                 state.selectedVessel[taskType] = {};

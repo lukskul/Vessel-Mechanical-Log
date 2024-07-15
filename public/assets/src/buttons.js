@@ -3,6 +3,7 @@ import { showTasks, resetTasks, hideTasks } from "./tasks";
 import { state } from "./global"; 
 import { resetUnitSystem } from "./unit-system";
 import { showSuccessPopup, shakeAlert, resetShakeAlert } from "./alert";
+import { language } from "./language";
 
 
 export const saveVessel = document.getElementById('save-vessel-button');  
@@ -60,10 +61,13 @@ back.addEventListener('click', function() {
 
 export const sharedSubmitButton = document.getElementById('shared-submit-button'); 
 sharedSubmitButton.addEventListener('click', function() {
-    if(state.selectedVessel != null && state.addMode === true) {
+    if(state.selectedVessel != null && state.addMode === true && language === 'en') {
         showSuccessPopup("Saved!"); 
         resetShakeAlert(); 
-    } else {
+    } else if (state.selectedVessel != null && state.addMode === true && language === 'es') {
+        showSuccessPopup("Guardado!"); 
+        resetShakeAlert(); 
+    }else {
         shakeAlert(); 
         console.log("wo buddy you are not in add mode.")
     }

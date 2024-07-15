@@ -1,5 +1,6 @@
 const messageContainer = document.getElementById('alert-popup');
 let shakeCounter = 0;
+import { language } from './language'; 
 
 export function shakeAlert() {
     const vesselNameDiv = document.getElementById('data-form'); 
@@ -12,14 +13,17 @@ export function shakeAlert() {
 
     shakeCounter++;
 
-    if (shakeCounter > 2) {
+    if (shakeCounter > 2 && language === 'en') {
         showError('Please select a vessel.');
+        shakeCounter = 0; 
+    } else if (shakeCounter > 2 && language === 'es') {
+        showError('Por favor, seleccione una embarcación');
         shakeCounter = 0; 
     }
 }
 
 export function resetShakeAlert() {
-    shakeCounter = 0;
+    shakeCounter = 0;  
 }
 
 

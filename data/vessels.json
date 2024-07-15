@@ -110,7 +110,35 @@
     "generators": {},
     "electricMotors": {
       "electricMotors-Entry-1": {},
-      "electricMotors-Entry-2": {}
+      "electricMotors-Entry-2": {},
+      "electricMotors-Entry-3": {
+        "electricMotorsType": "Fan",
+        "thread": "3/8in"
+      },
+      "electricMotors-Entry-4": {
+        "electricMotorsType": "Fan",
+        "thread": "5/16in"
+      },
+      "electricMotors-Entry-5": {
+        "electricMotorsType": "Fan",
+        "thread": "3/8in"
+      },
+      "electricMotors-Entry-6": {
+        "electricMotorsType": "Fan",
+        "thread": "3/8in"
+      },
+      "electricMotors-Entry-7": {
+        "electricMotorsType": "Fan",
+        "thread": "3/8in"
+      },
+      "electricMotors-Entry-8": {
+        "electricMotorsType": "Fan",
+        "thread": "3/8in"
+      },
+      "electricMotors-Entry-9": {
+        "electricMotorsType": "Fan",
+        "thread": "3/8in"
+      }
     },
     "shafts": {},
     "props": {},
