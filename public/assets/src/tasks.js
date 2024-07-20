@@ -53,10 +53,10 @@ async function handleTaskClick(event) {
                 //scriptFile = 'assets/src/forms/zincs.js';     
                 break;  
             case 'shafts':
-                htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/shafts.html';
-                //htmlFile = 'assets/html/shafts.html';
-                scriptFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/src/forms/shafts.js'; 
-                //scriptFile = 'assets/src/forms/shafts.js'; 
+                //htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/shafts.html';
+                htmlFile = 'assets/html/shafts.html';
+                //scriptFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/src/forms/shafts.js'; 
+                scriptFile = 'assets/src/forms/shafts.js'; 
                 break;  
             case 'electricMotors':
                 htmlFile = 'https://lukskul.github.io/Vessel-Mechanical-Log/public/assets/html/electricMotors.html';

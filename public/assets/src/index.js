@@ -5,10 +5,11 @@ import '../css/menu.css';
 import '../css/button.css'; 
 import '../css/animation.css'; 
 import '../css/alert.css'; 
+import '../css/forms/forms.css'; 
 
-// Forms Css
+// Forms CSS
 import '../css/forms/vessel.css'; 
-import '../css/forms/form.css'; 
+import '../css/forms/shafts.css'; 
 import '../css/forms/zincs.css'; 
 
 // Javascript

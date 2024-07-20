@@ -10,6 +10,7 @@ This Server.js is saving data locally into data/vessels.json and language/**.js 
 
 ## Things To do: 
         1. Translate archive data to en or es. 
+        2. Edit/Change Shafts form button style to less white bold and cyberpunk
 
 This Repository is strictly controlling the Script and Style functionality and all pushed changes into github will instantly translate to the Heroku Site. 
 

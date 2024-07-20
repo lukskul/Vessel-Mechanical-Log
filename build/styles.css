@@ -406,61 +406,6 @@ input:checked + .slider:before {
     50% { opacity: 0.5; }
     100% { opacity: 1; }
 }
-.vesselForm {
-    width: 60%; 
-    margin-left: 20%; 
-    margin-top: 30%; 
-    cursor: pointer;
-    position: relative;
-    transition: transform 0.3s ease;
-    text-align: center;
-    color: white;
-}
-
-.vesselDataForm {
-    margin-bottom: 10%; 
-}
-
-.vesselFormLabel {
-    display: flex; 
-    justify-content: flex-start;
-    margin-bottom: 2%; 
-}
-
-.vesselForm::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    z-index: -1;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-}
-
-.vesselForm:hover::before {
-    opacity: 1;
-}
-
-.vesselForm input,
-
-.vesselForm input {
-    width: 75%;
-    height: 41px;
-    padding: 2%; 
-    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
-}
-
-.suggestion {
-    padding: 4%; 
-    padding-top: 0px; 
-    display: flex;
-    justify-content: center;
-}
-
-
-
 
 .container {
     background: rgba(0, 0, 0, 0.8);
@@ -474,6 +419,7 @@ input:checked + .slider:before {
 
 .retro-form {
     max-width: 400px;
+    margin-top: 5%; 
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -572,23 +518,96 @@ input:checked + .slider:before {
     margin-bottom: 2%; 
 }
 
-.informationButton { 
-    cursor: pointer; 
-    float: right; 
-    top: -32px; 
+
+.vesselForm {
+    width: 60%; 
+    margin-left: 20%; 
+    margin-top: 30%; 
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s ease;
+    text-align: center;
+    color: white;
 }
 
-.informationButton .svg-icon {
-    filter: none; 
+.vesselDataForm {
+    margin-bottom: 10%; 
+}
+
+.vesselFormLabel {
+    display: flex; 
+    justify-content: flex-start;
+    margin-bottom: 2%; 
+}
+
+.vesselForm::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.vesselForm:hover::before {
+    opacity: 1;
+}
+
+.vesselForm input,
+
+.vesselForm input {
+    width: 75%;
+    height: 41px;
+    padding: 2%; 
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+}
+
+.suggestion {
+    padding: 4%; 
+    padding-top: 0px; 
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.informationButton {
+    display: inline;
+    float: right; 
+    margin-top: -30px; 
+    background: linear-gradient(45deg, #13de42, #8000ff);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 10px #13de42, 0 0 20px #8000ff, 0 0 30px #13de42, 0 0 40px #8000ff;
+    transition: background 0.5s, box-shadow 0.5s;
+}
+
+.informationButton:hover {
+    background: linear-gradient(45deg, #8000ff, #13de42);
+    box-shadow: 0 0 20px #13de42, 0 0 30px #8000ff, 0 0 40px #13de42, 0 0 50px #8000ff;
+}
+
+.informationButton:focus {
+    outline: none;
+    box-shadow: 0 0 30px #13de42, 0 0 40px #8000ff, 0 0 50px #13de42, 0 0 60px #8000ff;
+}
+
+/* Bold lines for the image */
+.informationButton svg-icon {
+    filter: drop-shadow(0 0 1px #13de42) drop-shadow(0 0 1px #8000ff);
 }
 
 .informationContainer {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    min-height: 150%; 
-    margin-top: 2%; 
-    display: none;
+    display: none; 
 }
+
 
 .form-group {
     display: flex;
