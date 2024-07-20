@@ -419,7 +419,7 @@ input:checked + .slider:before {
 
 .retro-form {
     max-width: 400px;
-    margin-top: 5%; 
+    margin-top: 10%; 
     margin: auto;
     display: flex;
     flex-direction: column;
