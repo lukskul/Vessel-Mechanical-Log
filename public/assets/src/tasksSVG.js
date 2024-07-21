@@ -68,15 +68,17 @@ export function loadTaskSVG(taskType) {
             console.error('Error loading SVG:', error);
             taskIdentifier.innerHTML = `<p>Error loading SVG for ${taskType}.</p>`;
         });
-}
+}  
 
 export function loadDefaultLogo() {
 
     const defaultLogoPath = 'assets/icons/wrench-hammer.svg';
 
+    taskIdentifier.classList.remove('visible');
+
     fetch(defaultLogoPath)
         .then(response => response.text())
-        .then(logoContent => {
+        .then(logoContent => {   
             taskIdentifier.style.display = 'block';
             taskIdentifier.innerHTML = logoContent;
             const svgElement = taskIdentifier.querySelector('svg');
