@@ -1,8 +1,9 @@
 //TasksSVG will put the task image in the menu left corner
 
-const taskIdentifier = document.getElementById('task-identifier');
+export const taskIdentifier = document.getElementById('task-identifier');
 
 export function loadTaskSVG(taskType) {
+
     let svgFile;
 
     switch (taskType) {
@@ -44,7 +45,9 @@ export function loadTaskSVG(taskType) {
         default:
             console.error('Unknown task type for SVG:', taskType);
             return;
-    }  
+    } 
+
+    taskIdentifier.classList.remove('visible');
 
     fetch(svgFile)
         .then(response => response.text())
@@ -54,6 +57,9 @@ export function loadTaskSVG(taskType) {
             const svgElement = taskIdentifier.querySelector('svg');
             if (svgElement) {
                 svgElement.classList.add('taskIdentifier');
+                setTimeout(() => {
+                    taskIdentifier.classList.add('visible');
+                }, 10); 
             } else {
                 console.error('Icon element not found');
             }
@@ -81,6 +87,11 @@ export function loadDefaultLogo() {
                 svgElement.style.height = '55px'; 
                 svgElement.style.width = '55px'; 
                 svgElement.style.top = '2px';
+
+                setTimeout(() => {
+                    taskIdentifier.classList.add('visible');
+                }, 10); // Adjust delay as needed
+            
             } else {
                 console.error('Icon not found');
             }

@@ -38,7 +38,7 @@ async function handleTaskClick(event) {
         opt.style.display = 'none';
     });
 
-    loadTaskSVG(taskType);
+    loadTaskSVG(taskType)
 
     if (state.addMode) {
 

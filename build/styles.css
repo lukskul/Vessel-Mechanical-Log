@@ -134,6 +134,8 @@ h2 {
   .taskMainBlock {
     margin-top: 5%; 
   }
+
+
   
 .vesselDisplay {
     position: fixed;
@@ -160,7 +162,7 @@ h2 {
     left: 2px; 
     top: -10px; 
     z-index: 999;
-}
+} 
 
 .logo {
     background-color: black; 
@@ -188,7 +190,7 @@ h2 {
     z-index: -1; 
     transition: opacity 0.3s ease;
     opacity: 0;
-}
+} 
 
 
 /* Bottom Menu Bar */
@@ -209,6 +211,15 @@ h2 {
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+#task-identifier {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#task-identifier.visible {
+    opacity: 1;
 }
 
 

@@ -4,6 +4,7 @@ import { state } from "./global";
 import { resetUnitSystem } from "./unit-system";
 import { showSuccessPopup, shakeAlert, resetShakeAlert } from "./alert";
 import { language } from "./language";
+import { taskIdentifier } from "./tasksSVG";
 
 
 export const saveVessel = document.getElementById('save-vessel-button');  

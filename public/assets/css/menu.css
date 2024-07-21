@@ -23,7 +23,7 @@
     left: 2px; 
     top: -10px; 
     z-index: 999;
-}
+} 
 
 .logo {
     background-color: black; 
@@ -51,7 +51,7 @@
     z-index: -1; 
     transition: opacity 0.3s ease;
     opacity: 0;
-}
+} 
 
 
 /* Bottom Menu Bar */
@@ -72,5 +72,14 @@
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+#task-identifier {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#task-identifier.visible {
+    opacity: 1;
 }
 
