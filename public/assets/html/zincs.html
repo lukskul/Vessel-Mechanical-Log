@@ -6,17 +6,17 @@
     <title>Zincs</title>
 </head>
 <body>
-    <div class="form-title" data-translate="Zincs">
-        <h2>Zincs</h2>
-    </div>
-    <div class="container">
-        <form id="zincs" class="retro-form">
+    <form id="zincs" class="retro-form">
+        <div class="form-title" data-translate="zincs">
+            <h2>Zincs</h2>
+        </div>
+        <div class="container">
             <div id="form-sections">
                 <div class="form-section container">
-
                     <div class="form-group">
                         <label for="location-1" data-translate="location">Location</label>
                         <select id="location-1" name="location-1" required>
+                            <option value=""></option>
                             <option value="hull" data-translate="hull">Hull</option>
                             <option value="propeller" data-translate="propeller">Propeller</option>
                             <option value="rope-guard" data-translate="ropeGuard">Rope-Guard</option>
@@ -37,6 +37,7 @@
                     <div class="form-group">
                         <label for="material-1" data-translate="material">Material</label>
                         <select id="material-1" name="material-1" required>
+                            <option value=""></option>
                             <option value="zinc">Zinc</option>
                             <option value="aluminum" data-translate="aluminum">Aluminum</option>
                             <option value="magnesium" data-translate="magnesium">Magnesium</option>
@@ -45,7 +46,7 @@
                 </div>
             </div>
         </form>
-        <button id="add-button" class="button addButton" style="display:block;"><img src="assets/icons/plus.svg" alt="add"></button>
+        <button id="add-button" class="button informationButton" style="display:block;"><img class="zinc-plus-icon" src="assets/icons/plus.svg" alt="add"></button>
     </div>
 </body>
 </html>

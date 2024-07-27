@@ -11,6 +11,7 @@
                 <div class="form-group">
                     <label for="location-${sectionCount}">Location</label>
                     <select id="location-${sectionCount}" name="location-${sectionCount}" required>
+                    <option value=""></option>
                     <option value="hull" data-translate="hull">Hull</option>
                     <option value="propeller" data-translate="propeller">Propeller</option>
                     <option value="rope-guard" data-translate="ropeGuard">Rope-Guard</option>
@@ -31,6 +32,7 @@
                 <div class="form-group">
                     <label for="material-${sectionCount}" data-translate="material">Material</label>
                     <select id="material-${sectionCount}" name="material-${sectionCount}" required>
+                        <option value=""></option>
                         <option value="zinc" data-translate="zinc">Zinc</option>
                         <option value="aluminum" data-translate="aluminum">Aluminum</option>
                         <option value="magnesium" data-translate="magnesium">Magnesium</option>
@@ -53,5 +55,6 @@
     //<button type="button" class="delete-button" onclick="deleteFormSection(${sectionCount})">Delete</button>
 
     document.getElementById('add-button').onclick = function() {
+        this.classList.toggle('rotated');
         addFormSection();
     };
