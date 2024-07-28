@@ -10,7 +10,10 @@ This Server.js is saving data locally into data/vessels.json and language/**.js 
 
 ## Things To do: 
         1. Translate archive data to en or es. 
-        2. Edit/Change Shafts form button style to less white bold and cyberpunk
+        2. return button bug.  
+                In Zinc form click plus then return button and go back into zinc form and you can not click plus anymore.  
+        3. informationButton class     
+                informationButton css is in shaft.css that should be moved to a global folder, since it looks cool and other forms are using it. 
 
 This Repository is strictly controlling the Script and Style functionality and all pushed changes into github will instantly translate to the Heroku Site. 
 

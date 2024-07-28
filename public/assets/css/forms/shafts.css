@@ -23,12 +23,17 @@
     box-shadow: 0 0 30px #13de42, 0 0 40px #8000ff, 0 0 50px #13de42, 0 0 60px #8000ff;
 }
 
-/* Bold lines for the image */
-.informationButton svg-icon {
-    filter: drop-shadow(0 0 1px #13de42) drop-shadow(0 0 1px #8000ff);
-}
-
 .informationContainer {
     display: none; 
 }
 
+#toggle-button img.svg-icon {
+    filter: brightness(0) invert(1); 
+    stroke-width: 5px;
+    transition: transform 0.5s ease-in-out; 
+}
+
+/* Rotated state */
+#toggle-button img.svg-icon.rotated {
+    transform: rotate(90deg); 
+}

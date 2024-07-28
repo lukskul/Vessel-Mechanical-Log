@@ -10,12 +10,11 @@ function toggleButtonClick(button) {
         }
         if (container.style.display === 'none') {
             container.style.display = 'block';
-            img.src = 'assets/icons/less.svg'; // Change to the "less" icon
         } else {
             container.style.display = 'none';
-            img.src = 'assets/icons/more.svg'; // Change to the "more" icon
         }
-    }
+        img.classList.toggle('rotated');
+    } 
 }
 
 //Section 4- Shaft Seal
