@@ -40,8 +40,15 @@
                 </div>
             </div>
         `;
+
         formSections.appendChild(newSection);
         console.log(`New section added with id zinc-${sectionCount}`); // Debugging statement
+        
+        // Force reflow to trigger the CSS transition
+        newSection.offsetHeight; // Forces reflow
+
+        // Apply the 'open' class to transition the section into view
+        newSection.classList.add('open');
     }
 
     // window.deleteFormSection = function(sectionId) {

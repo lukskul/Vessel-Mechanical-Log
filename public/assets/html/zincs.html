@@ -11,39 +11,38 @@
             <h2>Zincs</h2>
         </div>
         <div class="container">
+            <div class="form-group">
+                <label for="location-1" data-translate="location">Location</label>
+                <select id="location-1" name="location-1" required>
+                    <option value=""></option>
+                    <option value="hull" data-translate="hull">Hull</option>
+                    <option value="propeller" data-translate="propeller">Propeller</option>
+                    <option value="rope-guard" data-translate="ropeGuard">Rope-Guard</option>
+                    <option value="bow thruster" data-translate="bowThruster">BowThruster</option>
+                    <option value="jets" data-translate="jets">Jets</option>
+                    <option value="rudder" data-translate="rudder">Rudder</option>
+                    <option value="trim-tab" data-translate="trimTab">Trim Tab</option>
+                    <option value="shaft" data-translate="shaft">Shaft</option>
+                    <option value="sea-chest" data-translate="seaChest">Sea Chest</option>
+                    <option value="coolers" data-translate="coolers">Coolers</option>
+                    <option value="engine" data-translate="engine">Engine</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="count-1" data-translate="amount">Amount</label>
+                <input type="number" class="zincStyleCount" id="count-1" name="count-1" required>
+            </div>
+            <div class="form-group">
+                <label for="material-1" data-translate="material">Material</label>
+                <select id="material-1" name="material-1" required>
+                    <option value=""></option>
+                    <option value="zinc">Zinc</option>
+                    <option value="aluminum" data-translate="aluminum">Aluminum</option>
+                    <option value="magnesium" data-translate="magnesium">Magnesium</option>
+                </select>
+            </div>
             <div id="form-sections">
-                <div class="form-section container">
-                    <div class="form-group">
-                        <label for="location-1" data-translate="location">Location</label>
-                        <select id="location-1" name="location-1" required>
-                            <option value=""></option>
-                            <option value="hull" data-translate="hull">Hull</option>
-                            <option value="propeller" data-translate="propeller">Propeller</option>
-                            <option value="rope-guard" data-translate="ropeGuard">Rope-Guard</option>
-                            <option value="bow thruster" data-translate="bowThruster">BowThruster</option>
-                            <option value="jets" data-translate="jets">Jets</option>
-                            <option value="rudder" data-translate="rudder">Rudder</option>
-                            <option value="trim-tab" data-translate="trimTab">Trim Tab</option>
-                            <option value="shaft" data-translate="shaft">Shaft</option>
-                            <option value="sea-chest" data-translate="seaChest">Sea Chest</option>
-                            <option value="coolers" data-translate="coolers">Coolers</option>
-                            <option value="engine" data-translate="engine">Engine</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="count-1" data-translate="amount">Amount</label>
-                        <input type="number" class="zincStyleCount" id="count-1" name="count-1" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="material-1" data-translate="material">Material</label>
-                        <select id="material-1" name="material-1" required>
-                            <option value=""></option>
-                            <option value="zinc">Zinc</option>
-                            <option value="aluminum" data-translate="aluminum">Aluminum</option>
-                            <option value="magnesium" data-translate="magnesium">Magnesium</option>
-                        </select>
-                    </div>
-                </div>
+                <div class="form-section container"> </div>
             </div>
         </form>
         <button id="add-button" class="button informationButton" style="display:block;"><img class="zinc-plus-icon" src="assets/icons/plus.svg" alt="add"></button>

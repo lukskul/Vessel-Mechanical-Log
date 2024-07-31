@@ -5,14 +5,7 @@ function toggleButtonClick(button) {
     const container = button.nextElementSibling;
     const img = button.querySelector('img');
     if (container.classList.contains('informationContainer')) {
-        if (container.style.display === '') {
-            container.style.display = 'none';
-        }
-        if (container.style.display === 'none') {
-            container.style.display = 'block';
-        } else {
-            container.style.display = 'none';
-        }
+        container.classList.toggle('open');
         img.classList.toggle('rotated');
     } 
 }

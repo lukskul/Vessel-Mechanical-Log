@@ -29,3 +29,24 @@
     transform: rotate(90deg); /* Rotate 90 degrees */
 }
 
+/* Initial container styles */
+.container {
+    transition: all 0.5s ease; /* Smooth transition for all properties */
+}
+
+/* Initially, sections will have no max-height and opacity */
+.form-section {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, border-width 0.5s ease;
+}
+
+/* When the section is open */
+.form-section.open {
+    max-height: 1000px; /* Adjust as needed */
+    opacity: 1;
+    border-width: 2px; /* Adjust as needed */
+}
+
+

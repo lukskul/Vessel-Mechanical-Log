@@ -23,10 +23,6 @@
     box-shadow: 0 0 30px #13de42, 0 0 40px #8000ff, 0 0 50px #13de42, 0 0 60px #8000ff;
 }
 
-.informationContainer {
-    display: none; 
-}
-
 #toggle-button img.svg-icon {
     filter: brightness(0) invert(1); 
     stroke-width: 5px;
@@ -36,4 +32,22 @@
 /* Rotated state */
 #toggle-button img.svg-icon.rotated {
     transform: rotate(90deg); 
+}
+
+.informationContainer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+.informationContainer.open {
+    max-height: 1000px; /* Adjust this value according to your content size */
+    opacity: 1;
+}
+
+/* Rotate the icon */
+.rotated {
+    transform: rotate(90deg);
+    transition: transform 0.5s ease;
 }
